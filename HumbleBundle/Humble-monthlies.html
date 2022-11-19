@@ -1,0 +1,2380 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<title>Humble Choice/Monthly Games</title>
+<base href="https://store.steampowered.com/">
+<style type=text/css>
+ body		{ width: 48em; margin: 3px auto 1em; font-family: serif; }
+ a.gotoend	{ float: right; margin: 0; border: 1px solid; border-radius: 25%;
+		  text-decoration: none; font-size: 2rem; color: #060; }
+ h1		{ font: bold 1.50rem sans-serif; margin: 0.6rem 0; }
+ h1.small	{ font-size: 1.11rem; }
+ h1.small.span	{ font-weight: normal; }
+ summary		{ font: bold 1.1rem sans-serif; margin: 1rem 0 0; }
+ summary.m::before	{ content: "Humble Monthly — "; color: #888; }
+ summary.c::before	{ content: "Humble Choice — "; color: #888; }
+ summary[nLeft]::after	{ float: right; content:
+			  " \A0 Can claim or gift " attr(nLeft) " remaining games."; }
+ summary[note]::after	{ float: right; content: " \A0 " attr(note); }
+ summary::after		{ font: italic 1rem serif; }
+ .skipped		{ opacity: 0.6; }
+ p		{ margin: 0.5rem 0 0; }
+ details + p	{ margin: 1rem 0 0 0.5rem; }
+ div.aside	{ float: right; font: 90% serif; }
+ table		{ border-collapse: collapse; width: 100%;
+					border: 1px solid #888; margin: 3pt; }
+ td		{ padding: 0pt 4pt; vertical-align: baseline; }
+ tr.hr > td	{ padding-top: 1pt;	border-top: 1px solid #888; }
+ tr.hr > td > a,  tr.hr > td > span,  .title
+		{ font: bold italic 100% serif; }
+ tr.hr > td:nth-child(2)
+		{ font: bold 111% monospace; padding-right: none; width: 5ex; }
+ tr.hr > td:nth-child(3)
+		{ width: 5em; }
+ tr.hr > td:nth-child(3):not([class])
+		{ color: #088; padding-left: none; }
+ tr.hr > td:nth-child(4)
+		{ width: 9em; }
+ tr.hr + tr > td
+		{ font-family: sans-serif; padding-left: 1rem; padding-bottom: 1pt; }
+ tr.hr + tr > td > i	{ font: italic 1rem serif; }
+ td > div	{ float: right; font: italic 91% serif; }
+ .nsp,  .brnz	{ color: #800; }
+ .nsp::before	{ content: "Borked"; }			/* "No Steam Proton support" */
+ .ln::before	{ content: "(native)"; color: #484 ; }	/* "Linux Native" */
+ .w		{ background: #FEE; font-weight: bold; color: #800; }
+ .n4me, .have	{ background: #DFD; }
+ .took		{ background: #FED; }
+ .took:not(:empty)	{ font-size: 80%; }
+ .todo		{ background: #FFf8AA; }
+ .want,  .took	{ font-weight: bold; color: #088; }
+ .n4me::before	{ content: "Not for me"; color: #800; }
+ .took::before	{ content: "Taken"; font-size: 1rem; }
+ .have::before	{ content: "Already Owned"; color: #800; }
+ .sc		{ font-variant: small-caps; }
+
+ ul, ul>li	{ margin-top: 0.3em; margin-bottom: 0; }
+ a[href]:empty:before { content: attr(href) }
+ [title]	{ text-decoration: #AFA wavy underline; }
+ .pre		{ white-space: pre; }
+</style>
+<script>
+ "use strict";
+ document.addEventListener("load", do_fixups, true);
+ var fixes_done = false;
+ function do_fixups() {
+  try {
+	// Hack alert:
+	var hash = location.hash;
+	if ( location.hash.endsWith("=") ) {
+		hash = hash.slice(0,-1);
+		console.log("#D# setting location.hash to «" + hash + "»");
+		location.hash = hash
+	} // So what is appending those "=" chars?
+	//
+	if ( fixes_done )
+		return;
+	fixes_done = true;
+	for ( let e of
+	      document.querySelectorAll('a[href]:not([href^="#"]):not([target])') ) {
+	    e.target = "_blank";
+	}
+	for ( let il of document.querySelectorAll('a[href^="#"]') ) {
+	    il.href = document.URL + il.getAttribute("href")
+	}
+  } catch(e) { alert("Fixups failed: "+e); throw e; }
+ }
+</script>
+</head>
+<body>
+
+<a class=gotoend title="Go to end of page" href="#end">▼</a>
+<h1>Humble Choice <small><span>(formerly</span> Humble Monthly<span>)</span></small></h1>
+
+
+<details><summary class=m nLeft="both"
+	>October 2019</summary>
+<table>
+<tr class=hr><td><a href="/app/691830">Avernum 3: Ruined World</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>RPG, Indie, Spiderweb Software
+
+<tr class=hr><td><a href="/app/637090">Battletech</a> + 2 of 5 DLC
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Mechs, TBS, TBT
+
+<tr class=hr><td><a href="/app/709440">Override: Mech City Brawl</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Mechs, Fighting, Indie, Local co-op
+
+<tr class=hr><td><a href="/app/485030">Planet Alpha</a>
+	<td>W/-/- <td>Silver				<td class=took>
+ <tr><td colspan=5>Platformer, Indie, SF, Survival
+
+<tr class=hr><td><a href="/app/719750">Puss!</a>
+	<td>W/M/- <td class=brnz>Bronze			<td class=n4me>
+ <tr><td colspan=5>Deliberately-bad(?), Psychedelic, Horror	<div>Reviews⇒No</div>
+
+<tr class=hr><td><a href="/app/584400">Sonic Mania</a>
+	<td>W/-/- <td>Platinum				<td class=took> (Oops?)
+ <tr><td colspan=5>2D, Platformer, Sequel-to-Classic
+
+<tr class=hr><td><a href="/app/862480">The Spiral Scouts</a>
+	<td>W/M/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Adventure, Indie, Puzzle, (Schoolboy) Comedy
+</table>
+</details>
+
+
+<details class=skipped>
+<summary class=m note="I skipped this month.">November 2019</summary>
+<table>
+<tr class=hr><td><a href="/app/476600">Call of Duty: WWII</a>
+	<td>W/-/-	<td class=nsp>			<td class=n4me>
+ <tr><td colspan=5>FPS, WW2, multiplayer
+
+<tr class=hr><td><a href="/app/731490">Crash Bandicoot N. Sane Trilogy</a>
+	<td>W/-/-	<td>Platinum			<td class=n4me>
+ <tr><td colspan=5>Platformer, 3D, remake
+
+<tr class=hr><td><a href="/app/996580">Spyro Reignited Trilogy</a>
+	<td>W/-/-	<td>Gold			<td class=n4me>
+ <tr><td colspan=5>Platformer, 3D
+
+<tr class=hr><td><a href="/app/758330">Shenmue I & II</a>
+	<td>W/-/-	<td>Silver			<td>Unnecessary
+ <tr><td colspan=5>Fighting, jujitsu, 3D, open-world, story-rich
+
+<tr class=hr><td><a href="/app/735580">11-11 Memories Retold</a>
+	<td>W/-/-	<td>Gold			<td class=n4me>
+ <tr><td colspan=5>Adventure, WW1, story-rich, war, anti-war
+
+<tr class=hr><td><a href="/app/528230">Synthetik: Legion Rising</a>
+	<td>W/-/-	<td>Gold			<td class=n4me>
+ <tr><td colspan=5>Shooter, top-down, rogue-like
+
+<tr class=hr><td><a href="/app/576500">Evergarden</a>
+	<td>W/M/L <td class=ln>				<td>Unlikely
+ <tr><td colspan=5>Puzzles, narrative, Atmospheric
+</table>
+</details>
+
+
+<details>
+<summary class=m nLeft=4
+	>December 2019</summary>
+<table>
+<tr class=hr><td><a href="/app/312200">Chasm</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Metroidvania, Platformer, Procedurally-Generated,
+	Dungeon Exploration
+
+<tr class=hr><td><a href="/app/777880">Fluffy Horde</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>2D side-scroller, RTS/TowerDefense, Rabbits-as-enemy
+
+<tr class=hr><td><a href="/app/666140">My Time At Portia</a>
+	<td>W/-/- <td>Gold				<td class=have>
+ <tr><td colspan=5>RPG/Sim, Open World, Crafting
+
+<tr class=hr><td><a href="/app/661940">Regular Human Basketball</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Co-op/Multiplayer, Funny
+	<div>Player(s) control a robot basketball player</div>
+
+<tr class=hr><td><a href="/app/544750">SoulCalibur VI</a>
+	<td>W/-/- <td>Gold				<td class=todo>Maybe?
+ <tr><td colspan=5>Fighting, Fantasy, Japanese	<div>Positive Reviews</div>
+
+<tr class=hr><td><a href="/app/690140">Sword Legacy: Omen</a>
+	<td>W/-/- <td>Platinum				<td class=todo>Hmmm
+ <tr><td colspan=5>RPG, Strategy, TBT, Fantasy, Arthurian-ish
+
+<tr class=hr><td><a href="/app/834530">Yakuza Kiwami</a>
+	<td>W/-/- <td>Gold				<td class=todo>Hmmm
+ <tr><td colspan=5>Adventure, JRPG, Brawler, Japanese, Remastered classic
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="all 3"
+	><a href="https://www.humblebundle.com/subscription/december-2019"
+		>December 2019</a></summary>
+<table>
+<tr class=hr><td><a href="/app/371140">Aegis Defenders</a>
+	<td>W/M/- <td>Gold				<td class=took>
+ <tr><td colspan=5>Action, Platformer, Tower Defense
+
+<tr class=hr><td><a href="/app/620590">Ancestors Legacy</a>
+	<td>W/-/- <td>Silver+				<td class=took>
+ <tr><td colspan=5>RTS, Medieval, Co-op/Multiplayer, Best-of-show@PAX18
+
+<tr class=hr><td><a href="/app/774361">Blasphemous</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>“Punishing”, Metroidvania, Action, Platformer(ish?), Souls-like
+
+<tr class=hr><td><a href="/app/370870">Dark Future: Blood Red States</a>
+	<td>W/-/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Strategy, Action, based-on-CarWars-ish-minis-game
+
+<tr class=hr><td><a href="/app/573120">Dead in Vinland</a>
+	<td>W/M/- <td>Platinum				<td class=todo>Probably NO
+ <tr><td colspan=5>Survival/Management, some RPG + Adventure	<div>Reviews⇒Meh</div>
+
+<tr class=hr><td><a href="/app/844050">Desert Child</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Racing, Hoverbikes, Shooter, SF, RPG, Gritty, Punk
+
+<tr class=hr><td><a href="/app/389140">Horizon Chase Turbo</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>Racing, Arcade, Old-School
+
+<tr class=hr><td><a href="/app/559100">Phantom Doctrine</a>
+	<td>W/-/- <td>Silver				<td class=n4me>
+ <tr><td colspan=5>TBT, Stealth, Cold-War, XCOM-but-with-spies
+
+<tr class=hr><td><a href="/app/750920">Shadow of the Tomb Raider</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Action, Adventure
+
+<tr class=hr><td><a href="/app/408410">X-Morph: Defense</a>
+	<td>W/-/- <td>Silver				<td class=took>
+ <tr><td colspan=5>Top-down shooter PLUS Tower Defense
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="3 of 5"
+	><a href="https://www.humblebundle.com/subscription/january-2020"
+		>January 2020</a></summary>
+<table>
+<tr class=hr><td><a href="/app/688420">Bad North: Jotunn Edition</a>
+	<td>W/M/- <td>Gold				<td class=took>
+ <tr><td colspan=5>RTS, Real-time-tactics, Roguelike, Brutal
+
+<tr class=hr><td><a href="/app/690790">DiRT Rally 2.0</a> + 3 DLCs
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Racing, Sim, Rally-driving
+
+<tr class=hr><td><a href="/app/599140">Graveyard Keeper</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>RPG, Crafting, Pixel-Graphics, Medieval
+
+<tr class=hr><td><a href="/app/396900">GRIP: Combat Racing</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Racing, Car-Combat
+
+<tr class=hr><td><a href="/app/529660">Mages of Mystralia</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>Action, Fantasy, Female-Protagonist, Fun-spell-mechanics
+
+<tr class=hr><td><a href="/app/356190">Middle-earth: Shadow of War</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>RPG, Dark Fantasy, 1P, Sequel
+
+<tr class=hr><td><a href="/app/310950">Street Fighter V</a>
+	<td>W/-/- <td class=nsp>			<td class=n4me>
+ <tr><td colspan=5>Fighting, 2D, Arcade, Multiplayer
+
+<tr class=hr><td><a href="/app/574980">Them’s Fightin' Herds</a>
+	<td>W/M/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Fighting, 2D, Cartoonish-Animals, 1P, Online-PvP
+
+<tr class=hr><td><a href="/app/585420">Trailmakers</a>
+	<td>W/-/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Vehicle-building, Wheeled/Walking/Flying/Water
+
+<tr class=hr><td><a href="/app/535930">Two Point Hospital</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>Management-Sim, Hospital
+
+<tr class=hr><td><a href="/app/1016920">Unrailed!</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Rail-building, Casual, Co-op
+
+<tr class=hr><td><a href="/app/631570">Whispers of a Machine</a>
+	<td>W/M/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Point+Click, SF, Detective
+
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="4 of 6"
+	><a href="https://www.humblebundle.com/subscription/february-2020"
+		>February 2020</a></summary>
+<table>
+<tr class=hr><td><a href="/app/449960">Book of Demons</a>
+	<td>W/M/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Deckbuilding-ish, Dungeon-crawler
+
+<tr class=hr><td><a href="/app/829590">CryoFall</a>
+	<td>W/-/- <td>Silver				<td class=n4me>
+ <tr><td colspan=5>Survival, SF, MMORPG, Crude-visuals
+
+<tr class=hr><td><a href="/app/716500">Eliza</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>Visual-Novel, Female-protagonist, Counselling, Contemporary-Seattle
+
+<tr class=hr><td><a href="/app/323190">Frostpunk</a> + 1 DLC
+	<td>W/M/- <td>Gold				<td class=took>
+ <tr><td colspan=5>Colony-sim, City-Builder, Survival, Hard-choices
+
+<tr class=hr><td><a href="/app/510420">The Hex</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Story-rich, Psychological-Horror, Funny, Daniel-Mullens
+
+<tr class=hr><td><a href="/app/680380">Night Call</a>
+	<td>W/M/- <td>Silver				<td class=n4me>
+ <tr><td colspan=5>Visual-Novel, Noir, Paris, Taxi-Driver, Conversational, Mystery
+
+<tr class=hr><td><a href="/app/587620">Okami HD</a>
+	<td>W/-/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>JRPG, Japanese-mythology, Classic-game
+
+<tr class=hr><td><a href="/app/640820">Pathfinder: Kingmaker</a>
+ <small>Explorer Ed</small>
+	<td>W/M/L <td class=ln>				<td class=have>
+ <tr><td colspan=5>RPG, Fantasy, Isometric, 1P
+
+<tr class=hr><td><a href="/app/893680">Project Warlock</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>FPS, SF, Retro-Graphics
+
+<tr class=hr><td><a href="/app/504210">Shenzhen I/O</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Puzzles, Circuit-Sim, Assembler-coding(!), Zachtronics
+	<div>“Build circuits. Write code. RTFM.”</div>
+
+<tr class=hr><td><a href="/app/573320">Underhero</a>
+	<td>W/M/L <td class=nl>				<td class=n4me>
+ <tr><td colspan=5>Sidescroller, Timing-based-combat
+
+<tr class=hr><td><a href="/app/562500">Warstone TD</a>
+	<td>W/M/- <td>Gold				<td class=todo>Hmmmmmm
+ <tr><td colspan=5>Tower-Defense, Some-City-Building, Online-PvP/Co-op
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="6 of 8"
+	><a href="https://www.humblebundle.com/subscription/march-2020"
+		>March 2020</a></summary>
+<table>
+<tr class=hr><td><a href="/app/1086010">198X</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Arcade-games, Coming-of-Age, Retro
+
+<tr class=hr><td><a href="/app/573410">AI War 2</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>RTS/Grand-Strategy, SF, Space, 4X
+
+<tr class=hr><td><a href="/app/451020">Battle Chasers: Nightwar</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>JRPG, TBC, 1P, Party-based, Fantasy
+	<div>“Inspired by the classic <strong>console</strong> greats”
+
+<tr class=hr><td><a href="/app/356650">Death’s Gambit</a>
+	<td>W/-/- <td>Silver				<td class=n4me>
+ <tr><td colspan=5>Platformer, RPGish, Metroidvania, <i>Souls</i>-like
+
+<tr class=hr><td><a href="/app/812160">Etherborn</a>
+	<td>W/-/- <td>Platinum				<td class=w>In Humble Trove
+ <tr><td colspan=5>Gravity-Puzzle, Best-with-gamepad, Short
+
+<tr class=hr><td><a href="/app/716490">Exapunks</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Hacking, Puzzle, Sim, 1990s-ish, Zachtronics
+
+<tr class=hr><td><a href="/app/928600">F1 2019</a>
+	 + <a href="/app/1071370">Anniversary DLC</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Racing, Sim, F1
+
+<tr class=hr><td><a href="/app/699170">Fell Seal: Arbiter’s Mark</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>RPG, TBT, Fantasy
+
+<tr class=hr><td><a href="/app/557340">My Friend Pedro</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Shooter, Violent, Gore, Parkour
+
+<tr class=hr><td><a href="/app/351100">Niffelheim</a>
+	<td>W/M/L <td class=ln>				<td class=todo>Hmmm
+ <tr><td colspan=5>RPG, Survival, Norse-Legend, Dungeon-crawler, Grindy?
+
+<tr class=hr><td><a href="/app/493340">Planet Coaster</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Sim, Building, Roller-Coasters
+
+<tr class=hr><td><a href="/app/405820">Turok</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>FPS, Dinosaur-hunting, From-1997
+
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="6 of 8"
+	><a href="https://www.humblebundle.com/subscription/april-2020"
+		>April 2020</a></summary>
+<table>
+<tr class=hr><td><a href="/app/1091980">The Bard’s Tale IV: Director’s Cut </a>
+	<td>W/M/- <td>Gold				<td class=have>
+ <tr><td colspan=5>RPG, Party-Based, Dungeon-Crawler, TBC
+
+<tr class=hr><td><a href="/app/638200">Capitalism 2</a>
+	<td>W/-/- <td>Silver				<td class=n4me>
+ <tr><td colspan=5>Business-sim, Strategy, From-2001
+
+<tr class=hr><td><a href="/app/718650">Driftland: The Magic Revival</a>
+	<td>W/M/- <td>Silver				<td class=took>
+ <tr><td colspan=5>RTS/Management, Fantasy, 4X
+
+<tr class=hr><td><a href="/app/683320">Gris</a>
+	<td>W/M/- <td>Gold				<td class=took>
+ <tr><td colspan=5>Great-Look-Sounds, Girl, Journey-Through-Sorrow
+
+<tr class=hr><td><a href="/app/863550">Hitman 2</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Stealth, Action, Assassin, Violent, 1P
+
+<tr class=hr><td><a class=sc href="/app/1168880">Molek-Syntez</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>Sim, Chemistry, Small-Molecule-Pharmaceuticals, Hard, Zachtronics
+
+<tr class=hr><td><a href="/app/558990">Opus Magnum</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Puzzle, Design/Build, Fan-Community, Zachtronics
+
+<tr class=hr><td><a href="/app/570050">Raiden V: Director’s Cut</a>
+	<td>W/-/- <td class=nsp>			<td class=n4me>
+ <tr><td colspan=5>Shoot-em-up, Bullet-hell, Arcade
+
+<tr class=hr><td><a href="/app/684580">Shoppe Keep 2</a>
+	<td>W/-/- <td class=nsp>			<td>Very skippable?
+ <tr><td colspan=5>Business-sim/RPG, SP/2P/3P/4P
+
+<tr class=hr><td><a href="/app/785740">This Is the Police 2</a>
+	<td>W/M/- <td>Gold				<td class=todo>Hmmmmmm
+ <tr><td colspan=5>Story-driven, Adventure/Strategy/Management-Sim,
+		   Difficult, Lots-to-Learn
+
+<tr class=hr><td><a href="/app/757300">Trüberbrook</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Parallel-1967, Germany, SF/Mystery/Thriller
+
+<tr class=hr><td><a href="/app/405830">Turok 2: Seeds of Evil</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>FPS, Dinosaur-hunting, From-1998
+
+</table>
+</details>
+
+
+<details class=skipped>
+<summary class=c note="I skipped this month."
+	><a href="https://www.humblebundle.com/subscription/may-2020"
+		>May 2020</a></summary>
+<table>
+<tr class=hr><td><a href="/app/518060">Chess Ultra</a>
+    <td>W/-/- <td>Platinum				<td class=n4me>
+<tr><td colspan=5>Chess-simulator, AI-opponent, VR-support
+
+<tr class=hr><td><a href="/app/905340">Heave Ho</a>
+    <td>W/M/- <td>Gold					<td class=n4me>
+<tr><td colspan=5>Local-coop, Funny, Needs-controller
+
+<tr class=hr><td><a href="/app/629090">Horace</a>
+    <td>W/-/- <td>Platinum				<td>Hmmmm
+<tr><td colspan=5>Action, Platformer, Metroidvani
+
+<tr class=hr><td><a href="/app/648350">Jurassic World Evolution</a> + 1 DLC
+    <td>W/-/- <td class=nsp>				<td class=n4me>
+<tr><td colspan=5>Management-Sim, Dinosaurs
+
+<tr class=hr><td><a href="/app/1104660">MO: Astray</a>
+    <td>W/-/- <td>Platinum				<td>WLed
+<tr><td colspan=5>Action-platformer, Puzzles, Pixel-art
+
+<tr class=hr><td><a href="/app/994220">Neoverse</a>
+    <td>W/M/- <td class=nsp>				<td class=n4me>
+<tr><td colspan=5>Deckbuilder, Roguelite, Slay-the-Spire-esque
+
+<tr class=hr><td><a href="/app/440650">Niche - a genetics survival game</a>
+    <td>W/M/L <td class=ln>				<td class=n4me>
+<tr><td colspan=5>TBS/Sim/Survival, Sandbox, Science
+
+<tr class=hr><td><a href="/app/671440">Rise of Industry</a>
+    <td>W/M/L <td class=nl>				<td class=n4me>
+<tr><td colspan=5>Management-Sim, Early-20th-century
+
+<tr class=hr><td><a href="/app/619780">The Swords of Ditto: Mormos Curse</a>
+    <td>W/M/L <td class=ln>				<td>Marginal
+<tr><td colspan=5>Action-Roguelike, sequel
+
+<tr class=hr><td><a href="/app/489630">Warhammer 40000: Gladius - Relics of War</a>
+    <td>W/-/L <td class=ln>				<td class=n4me>
+<tr><td colspan=5>TBS, Warhammer-40K
+
+<tr class=hr><td><a href="/app/1026420">Warsaw</a>
+    <td>W/-/- <td>Gold					<td class=n4me>
+<tr><td colspan=5>TBT, WW2, 1944-Polish-Uprising
+
+<tr class=hr><td><a href="/app/268500">XCOM 2</a> + 2 DLC
+    <td>W/M/L <td class=ln>				<td>Unnecessary
+<tr><td colspan=5>TBS, SF, Aliens-conquered-Earth
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="6 of 8"
+	><a href="https://www.humblebundle.com/subscription/june-2020"
+		>June 2020</a></summary>
+<table>
+<tr class=hr><td><a href="/app/602960">Barotrauma</a>
+    <td>W/M/L <td class=ln>				<td class=n4me>
+<tr><td colspan=5>2D co-op submarine simulator, IN-SPACE, Survival-horror
+
+<tr class=hr><td><a href="/app/919410">Felix The Reaper</a>
+    <td>W/M/- <td>Silver				<td class=n4me>
+<tr><td colspan=5>“challenging and strict 3D puzzle game”, Early-Access
+
+<tr class=hr><td><a href="/app/703860">GRID</a> + 8 DLCs, etc
+    <td>W/-/-L <td>Silver				<td class=n4me>
+<tr><td colspan=5>Racing, Touring-Cars
+
+<tr class=hr><td><a href="/app/414340">Hellblade: Senua’s Sacrifice</a>
+    <td>W/-/- <td>Platinum				<td class=took>
+<tr><td colspan=5>FRPG, Norse-myth, Dark, Psychotic-protag, Great-story
+
+<tr class=hr><td class=pre>
+	 <a href="/app/244450">Men of War: Assault Squad 2</a> + 4 DLCs + remake</td>
+    <td>W/-/- <td class=brnz>Bronze			<td class=took>
+<tr><td colspan=5>RTS, WW2, 1P+MP, Difficult, “Awesome”
+
+<tr class=hr><td><a href="/app/448850">Overload</a>
+    <td>W/M/L <td class=ln>				<td class=took><!--was AU$15-->
+<tr><td colspan=5>6DOF, <i>Descent</i>-like, SF, FPS, Has-MP
+
+<tr class=hr><td><a href="/app/590590">Remnants of Naezith</a>
+    <td>W/M/L <td class=ln>				<td class=n4me>
+<tr><td colspan=5>Precision Platformer
+
+<tr class=hr><td><a href="/app/779290">Stygian: Reign of the Old Ones</a>
+    <td>W/M/L <td class=ln>				<td class=n4me>
+<tr><td colspan=5>RPG, Lovecraftian-Horror, allegedly-unfinished
+
+<tr class=hr><td><a href="/app/813630">Supraland</a>
+    <td>W/-/L <td class=ln>				<td class=took>
+<tr><td colspan=5>“First-Person Metroidvania Puzzle”
+
+<tr class=hr><td><a href="/app/812550">The King’s Bird</a>
+    <td>W/-/- <td>Silver				<td class=n4me>
+<tr><td colspan=5>Precision-Platformer, Time-Attack, Text-less-narrative
+
+<tr class=hr><td><a href="/app/764790">The Messenger</a>
+    <td>W/-/- <td>Platinum				<td class=n4me>
+<tr><td colspan=5>Metrovoidana-plus, Precision, Great-music
+
+<tr class=hr><td><a href="/app/828900">The Stillness of the Wind</a>
+    <td>W/M/- <td>Platinum				<td class=n4me>
+<tr><td colspan=5>“A quiet rumination on life and loss”
+
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="4 of 6"
+	><a href="https://www.humblebundle.com/subscription/july-2020"
+		>July 2020</a></summary>
+<table>
+<tr class=hr><td><a href="/app/718850">Age of Wonders: Planetfall</a>
+    <td>W/M/- <td>Gold					<td class=took>
+<tr><td colspan=5>TBS, SF, 4X
+
+<tr class=hr><td><a href="/app/336940">Basingstoke</a>
+    <td>W/M/L <td class=ln>				<td class=todo>Maaaybe
+<tr><td colspan=5>Action-roguelike, Stealth, Zombies, Simplistic-graphics
+
+<tr class=hr><td><a href="/app/544610">Battlestar Galactica Deadlock</a>
+    <td>W/-/- <td>Gold					<td class=took>
+<tr><td colspan=5>SF, 3D-Space-combat, TBS/TBT
+
+<tr class=hr><td><a href="/app/618740">Beat Hazard 2</a>
+    <td>W/-/- <td>Gold					<td class=n4me>
+<tr><td colspan=5>Arcade, Bullet-Hell, Driven-by-your-own-music
+
+<tr class=hr><td><a href="/app/611760">Don't Escape: 4 Days to Survive</a>
+    <td>W/M/- <td>Gold					<td class=took>
+<tr><td colspan=5>Point+Click, Post-apocalyptic, Retro-visuals
+
+<tr class=hr><td><a href="/app/761030">Earthlock</a>
+    <td>W/M/L <td class=ln>				<td class=have>
+<tr><td colspan=5>RPG, JRPG-ish?, inspired-by-late-90s-RPGs
+
+<tr class=hr><td><a href="/app/1173200">Metal Unit</a>
+    <td>W/-/- <td>Platinum				<td class=todo>Hmmmmm
+<tr><td colspan=5>Side-scrolling-platformer, roguelite
+
+<tr class=hr><td><a href="/app/503940">Railway Empire</a>
+    <td>W/-/L <td class=ln>				<td class=took>
+<tr><td colspan=5>Rail-builder, workforce-management, research, 1830s-US
+
+<tr class=hr><td><a href="/app/716640">Sigma Theory: Global Cold War</a>
+    <td>W/M/L <td class=ln>				<td class=took>
+<tr><td colspan=5>TBS, Future-cold-war, Management
+
+<tr class=hr><td><a href="/app/811870">Verlet Swing</a>
+    <td>W/M/- <td>Platinum				<td class=n4me>
+<tr><td colspan=5>3D-platformer, fast-paced
+
+<tr class=hr><td><a href="/app/857980">Void Bastards</a>
+    <td>W/M/- <td>Gold					<td class=took>
+<tr><td colspan=5>FPS+Strategy, Action-roguelike, Some-humor
+
+<tr class=hr><td><a href="/app/597760">Yuppie Psycho</a>
+    <td>W/M/L <td class=ln>				<td class=n4me>
+<tr><td colspan=5>Survival-horror, Exploration, Pixel-graphics
+
+</table>
+</details>
+
+
+<details class=skipped>
+<summary class=c note="I skipped this month."
+	><a href="https://www.humblebundle.com/subscription/august-2020"
+	>August 2020</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/934780">American Fugitive</a>
+	<td>W/-/- <td>Silver				<td class=n4me>
+ <tr><td colspan=5>Action, Adventure, Open-world, You-were-framed
+
+<tr class=hr><td><a href="/app/984800">Automachef</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Resource-management-puzzler, Kitchens, Programming
+
+<tr class=hr><td><a href="/app/399810">Call of Cthulhu</a>
+	<td>W/-/- <td>~Gold				<td class=n4me>
+ <tr><td colspan=5>Horror, Lovecraftian, RPG
+
+<tr class=hr><td><a href="/app/717610">A Case of Distrust</a>
+	<td>W/M/- <td class=brnz>Bronze			<td class=n4me>
+ <tr><td colspan=5>Mystery, SanFrancisco, 1924, Female-PI
+
+<tr class=hr><td><a href="/app/1045720">The Coma 2: Vicious Sisters</a>
+	<td>W/M/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Survival, Horror, Adventure, Korean
+
+<tr class=hr><td><a href="/app/712190">Genesis Alpha One</a>
+	<td>W/-/- <td>Platinum				<td>Hmm
+ <tr><td colspan=5>Roguelike, FPS, Spaceship-building, Exploration,
+	Difficult, Repetitive, Wishlisted
+
+<tr class=hr><td><a href="/app/521890">Hello Neighbor</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Horror, Stealth, Bad-reviews
+
+<tr class=hr><td><a href="/app/574720">Little Big Workshop</a>
+	<td>W/M/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Management-Sim, Factory-management
+
+<tr class=hr><td><a href="/app/1003090">Through the Darkest of Times</a>
+	<td>W/M/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Strategy/Adventure, Berlin-1933, Secret-resistance-to-Hitler
+
+<tr class=hr><td><a href="/app/427290">Vampyr</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>RPG, Vampires, London1918, Horror, Reviews⇒no
+
+<tr class=hr><td><a href="/app/607050">Wargroove</a>
+	<td>W/-/- <td>Silver				<td>Hmmm
+ <tr><td colspan=5>TBS, SP/2-4P, Cartoony
+
+<tr class=hr><td><a href="/app/865360">We Were Here Together</a>
+	<td>W/M/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Puzzle, Adventure, Co-op
+
+</table>
+</details>
+
+
+<details>
+<summary class=c note="Meant to skip but stuffed up; 11 of 12 games remaining"
+	><a href="https://www.humblebundle.com/subscription/september-2020"
+	>September 2020</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/893180">Catherine Classic</a>
+    <td>W/-/- <td class=brnz>Bronze			<td class=n4me>
+<tr><td colspan=5>Romance/sex, Anime-like, Puzzle, Remake-of-PS3-game
+
+<tr class=hr><td><a href="/app/1020470">Evoland Legendary Edition</a>
+    <td>W/M/L <td class=ln>				<td class=took>
+<tr><td colspan=5>Action/RPG, Graphics-gameplay-reflect-history-of-[J]RPGs
+
+<tr class=hr><td><a href="/app/751780">Forager</a>
+    <td>W/-/- <td>Gold					<td class=n4me>
+<tr><td colspan=5>Builder, Old-style-graphics, Idle-game, Farm/Delve/Trade
+
+<tr class=hr><td><a href="/app/1142500">Fun with Ragdolls: The Game</a>
+    <td>W/M/- <td>Gold					<td class=n4me>
+<tr><td colspan=5>Sim, Sandbox, World-design, Community-created-content
+
+<tr class=hr><td><a href="/app/704270">Generation Zero</a>
+    <td>W/-/- <td>Gold					<td class=n4me>
+<tr><td colspan=5>Survival, Co-op, Open-World, 80s-Sweden
+
+<tr class=hr><td><a href="/app/431240">Golf With Your Friends</a>
+    <td>W/M/L <td class=ln>				<td class=n4me>
+<tr><td colspan=5>Mini-golf, Multiplayer, Casual
+
+<tr class=hr><td><a href="/app/553310">Lethal League Blaze</a>
+    <td>W/M/L <td class=ln>				<td class=n4me>
+<tr><td colspan=5>Ball-game, Fighting, 1to4-players
+
+<tr class=hr><td><a href="/app/765880">The Occupation</a>
+    <td>W/-/- <td>Gold					<td class=n4me>
+<tr><td colspan=5>Adventure, Stealth, 1:1-time, Occupied-England-1987
+
+<tr class=hr><td><a href="/app/898650">The Shapeshifting Detective</a>
+    <td>W/M/- <td class=brnz>Bronze			<td class=n4me>
+<tr><td colspan=5>Murder-mystery, Supernatural/Noir, FMV, Impersonation
+
+<tr class=hr><td><a href="/app/312670">Strange Brigade</a>
+    <td>W/-/- <td>Gold					<td class=n4me>
+<tr><td colspan=5>Adventure, Zombies, 1to4-players, 1930s, Egypt
+
+<tr class=hr><td><a href="/app/1096410">Vampire: The Masquerade - Coteries of New York</a>
+    <td>W/M/L <td class=ln>				<td class=n4me>
+<tr><td colspan=5>Visual-Novel, V:TM-5th-edition
+
+<tr class=hr><td><a href="/app/846870">Yooka-Laylee and the Impossible Lair</a>
+    <td>W/-/- <td>Gold					<td class=n4me>
+<tr><td colspan=5>Platformer, 2½D-levels, 3D-overworld, 2-PCs
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="all 6"
+	><a href="https://www.humblebundle.com/subscription/october-2020"
+	>October 2020</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/979120">Autonauts</a>
+    <td>W/-/- <td>Platinum				<td class=todo>Maybe
+<tr><td colspan=5>Colony-builder, For-Youngsters, Visual-P-L
+
+<tr class=hr><td><a href="/app/340150">Basement</a>
+    <td>W/M/L <td class=ln>				<td class=n4me>
+<tr><td colspan=5>Sim, Drug-dealing, Difficult
+
+<tr class=hr><td><a href="/app/995980">Fae Tactics</a>
+    <td>W/-/- <td>Platinum				<td class=took>
+<tr><td colspan=5>RPG/Strategy, TBT, Pixel-graphics, Humble-Games
+
+<tr class=hr><td><a href="/app/959520">Fantasy Blacksmith</a>
+    <td>W/-/- <td>Silver				<td class=todo>Maybe
+<tr><td colspan=5>Sword-making, Business-Sim, Steam-reviews⇒No
+
+<tr class=hr><td><a href="/app/555000">Goat of Duty</a>
+    <td>W/-/- <td>Gold					<td class=n4me>
+<tr><td colspan=5>MP, FPS, Fast-paced, Jokey
+
+<tr class=hr><td><a href="/app/899310">Iron Danger</a>
+    <td>W/-/- <td>Silver				<td class=took>
+<tr><td colspan=5>Adventure, Tactical-combat, Fantasy, Time-manipulation,
+	<i>The Kalevala</i>
+
+<tr class=hr><td><a href="/app/994140">Lightmatter</a>
+    <td>W/-/- <td>Gold					<td class=took>
+<tr><td colspan=5>First-person-puzzler, Adventure
+
+<tr class=hr><td><a href="/app/585450">Shadows: Awakening</a>
+    <td>W/-/- <td>Silver				<td class=took>
+<tr><td colspan=5>RPG, Isometric, Real-time-tactical-combat
+
+<tr class=hr><td><a href="/app/1057750">The Suicide of Rachel Foster</a>
+    <td>W/-/- <td>Platinum				<td class=n4me>
+<tr><td colspan=5>Adventure, Mystery/Horror, Pedophilia-backstory
+
+<tr class=hr><td><a href="/app/596970">Sunless Skies</a> + <i>Sunless Sea</i> (owned)
+    <td>W/M/L <td class=ln>				<td class=took>
+<tr><td colspan=5>RPG, Gothic-Horror, SteamPunk, Great-writing
+
+<tr class=hr><td><a href="/sub/309466"
+	>Tropico 6 - El Prez Edition</a>
+    <td>W/M/L <td class=ln>				<td class=took>
+<tr><td colspan=5>City-builder, Simpler-than-4-and-5
+
+<tr class=hr><td><a href="/app/406970">The Uncertain: Last Quiet Day</a>
+    <td>W/M/- <td>Gold					<td class=todo>Maybe
+<tr><td colspan=5>Point+Click, puzzles, Robot-characters, Humans-are-dead,
+
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="all 10"
+	><a href="https://www.humblebundle.com/subscription/november-2020"
+	>November 2020</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/873940">Crying Suns</a>
+    <td>W/-/- <td>Gold					<td class=took> $Win
+<tr><td colspan=5>Tactical-Roguelike, SF, Mysterious-Fallen-Empire
+
+<tr class=hr><td><a href="/app/939100">Darksburg</a>
+    <td>W/-/- <td>Platinum				<td class=todo>Maybe
+<tr><td colspan=5>Co-op, Action, Roguelike, Medieval, Undead
+
+<tr class=hr><td><a href="/app/606280">Darksiders III</a>
+    <td>W/-/- <td>Platinum				<td class=todo>Maybe
+<tr><td colspan=5>Hack+Slash, Fantasy
+
+<tr class=hr><td><a href="/app/274520">Darkwood</a>
+    <td>W/-/+ <td>(Proton)				<td class=todo>May-ay-aybe?
+<tr><td colspan=5>Survival-horror, Rave-Reviews
+
+<tr class=hr><td><a href="/app/859580">Imperator: Rome</a>
+    <td>W/M/L <td class=ln>				<td class=took> Why not?
+<tr><td colspan=5>Grand-Strategy, Historical-Rome, Some-bad-reviews
+
+<tr class=hr><td><a href="/app/714120">Little Misfortune</a>
+    <td>W/M/L <td class=ln>				<td class=todo>Maybe
+<tr><td colspan=5>Linear, Point+Click, For-Kids?
+
+<tr class=hr><td><a href="/app/864680">Rover Mechanic Simulator</a>
+    <td>W/-/- <td>Platinum				<td class=n4me>
+<tr><td colspan=5>Mars-Rover-Maintenance-Simulator, Early-Access
+
+<tr class=hr><td><a href="/app/1018850">Smile For Me</a>
+    <td>W/M/- <td>Platinum				<td class=n4me>
+<tr><td colspan=5>Psych-Horror, Casual
+
+<tr class=hr><td><a href="/app/938380">Townsmen - A Kingdom Rebuilt</a>
+    <td>W/-/- <td>Platinum				<td class=todo>Maybe
+<tr><td colspan=5>Colony-Sim, Medieval, Casual
+
+<tr class=hr><td><a href="/app/393190">TSIOQUE</a>
+    <td>W/M/- <td>Platinum				<td class=have>
+<tr><td colspan=5>Point+Click, Hand-animated, Girl-vs-Evil-Wizard
+
+<tr class=hr><td><a href="/app/927380">Yakuza Kiwami 2</a>
+    <td>W/-/- <td>Platinum				<td class=n4me>
+<tr><td colspan=5>Beat-em-up, RPG, Japanese-Criminals
+
+<tr class=hr><td><a href="/app/640120">Youropa</a>
+    <td>W/-/- <td>Silver				<td class=todo>Maybe
+<tr><td colspan=5>Puzzle, 3D, Difficult
+
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="all 5"
+	><a href="https://www.humblebundle.com/subscription/december-2020"
+	>December 2020</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/792300">The Beast Inside</a>
+	<td>W/-/- <td class=brnz>Bronze			<td class=n4me> <strong>?</strong>
+ <tr><td colspan=5>Survival-Horror, Action/Adventure, Fancy-Visuals
+
+<tr class=hr><td><a href="/app/330020">Children of Morta</a>
+	<td>W/M/L <td class=ln>				<td class=took> Why not?
+ <tr><td colspan=5>ARPG/Roguelite, FPRG, Family-of-protags
+
+<tr class=hr><td><a href="/app/1047220" id=FrogDetective2
+	>Frog Detective 2: The Case of the Invisible Wizard</a>
+	<td>W/M/- <td>Platinum				<td class=took> Yep. (!)
+ <tr><td colspan=5>Comedy, Short, Meme-heavy
+	<div>Game 1, “The Haunted Island”, is in this bundle</a></div>
+
+<tr class=hr><td><a href="/app/963000" id=FrogDetective1
+	>The Haunted Island, a Frog Detective Game</a>
+	<td>W/M/- <td>Platinum				<td class=took> Yep. (!)
+ <tr><td colspan=5>Comedy, Short, Meme-heavy
+	<div>Game 2, “The Case of the Invisible Wizard”, is in this bundle</a></div>
+
+<tr class=hr><td><a href="/app/421170">Indivisible</a>
+	<td>W/M/L <td class=ln>				<td class=todo>Hmmm
+ <tr><td colspan=5>Action/RPG/Metroidvania, Hand-Drawn, Anime-esque, Fantasy
+
+<tr class=hr><td><a href="/app/960690">One Step From Eden</a>
+	<td>W/M/- <td>Gold				<td class=todo>Hmmm
+ <tr><td colspan=5>Deckbuilder, Bullet-hell, Indie, Roguelike/Action/Strategy (?)
+
+<tr class=hr><td><a href="/app/728880">Overcooked! 2</a> + 2 DLC
+			<small>(Too Many Cooks; Surf ’n’ Turf Pack)<small>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>Multiplayer, Online-Co-op, Local-Co-Op, Cooking, Chaotic-Casual
+
+<tr class=hr><td><a href="/app/1181400">Path of Giants</a>
+	<td>W/M/- <td>Platinum				<td class=took> Yeah
+ <tr><td colspan=5>Traversal-Puzzle, Adventure, Indie, Casual, Cute
+
+<tr class=hr><td><a href="/app/809890">Shining Resonance Refrain</a>
+	<td>W/-/- <td>Platinum				<td class=took> Why not?
+ <tr><td colspan=5>JRPG, ARPG, Anime, Fantasy, Dragons, SEGA
+
+<tr class=hr><td><a href="/app/1063490">Still There</a>
+	<td>W/M/- <td>Gold				<td class=took> Yes
+ <tr><td colspan=5>Point+Click, Story-Rich, Psychological-Adventure, Short
+
+<tr class=hr><td><a href="/app/1035560">Struggling</a>
+	<td>W/-/- <td>Platinum				<td class=todo>Ye-es?
+ <tr><td colspan=5>Co-op-platformer, Physics-based, Test-of-friendship
+
+<tr class=hr><td><a href="/app/838410">Tabletop Playground</a>
+	<td>W/-/- <td>Silver				<td class=took>
+ <tr><td colspan=5>Indie, Simulated-gaming-table, Early-Access
+
+<tr class=hr><td><a href="/app/427680">Zwei: The Arges Adventure</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>JRPG, Dungeon-crawling, Comedy, puns, Remake-of-2001-game
+	<div>First game in the “Zwei” series</div>
+
+<tr class=hr><td><a href="/app/427700">Zwei: The Ilvard Insurrection</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>JRPG, Dungeon-crawling, Comedy, puns, Remake-of-2008-game
+	<div>Second game in the “Zwei” series</div>
+
+</table>
+</details>
+
+
+<details class=skipped>
+<summary class=c note="I skipped this month."
+	><a href="https://www.humblebundle.com/subscription/january-2021"
+	>January 2021</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/1171660">The Ambassador: Fractured Timelines</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Twin-stick-shooter, Fantasy, Protag-can-Stop-Time
+
+<tr class=hr><td><a href="/app/536270">Ancestors: The Humankind Odyssey</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Human-Evolution-sim, Open-World, Survival, Crafting
+
+<tr class=hr><td><a href="/app/1045580">Deleveled</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>Puzzle, Platformer, Minimalist, Physics
+
+<tr class=hr><td><a href="/app/940910">Minoria</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Action, RPG, Metroidvania, Witch-hunting
+
+<tr class=hr><td><a href="/app/733790">Not Tonight</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Delusional Anti-Brexit propaganda from Aug 2018
+
+<tr class=hr><td><a href="/app/505230">Pathologic 2</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Horror, RPG, Open-world, Plague, Choices-matter
+
+<tr class=hr><td><a href="/app/621060">PC Building Simulator</a>
+	<td>W/M/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Business-Sim, Building-PCs, Real-world-components, Lotsa-DLC
+
+<tr class=hr><td><a href="/app/828740">Tales of the Neon Sea</a>
+	<td>W/-/- <td class=nsp>			<td class=n4me>
+ <tr><td colspan=5>Point+Click, Cyberpunk, Robots, Pixel-Art
+
+<tr class=hr><td><a href="/app/1096570">Song of Horror Complete Edition</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Horror, 3rd-person, Fixed-camera
+
+<tr class=hr><td><a href="/app/674500">Total Tank Simulator</a>
+	<td>W/-/- <td>Silver				<td class=n4me>
+ <tr><td colspan=5>WW2, Tanks/Aircraft/Infantry, Physics
+
+<tr class=hr><td><a href="/app/1279630">Vampire: The Masquerade - Shadows of New York</a>
+	<td>W/M/L <td class=nl>				<td class=n4me>
+ <tr><td colspan=5>Visual-novel, Vampires
+
+<tr class=hr><td><a href="/app/774241">Warhammer: Chaosbane</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Hack+Slash, Warhammer-Fantasy-the-RPG
+
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="all 9"
+	><a href="https://www.humblebundle.com/subscription/february-2021"
+	>February 2021</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/965680"
+	>Boomerang Fu</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Party-game, Physics, Brawling, 1P or local co-op 2-6P
+
+<tr class=hr><td><a href="/app/392110"
+	>Endless Space 2</a>
+	<td>W/M/- <td>Gold				<td class=have>
+ <tr><td colspan=5>TBS, Space, 4X
+
+<tr class=hr><td><a href="/app/1127610"
+	>Iris and the Giant</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>CCG, Card-battles, Rogue-like, Young-woman-facing-inner-demons
+
+<tr class=hr><td><a href="/app/871420"
+	>Lovecraft's Untold Stories</a>
+	<td>W/M/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Action-Roguelite, Lovecraft-Mythos,
+
+<tr class=hr><td><a href="/app/996770"
+	>Moving Out</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Physics, Moving-furniture, 1P or 2-4P (local co-op), Hilarity
+
+<tr class=hr><td><a href="/app/794260"
+	>Outward</a> + <a href="/app/1194010">The Soroboreans</a> (DLC)
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>Open-world FRPG, Survival, Difficult, No save-scumming, Online Co-op
+
+<tr class=hr><td><a href="/app/914010"
+	>Train Station Renovation</a>
+	<td>W/-/- <td>Silver				<td class=n4me>  WTF?!
+ <tr><td colspan=5>Business Sim, Indie, Trains, Train Stations
+
+<tr class=hr><td><a href="/app/690640"
+	>Trine 4: The Nightmare Prince</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>Puzzle Platformer, Action/Adventure, 2½D
+
+<tr class=hr><td><a href="/app/600130"
+	>Valfaris</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Platformer, Combat, Heavy-Metal-ethos, Hard, Pretty
+
+<tr class=hr><td><a href="/app/790820"
+	>Valkyria Chronicles 4 Complete Edition</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>TBS/RPG (= Tactical JRPG), Anime-ish, War, 1930s-ish
+
+<tr class=hr><td><a href="/app/1342620"
+	>Werewolf: The Apocalypse — Heart of the Forest</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>Visual-Novel with RPG mechanics, Horror, Werewolves,
+	<i>World of Darkness</i>
+
+<tr class=hr><td><a href="/app/526160"
+	>The Wild Eight</a>
+	<td>W/M/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Survival, Alaska, 1P or online co-op, Reviews ⇒ poor
+
+</table>
+</details>
+
+<details>
+<summary class=c nLeft="all 6"
+	><a href="https://www.humblebundle.com/subscription/march-2021"
+	>March 2021</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/1210150"
+	>Ageless</a>
+	<td>W/-/- <td>Unknown				<td class=took>
+ <tr><td colspan=5>“Story-driven puzzle platformer”, Alter-ages-of-plants+animals
+
+<tr class=hr><td><a href="/app/598780"
+	>Boreal Blade</a>
+	<td>W/-/- <td>Unknown				<td class=n4me>
+ <tr><td colspan=5>Team-based, Sword-fighting, PvP
+
+<tr class=hr><td><a href="https://support.505games.com/hc/en-us/articles/360020023219-What-version-of-Control-is-included-in-Humble-Choice-for-March-2021-"
+	>Base edition</a> of <a href="/app/870780">Control</a>
+	<td>W/-/- <td>Platinum				<td class=tooK>
+ <tr><td colspan=5>Third-person action/adventure, SF, Destructible-env
+
+<tr class=hr><td><a href="/app/1130410"
+	>Cyber Hook</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Parkour, 3D-platformer, grappling-hook
+
+<tr class=hr><td><a href="/app/411300"
+	>ELEX</a>
+	<td>W/-/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>RPG, Open-world, SF, Post-apocalyptic, <i>Gothic</i>-like
+
+<tr class=hr><td><a href="/app/609920"
+	>Hotshot Racing</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Racing, Arcade, 1P/4P-split-screen/8P-online
+
+<tr class=hr><td><a href="/app/701160"
+	>Kingdom Two Crowns</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>Strategy, Builder, Side-scroller, Pixel-art, 1P/Co-op-2P
+
+<tr class=hr><td><a href="/app/1013310"
+	>Peaky Blinders: Mastermind</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Strategy, Adventure/Puzzle, Violence, Crime-family-postWW1-UK
+
+<tr class=hr><td><a href="/app/1144030"
+	>Pesterquest</a>
+	<td>W/M/L <td class=ln>				<td class=todo>Maybe
+ <tr><td colspan=5>Adventure, RPG/VN, ‘Grimsical’, Homestuck/Hiveswap-universe
+
+<tr class=hr><td><a href="/app/431940"
+	>Wildfire</a>
+	<td>W/-/- <td>Silver				<td class=took>
+ <tr><td colspan=5>Stealth, Puzzle-platformer, Elemental-powers
+
+<tr class=hr><td><a href="/app/1142100"
+	>WWE 2K Battlegrounds</a>
+	<td>W/-/- <td>Unknown				<td class=n4me>
+ <tr><td colspan=5>Action, ‘Sport’, Fighting, 1P/PvP
+
+<tr class=hr><td><a href="/app/882100"
+	>XCOM: Chimera Squad</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>TBT/TBS, easier-sequel, aliens+humans-together
+
+</table>
+</details>
+
+<details>
+<summary class=c nLeft="all 6"
+	><a href="https://www.humblebundle.com/subscription/april-2021"
+	>April 2021</a></summary>
+<table>
+<tr class=hr><td><a href="/app/484900"
+	>Aven Colony</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>Colony-sim, planet-with-multiple-biomes, Strategy
+
+<tr class=hr><td><a href="/app/940710"
+	>Colt Canyon</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Shooter, Western, Roguelike, Pixel-graphics, Blood
+
+<tr class=hr><td><a href="/app/1080110"
+	>F1 2020</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>F1-racing, Team-management
+
+<tr class=hr><td><a href="/app/890720"
+	>In Other Waters</a>
+	<td>W/M/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Adventure, SF, No-violence, Alien-ocean, Xenobiology
+
+<tr class=hr><td><a href="/app/1078920"
+	>Main Assembly</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>Sandbox, Construct-3D-robots+vehicles, online-co-op, visual-programming
+
+<tr class=hr><td><a href="/app/349730"
+	>Popup Dungeon</a>
+	<td>W/-/- <td>Platinum				<td class=took> (AU$36!)
+ <tr><td colspan=5>Roguelike, Super-customizable, Community-content
+
+<tr class=hr><td><a href="/app/1142390"
+	>Remothered: Broken Porcelain</a>
+	<td>W/-/- <td class=brnz>Bronze			<td class=n4me>
+ <tr><td colspan=5>Horror, Gore, Violence, Survival-horror
+
+<tr class=hr><td><a href="/app/1101360"
+	>Rock of Ages 3: Make & Break</a>
+	<td>W/-/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Arcade/Tower-Defense, Rolling-boulder, Community-content
+	<div>Have wishlisted RoA2</div>
+
+<tr class=hr><td><a href="/app/878670"
+	>Shenmue III</a>
+	<td>W/-/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Action-RPG, Japan, Martial-arts
+
+<tr class=hr><td><a href="/app/1011190"
+	>Simulacra 2</a> (already have <a href="">1</a>)
+	<td>W/-/- <td class=nsp>			<td class=n4me> (?)
+ <tr><td colspan=5>Murder-mystery, Victim’s-phone
+
+<tr class=hr><td><a href="/app/1249110"
+	>Skully</a>
+	<td>W/-/- <td class=brnz>Bronze			<td class=todo>Hmmmmmmmm
+ <tr><td colspan=5>Puzzle-platformer
+
+<tr class=hr><td><a href="/app/973580"
+	>Sniper Ghost Warrior Contracts</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Sniping, Assassination, Rival-snipers, Open-world
+
+</table>
+</details>
+
+<details>
+<summary class=c nLeft="all 7"
+	><a href="https://www.humblebundle.com/subscription/may-2021"
+	>May 2021</a></summary>
+
+<table>
+<tr class=hr><td><a href="/app/1000030"
+	>Cook, Serve, Delicious! 3</a>
+	<td>W/M/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Management, Food-truck, Cooking, 2042, War-torn-America
+
+<tr class=hr><td><a href="/app/710920"
+	>Darksiders Genesis</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>Action, Hack-and-slash, Co-op-mode
+
+<tr class=hr><td><a href="/app/904360"
+	>Family Man</a>
+	<td>W/-/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Adventure/RPG, Violent, Dark, Mob-debt, Choices-matter
+
+<tr class=hr><td><a href="/app/465200"
+	>Fury Unleashed</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Roguelike/Action/Platformer, Combos
+
+<tr class=hr><td><a href="/app/628670"
+	>Hellpoint</a>
+	<td>W/M/L <td class=ln>				<td class=want>Take?
+ <tr><td colspan=5>Want-Controller,
+		Action/RPG, Dark-SF/Occult, Co-op-mode, <i>Souls</i>-like
+
+<tr class=hr><td><a href="/app/792710"
+	>Levelhead</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Precision-Platformer, Difficult, Jokes, Build-Contraptions
+
+<tr class=hr><td><a href="/app/412020"
+	>Metro Exodus</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>FPS, Story-rich, Post-apocalytic, Russian-wilderness
+
+<tr class=hr><td><a href="/app/1331910"
+	>Morkredd</a>
+	<td>W/-/- <td>Platinum				<td class=todo>Maybe take?
+ <tr><td colspan=5>Puzzles, Physics, Best-as-Couch-Co-op, Light-and-Shadow
+
+<tr class=hr><td><a href="/app/941570"
+	>Relicta</a>
+	<td>W/-/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Platformer/Puzzler, Physics, Casual, Exploration, SF-Thriller
+
+<tr class=hr><td><a href="/app/760810"
+	>Retimed</a>
+	<td>W/M/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Shooter, Slow-motion-time-bubbles, Frantic, Multiplayer, Casual, Funny
+
+<tr class=hr><td><a href="/app/976700"
+	>Size Matters</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Puzzle/Platformer, Shrinking-Scientist, Science-Puzzles
+
+<tr class=hr><td><a href="/app/1063310"
+	>Vane</a>
+	<td>W/-/- <td>Silver				<td class=todo>Maaaaybe?
+ <tr><td colspan=5>Indie, Puzzle/Adventure, Open-World, Aiming-for-Emotional-Experience
+
+</table>
+</details>
+
+
+<details class=skipped>
+<summary class=c note="I skipped this month.">
+	<a href="https://www.humblebundle.com/subscription/june-2021"
+	>June 2021</a></summary>
+<table>
+<tr class=hr><td><a href="/app/671510"
+	>Desolate</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>1P-Horror-Survival, Zombies, Open-world
+
+<tr class=hr><td><a href="/app/975950"
+	>Effie</a>
+	<td>W/-/- <td>Platinum				<td class=todo>Take?
+ <tr><td colspan=5>3D-Platfomer/Action/Adventure, Old-school, Combat, Puzzles
+
+<tr class=hr><td><a href="/app/1154810"
+	>Going Under</a>
+	<td>W/-/- <td>Platinum				<td class=want>Will Take
+ <tr><td colspan=5>“Satirical Dungeon Crawler”, Failed tech startups, Millenials
+
+<tr class=hr><td><a href="/app/854940"
+	>Ikenfell</a>
+	<td>W/M/- <td>Platinum				<td class=want>Why not?
+ <tr><td colspan=5>FRPG, Indie, Pixel-graphics, School-for-magic, Humble-Games
+
+<tr class=hr><td><a href="/app/1302050"
+	>Milky Way Prince – The Vampire Star</a>
+	<td>W/M/- <td>Silver				<td class=n4me>
+ <tr><td colspan=5>Visual-Novel, Indie, Borderline-Personality-Disorder
+
+<tr class=hr><td><a href="/app/975510"
+	>Panzer Paladin</a>
+	<td>W/-/- <td>Gold?				<td class=n4me>?
+ <tr><td colspan=5>2D-platformer, Retro, Mecho, Pixel-Graphics
+
+<tr class=hr><td><a href="/app/1037910"
+	>Paw Paw Paw</a>
+	<td>W/M/- <td>Platinum				<td class=n4me?>
+ <tr><td colspan=5>Action/RPG, Platformer, 1P/Couch-co-op, Cartoon-animals, Anti-pants
+
+<tr class=hr><td><a href="/app/859570"
+	>Secret Neighbor: Hello Neighbor Multiplayer</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>MP, Social-Horror-Game, Evil-neighbor-is-in-the-rescue-party
+
+<tr class=hr><td><a href="/bundle/12218"
+	>Sid Meier's Civilization VI</a> <i>Platinum Ed</i> (+ 8 DLC)
+	<td>W/M/L <td class=ln>				<td class=have>
+ <tr><td colspan=5>TBS, Historical, 4X
+
+<tr class=hr><td><a href="/app/7800"
+	>Stubbs the Zombie in Rebel Without a Pulse</a>
+	<td>W/-/- <td>Gold				<td class=todo>Hmmm
+ <tr><td colspan=5>Zombies, Comedy, Reboot, Villian-Protag
+
+<tr class=hr><td><a href="/app/1186040"
+	>Worms Rumble</a>
+	<td>W/-/- <td class=brnz>Bronze			<td class=todo>Hmmm
+ <tr><td colspan=5>MP, Arena shooter, 2½D
+
+<tr class=hr><td><a href="/app/1440191"
+	>Worms Rumble - Legends Pack</a>
+	<td>W/-/- <td class=brnz>Bronze			<td class=todo>Hmmm
+ <tr><td colspan=5>DLC
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="all 9"
+	><a href="https://www.humblebundle.com/subscription/july-2021"
+	>July 2021</a></summary>
+<table>
+<tr class=hr><td><a href="/app/333300"
+	>ADOM (Ancient Domains Of Mystery)</a>
+	<td>W/M/K <td class=ln>				<td class=have>
+ <tr><td colspan=5>Roguelike
+
+<tr class=hr><td><a href="/app/914750"
+	>Bee Simulator</a>
+	<td>W/-/- <td>Silver				<td class=todo>Huh?
+ <tr><td colspan=5>You play a worker bee. Really.
+
+<tr class=hr><td><a href="/app/740080"
+	>Deadly Days</a>
+	<td>W/M/L <td class=ln>				<td class=todo>Hmmmmm
+ <tr><td colspan=5>Action/Roguelike, Zombies, Strategy
+
+<tr class=hr><td><a href="/app/1038250"
+	>DIRT 5</a>
+	<td>W/-/- <td>Silver				<td class=n4me>
+ <tr><td colspan=5>Off-road racing
+
+<tr class=hr><td><a href="/app/727850"
+	>ELDERBORN</a>
+	<td>W/-/- <td>Gold				<td class=todo>Take?
+ <tr><td colspan=5>FP, Hack-and-slash, <i>Souls</i>-like-FRPG-progression, “Metal AF”
+
+<tr class=hr><td><a href="/app/760650"
+	>Hammerting</a>
+	<td>W/-/- <td>Silver				<td class=took>
+ <tr><td colspan=5>Early-Access, Strategy, Fantasy, Dwarven-mining-colony
+
+<tr class=hr><td><a href="/app/1179210"
+	>Kill It With Fire/</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Action, Spider-exterminator, Collateral-damage, Comedy
+
+<tr class=hr><td><a href="/app/383840/"
+	>Nimbatus - The Space Drone Constructor</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>SF, Construction, Destructible-open-world, Action, Indie
+
+<tr class=hr><td><a href="/app/1160220"
+	>Paradise Killer</a>
+	<td>W/-/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Mystery, Murder, Open-world, Visual-novel, Rave-reviews
+
+<tr class=hr><td><a href="/app/644830"
+	>The Surge 2</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>SF, Action, <i>Dark-Souls</i>-like, Violent, Difficult
+
+<tr class=hr><td><a href="/app/944010"
+	>SWINE HD Remaster</a>
+	<td>W/-/- <td>Platinum				<td class=todo>Maaaaaybe?
+ <tr><td colspan=5>Reboot, RTS-but-no-Infrastructure/RTT, Retro, Funny
+
+<tr class=hr><td><a href="/app/1088710"
+	>Yakuza 3 Remastered</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>?
+ <tr><td colspan=5>Action, Beat-em-up, Open-world, Attack-combos-required
+
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="all 5"
+	><a href="https://www.humblebundle.com/subscription/august-2021"
+	>August 2021</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/1119700"
+	>As Far As The Eye</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>TBS, Resource-Management, Build-a-Mobile-Village, 1P, Survival, 3D
+
+<tr class=hr><td><a href="/app/692850"
+	>Bloodstained: Ritual of the Night</a>
+	<td>W/-/- <td>Gold				<td class=todo>Hmmmmmmmm
+ <tr><td colspan=5>Metroidvania, RPG, Japanese, Fighting-Demons, Cursed-Female-Protagonist
+
+<tr class=hr><td><a href="/app/1220150"
+	>Blue Fire</a>
+	<td>W/-/- <td>Gold				<td class=todo>Hmmm
+ <tr><td colspan=5>Indie, 3D-platformer, Action, Exploration, Puzzles
+
+<tr class=hr><td><a href="/app/1172450"
+	>Carto</a>
+	<td>W/M/- <td>Gold				<td class=took>
+ <tr><td colspan=5>Puzzle, Adventure, Exploration, Cute, Hand-drawn, Humble-Games
+
+<tr class=hr><td><a href="/app/979640"
+	>Cepheus Protocol</a>
+	<td>W/-/- <td>Gold				<td class=todo>Maybe take
+ <tr><td colspan=5>Early-Access, Action, Zombies, RTS/TD-ish
+
+<tr class=hr><td><a href="/app/739650"
+	>Drake Hollow</a>
+	<td>W/-/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Adventure/Colony-Sim, 1P/Online-co-op, Survival, Indie, Child-protag,
+	Not-complex
+
+<tr class=hr><td><a href="https://www.gog.com/game/encodya"
+	>Encodya</a> (via GOG)
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>Point+Click-adventure, Cyberpunk
+
+<tr class=hr><td><a href="/app/903950"
+	>Last Oasis</a>
+	<td>W/-/- <td class=nsp>			<td class=n4me>
+ <tr><td colspan=5>MMORPG, PvP, Survival, Open-World, Build-walking-bases
+
+<tr class=hr><td><a href="/app/681730"
+	>Nowhere Prophet</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>1P-deckbuilder, Roguelike, Card-battler, Exploration
+
+<tr class=hr><td><a href="/app/400080"
+	>Out of Space</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Casual, Strategy, 1P/online-co-op, Living-on-a-spaceship-with-roommates
+
+<tr class=hr><td><a href="/app/1049410"
+	>Superliminal</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Puzzler about perception, FP, 1P
+
+<tr class=hr><td><a href="/app/307110"
+	>We Need To Go Deeper</a>
+	<td>W/M/L <td class=ln>				<td class=todo>Not for me?
+ <tr><td colspan=5>Co-op (1P=crap), Roguelite, Underwater, Lovecraftian
+
+</table>
+</details>
+
+<details>
+<summary class=c nLeft="all 8"
+	><a href="https://www.humblebundle.com/subscription/september-2021"
+	>September 2021</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/757320"
+	>Atomicrops</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Roguelite, Post-Apocalyptic, Manage &amp; Defend the last farm
+
+<tr class=hr><td><a href="/app/612570"
+	>Fort Triumph</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>TBS/TBT, Fantasy, Parody, Party-based
+
+<tr class=hr><td><a href="/app/322450"
+	>FRAMED Collection</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>Puzzle, Rearrange animated comic book panels to make story, Omnibus
+
+<tr class=hr><td><a href="/app/774201"
+	>Heaven's Vault</a>
+	<td>W/-/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Puzzles, Story-rich, Exo-archeology, SF,
+	Heiroglyphic language puzzles, Rave reviews
+
+<tr class=hr><td><a href="/app/1069530"
+	>Narita Boy</a>
+	<td>W/-/- <td>Platinum				<td class=todo>Hmm
+ <tr><td colspan=5>Action, Retro, Platformer, 2D Pixel Graphics, Recursive story
+
+<tr class=hr><td><a href="/app/788100"
+	>Neon Abyss</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Roguelite, Action/Sidescroller, 2D, Fast-paced
+
+<tr class=hr><td><a href="/app/1147550"
+	>Not For Broadcast</a>
+	<td>W/-/- <td>Silver				<td class=todo>Perhaaaaaaps?
+ <tr><td colspan=5>Propaganda sim, FMV, Point+Click, Choices matter, Story rich
+
+<tr class=hr><td><a href="/app/633060"
+	>Orwell: Ignorance is Strength</a>
+	<td>W/M/L <td>Gold				<td class=took>
+ <tr><td colspan=5>Surveillance sim, Politics, Choices matter
+
+<tr class=hr><td><a href="/app/1016120"
+	>PGA Tour 2K21</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Golf sim
+
+<tr class=hr><td><a href="/app/1067540"
+	>Röki</a>
+	<td>W/M/- <td>Platinum				<td class=todo>Hmmmm
+ <tr><td colspan=5>Adventure/Puzzles, Story rich, Norse folklore, Snowy wilderness
+
+<tr class=hr><td><a href="/app/929010"
+	>Swag and Sorcery</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Idle-game-ish RPG, Grindy, Village management
+
+<tr class=hr><td><a href="/app/1016790"
+	>West of Dead</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Twin-stick shooter, cover-based tactics, Fantasy/Horror, Wild West
+
+</table>
+</details>
+
+<details><!-- Should have skipped; left it too late -->
+<summary class=c nLeft="all 10"
+	><a href="https://www.humblebundle.com/subscription/october-2021"
+	>October 2021</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/793460"
+	>112 Operator</a>
+	<td>W/M/- <td>Silver				<td class=n4me>
+ <tr><td colspan=5>Emergency-services-sim, RTS, Casual, Moddable
+
+<tr class=hr><td><a href="/app/999220"
+	>Amnesia Rebirth</a>
+	<td>W/-/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>1P-Horror, Amnesiac, Female-protag, Algerian-desert, Mystery,
+	Has-horror-free-mode
+
+<tr class=hr><td><a href="/app/751820"
+	>Black Future '88</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Action, 2D, Roguelite, Vertical-shooter, Synth-Punk
+
+<tr class=hr><td><a href="/app/878580"
+	>Garage: Bad Trip</a>
+	<td>W/M/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Zombies, Gore, Violent, Action, 2D, Top-down
+
+<tr class=hr><td><a href="/app/537340"
+	>Guts and Glory</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>Action, Casual, Death-Races, Gore, ‘Funny’, “3-D Happy Wheels”
+
+<tr class=hr><td><a href="/app/833040"
+	>Hiveswap Friendsim</a>
+	<td>W/M/L <td class=ln>				<td class=took>
+ <tr><td colspan=5>VN, Homestuck/Hiveswap, Dark-comedy
+
+<tr class=hr><td><a href="/app/1405790"
+	>John Wick Hex</a>
+	<td>W/M/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Action, RTT, Some-RTS, Movie-franchise-spinoff
+
+<tr class=hr><td><a href="/app/460950"
+	>Katana ZERO</a>
+	<td>W/M/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Action, Side-scroller, Stealth, 2D, Pixel-graphics
+
+<tr class=hr><td><a href="/app/998740"
+	>Ring of Pain</a>
+	<td>W/M/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Dungeon-crawler, Roguelike, Card-game, Ring-shaped-dungeons, Difficult
+
+<tr class=hr><td><a href="/app/464340"
+	>Syberia 3</a>
+	<td>W/M/- <td>Silver		<td class=todo>? <small>Windows-only?</small>
+ <tr><td colspan=5>Point+Click, Story-Rich, Sequel
+
+<tr class=hr><td><a href="/app/940680"
+	>The Textorcist: The Story of Ray Bibbia</a>
+	<td>W/M/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Typing-game, Bullet-hell, Brutally-difficult
+
+<tr class=hr><td><a href="/app/1004490"
+	>Tools Up</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Local-coop, Home-renovation-sim, Good-for-newbies
+
+</table>
+</details>
+
+
+<details class=skipped>
+<summary class=c note="I skipped this month."
+	><a href="https://www.humblebundle.com/subscription/november-2021"
+	>November 2021</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/1286350"
+	>BPM: Bullets Per Minute</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Rhythm-Action, FPS/Roguelike
+
+<tr class=hr><td><a href="/app/753650"
+	>Due Process</a>
+	<td>W/-/- <td class=nsp>			<td class=n4me>
+ <tr><td colspan=5>PVP, Tactical FPS, Cyberpunk, Rewards/requires planning ahead
+
+<tr class=hr><td><a href="/app/613100"
+	>House Flipper</a>
+	<td>W/M/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Buy, repair/remodel & sell houses
+
+<tr class=hr><td><a href="/app/971160"
+	>Möbius Front ’83</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>TBT, Wargame, Hex-maps, 80s, USA vs alt-USA
+
+<tr class=hr><td><a href="/app/895870"
+	>Project Wingman</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Flight-sim, Dogfighting, Ground assault
+
+<tr class=hr><td><a href="/app/870200"
+	>SimpleRockets 2</a>
+	<td>W/-/- <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>Rocket-sim, Space travel, Aircraft, Early Access
+
+<tr class=hr><td><a href="/app/1150950"
+	>Timelie</a>
+	<td>W/-/- <td class=ln>				<td class=n4me> ?
+ <tr><td colspan=5>Stealth, Puzzle, Control time like media player
+
+<tr class=hr><td><a href="/app/1205450"
+	>Turnip Boy Commits Tax Evasion</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>Adventure, Play as a turnip, Overthrow the government
+
+<tr class=hr><td><a href="/app/1054490"
+	>Wingspan</a>
+	<td>W/M/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Birds, Wildlife-preserves-sim, Cards, From board game
+
+<tr class=hr><td><a href="/app/1000410"
+	>Wrath: Aeon of Ruin</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>FPS, Retro, Gore, Early Access
+
+</table>
+</details>
+
+
+<details class=skipped>
+<summary class=c note="I skipped this month."
+	><a href="https://www.humblebundle.com/subscription/december-2021"
+	>December 2021</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/668550"
+	>8Doors: Arums Afterlife Adventure</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Action, Platformer, Metroidvania, Korean-folk-myth
+
+<tr class=hr><td><a href="/app/1058650"
+	>Beyond The Wire</a>
+	<td>W/-/- <td class=nL>				<td class=n4me>
+ <tr><td colspan=5>MP FPS, WW1 trenches, “desparate and brutal”
+
+<tr class=hr><td><a href="/app/933820"
+	>Endzone  A World Apart</a>
+	<td>W/-/- <td>Silver				<td class=n4me>
+ <tr><td colspan=5>Post-Apocalyptic Survival/City-builder, Slow,
+	<span title="Per 1 Steam review">Difficult(?)</span>
+
+<tr class=hr><td><a href="/app/1054430"
+	>Fling to the Finish</a>
+	<td>W/-/- <td class=brnz>Bronze			<td class=n4me>
+ <tr><td colspan=5>Co-op 2P racing, elastic tether, obstacle course
+
+<tr class=hr><td><a href="/app/1311070"
+	>Greak Memories of Azur</a>
+	<td>W/-/- <td>Gold				<td class=todo>Hmmmm
+ <tr><td colspan=5>Puzzles, Side-scroller, Fantasy, Hand-drawn, 1P, 3 characters
+
+<tr class=hr><td><a href="/app/1364100"
+	>Lacuna - A SciFi Noir Adventure</a>
+	<td>W/-/- <td>Platinum				<td class=want>WLed
+ <tr><td colspan=5>IF Mystery, No undo/saves, SF noir, Dialog-driven adventure
+
+<tr class=hr><td><a href="/app/629820"
+	>Maneater</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Shark-sim, Dark Humor, Open World
+
+<tr class=hr><td><a href="/app/629760"
+	>Mordhau</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>MP Medieval Slasher, 1P/3P, “Brutal battles”
+
+<tr class=hr><td><a href="/app/1227530"
+	>Partisans 1941</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>RTT, WW2, Stealth, Squad-building
+
+<tr class=hr><td><a href="/app/897450"
+	>The Survivalists</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Survival, Crafting, Combat, Online Co-op
+	<span title="Per 1 Steam review"
+		>(but only hosting player can unlock some recipes)</span>
+
+<tr class=hr><td><a href="/app/1075200"
+	>Tohu</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Point+Click, Fish planets, Czech-style-artwork
+
+<tr class=hr><td><a href="/app/1304680"
+	>Voidigo</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Action-Roguelike, Top-down shooter, Early Access, Difficult
+
+</table>
+</details>
+
+<details>
+<summary class=c nLeft="all 6"
+	><a href="https://www.humblebundle.com/subscription/january-2022"
+	>January 2022</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/727130"
+	>Between the Stars</a>
+	<td>W/-/- <td>Silver				<td class=took> (AU$43)
+ <tr><td colspan=5>Space combat, Spaceship sim, RPGish?, Strong story, Early Access
+
+<tr class=hr><td><a href="/app/826630"
+	>Iron Harvest 1920+</a>
+	<td>W/-/- <td>Gold				<td class=took> (AU$43)
+ <tr><td colspan=5>RTS, Alt-1920s, Dieselpunk Mechsm, 'Epic' 1P campaign, MP/Coop,
+
+<tr class=hr><td><a href="/app/678900"
+	>Farmer’s Dynasty</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Farm sim, Life sim, Bad reviews
+
+<tr class=hr><td><a href="/app/1089980"
+	>The Henry Stickmin Collection</a>
+	<td>W/M/- <td>Gold				<td class=took> (AU$21)
+ <tr><td colspan=5>CYOP, 6 games, rewritten from Newgrounds classic, funny, memes
+
+<tr class=hr><td><a href="/app/1030840"
+	>Mafia: Definitive Edition</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Action, 1930s Illinois, GTA-style adventure, AAA title
+
+<tr class=hr><td><a href="/app/1162700"
+	>Midnight Protocol</a>
+	<td>W/M/L <td class=ln>				<td class=took> (AU$21)
+ <tr><td colspan=5>TBS (!), Hacking, Text-based
+
+<tr class=hr><td><a href="/app/774861"
+	>Project Winter</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>“Social deception and survival”, 8P, backstabbing
+
+<tr class=hr><td><a href="/app/970960"
+	>Rebel Cops</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>TBS, 1P, Gore, “ragtag squad of cops” vs new town boss
+
+<tr class=hr><td><a href="/app/1239690"
+	>Retrowave</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Racing, 80s vibe, Early Access
+
+<tr class=hr><td><a href="/app/844260"
+	>Rustler (Grand Theft Horse)</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Mediaeval GTA, Top-down,
+		Monty-Python-esque (police horses have flashing lights)
+
+</table>
+</details>
+
+<details>
+<summary class=c nLeft="all 3"
+	><a href="https://www.humblebundle.com/membership/february-2022"
+	>February 2022</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/1073910"
+	>Before We Leave</a>
+	<td>W/M/- <td>Platinum				<td class=took> Why not?
+ <tr><td colspan=5>City Builder, SF, Casual, Relaxing
+
+<tr class=hr><td><a href="/app/1138660"
+	>Black Book</a>
+	<td>W/M/- <td>Platinum				<td class=took> Yes
+ <tr><td colspan=5>RPG, Card Battler, TBT, Dark, Slavic myths
+
+<tr class=hr><td><a href="/app/397540"
+	>Borderlands 3</a>
+	<td>W/-/- <td>Gold				<td class=took> YES
+ <tr><td colspan=5>Action RPG, Looter Shooter, FPS, Open World
+
+<tr class=hr><td><a href="/app/1361831"
+	>Borderlands 3 Directors Cut</a>
+	<td>W/-/- <td>Gold?				<td class=took> Yes
+ <tr><td colspan=5>DLC for <i>Borderlands 3</i>
+
+<tr class=hr><td><a href="/app/1112890"
+	>Calico</a>
+	<td>W/-/- <td>Gold				<td class=took> Why not?
+ <tr><td colspan=5>Cat Café sim
+
+<tr class=hr><td><a href="/app/1229380"
+	>Everhood</a>
+	<td>W/-/- <td>Gold				<td class=took> I guess?
+ <tr><td colspan=5>Unconventional, RPG, Music Battles
+
+<tr class=hr><td><a href="/app/979070"
+	>Just Die Already</a>
+	<td>W/-/- <td>Platinum				<td class=todo>Maybe
+ <tr><td colspan=5>
+	“old people mayhem sandbox game … [by the folks from] <i>Goat Simulator</i>”
+
+<tr class=hr><td><a href="/app/982720"
+	>Paradise Lost</a>
+	<td>W/-/- <td>Gold				<td class=todo>Maaaybe?
+ <tr><td colspan=5>Walking Simulator, Alt-WW2 aftermath, Hostile Steam reviews
+
+<tr class=hr><td><a href="/app/803050"
+	>Per Aspera</a>
+	<td>W/-/- <td>Gold				<td class=todo>Perhaps not?
+ <tr><td colspan=5>Colony Sim, Mars
+
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="all 5"
+	><a href="https://www.humblebundle.com/membership/march-2022"
+	>March 2022</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/610370"
+	>Desperados III</a>
+	<td>W/M/L <td class=ln>				<td class=took>  Have I, II
+ <tr><td colspan=5>Stealth/RTT/Strategy, Wild West, Difficult
+
+<tr class=hr><td><a href="/app/1110050"
+	>Evan’s Remains</a>
+	<td>W/M/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Puzzle-platformer, Casual, Tells a Story
+
+<tr class=hr><td><a href="/app/1157220"
+	>Nebuchadnezzar</a>
+	<td>W/-/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>City-builder, RTS, Ancient Mesopotamia, Regular updates
+
+<tr class=hr><td><a href="/app/1414850"
+	>Nickelodeon All-Star Brawl</a>
+	<td>W/-/- <td>Silver				<td class=n4me>
+ <tr><td colspan=5>2D-fighting, 1P/MP, 90s cartoon characters
+
+<tr class=hr><td><a href="/app/539470"
+	>Police Stories</a>
+	<td>W/-/- <td>Silver				<td class=n4me>
+ <tr><td colspan=5>Top-down shooter, 1P/Co-op, Difficult/Annoying
+
+<tr class=hr><td><a href="/app/768520"
+	>Red Solstice 2: Survivors</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>RTT/Strategy/RPG, Fighting Mutants on Mars, 1P/Co-op
+
+<tr class=hr><td><a href="/app/939850"
+	>The Dark Pictures Anthology: Man of Medan</a>
+	<td>W/-/- <td>Silver				<td class=n4me>
+ <tr><td colspan=5>Horror, 1P/PvP, QTEs, Few choices
+
+<tr class=hr><td><a href=
+ "https://www.origin.com/aus/en-us/store/mass-effect/mass-effect-legendary-edition/"
+	>Mass Effect™ Legendary Edition</a> on <strong>EA Origin</strong>
+	<td>W/-/- <td class=brnz>—			<td class=took>, for DLC
+ <tr><td colspan=5><div class=aside>Steam: <a
+	 href="/app/1328670"
+		>AU$90</a>, W/-/<small>Gold</small></div>
+	SF, Bioware, Remastered Trilogy, <strong>All</strong> the DLC
+
+</table>
+</details>
+
+
+<details class=skipped>
+<summary class=c note="I skipped this month."
+	><a href="https://www.humblebundle.com/membership/april-2022"
+	>April 2022</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/1084640"
+	>Chicken Police - Paint it RED!</a>
+	<td>W/M/- <td>Platinum				<td class=todo>Maaybe? WL?
+ <tr><td colspan=5>Noir, Anthro animals, Visual novel / adventure, Unique style
+
+<tr class=hr><td><a href="/app/803330"
+	>Destroy All Humans!</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Action, Comedy, Slapstick, 1950s, Play as evil Alien
+
+<tr class=hr><td><a href="/app/1139900"
+	>Ghostrunner</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>FP slasher, “lightning fast”, Cyberpunk, Post-apocalyptic
+
+<tr class=hr><td><a href="/app/910490"
+	>Killsquad</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Hack-and-slash, Twin-stick shooter, RPG
+
+<tr class=hr><td><a href="/app/814370"
+	>Monster Sanctuary</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>Side-scroller, collect & train monsters, 1P or online PvP
+
+<tr class=hr><td><a href="/app/633230"
+	>Naruto to Boruto: Shinobi Striker</a>
+	<td>W/-/- <td class=nsp>			<td class=n4me>
+ <tr><td colspan=5>Fighting, Ninjas, 1P or online team-vs-team
+
+<tr class=hr><td><a href="/app/1207650"
+	>Suzerain</a>
+	<td>W/M/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Text-based/CYOA, Political drama, 1954, President, Limited choices
+
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="all 6"
+	><a href="https://www.humblebundle.com/subscription/may-2022"
+	>May 2022</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/1213210"
+	>Command & Conquer Remastered Coll’n</a> <strong>on
+	 <a href="https://www.origin.com/aus/en-us/store/command-and-conquer/command-and-conquer-remastered">EA Origin</strong>
+	<td>W/-/- <td>Platinum				<td class=took> (not giftable)
+ <tr><td colspan=5>RTS, 90s classic
+
+<tr class=hr><td><a href="/app/1062830"
+	>Embr</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Action, Sim/Strategy, Firefighting, Cartoony, 1P/MP
+
+<tr class=hr><td><a href="/app/735290"
+	>Genesis Noir</a>
+	<td>W/M/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Point+Click, Story, Cosmic beings, The Big Bang
+
+<tr class=hr><td><a href="/app/1041920"
+	>If Found</a>
+	<td>W/M/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Casual, Story, Lesbian coming out, interactive-media not a game
+
+<tr class=hr><td><a href="/app/703080"
+	>Planet Zoo</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Management/sim, zoo
+
+<tr class=hr><td><a href="/app/895620"
+	>Spellcaster University</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Management/Sim/Strategy, University for mages, random cards
+
+<tr class=hr><td><a href="/app/969990"
+	><small>SpongeBob SquarePants: Battle for Bikini Bottom - Rehydrated</small></a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>3D platformer, 20YO classic remade (same mechanics, better visuals)
+
+<tr class=hr><td><a href="/app/684450"
+	>Surviving the Aftermath</a>
+	<td>W/-/- <td>Silver				<td class=took> (US$8)
+ <tr><td colspan=5>City builder, post-apocalyptic
+
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="all 5"
+	><a href="https://www.humblebundle.com/subscription/june-2022"
+	>June 2022</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/1042490"
+	>Call of the Sea</a>
+	<td>W/-/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Adventure, 30s, 1P 3D, puzzles, story-rich, voiced
+
+<tr class=hr><td><a href="/app/917720"
+	>Gamedec</a>
+	<td>W/-/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Cyberpunk, RPG, Detective in virtual worlds, from <a href=
+	"https://en.wikipedia.org/wiki/Marcin Przybyłek#GAMEDEC_Saga">books</a>,
+	isometric, dialog, Steam reviews ⇒ flaws
+
+<tr class=hr><td><a href="/app/1472560"
+	>I Am Fish</a>
+	<td>W/-/- <td class=brnz>Bronze			<td class=n4me>
+ <tr><td colspan=5>Adventure, Physics-based, For youngsters
+
+<tr class=hr><td><a href="/app/839770"
+	>Phoenix Point: Year One Edition</a>
+	<td>W/M/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>TBT/Strategy, Alien invaders, Mutatation,
+	Diplomacy with other human factions
+
+<tr class=hr><td><a href="/app/1186640"
+	>Pumpkin Jack</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>3D Platformer, Colorful, Solo developer
+
+<tr class=hr><td><a href="/app/1167140"
+	>Siege Survival: Gloria Victis</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>Medieval siege management sim (!), 1P, Steam reviews are positive
+
+<tr class=hr><td><a href="/app/690040"
+	>Superhot: Mind Control Delete</a>
+	<td>W/-/- <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>FPS, Time manipulation, Bullet time
+
+<tr class=hr><td><a href="/app/1222730"
+	>Star Wars: Squadrons</a>
+ <strong>on <a href="https://www.ea.com/games/starwars/squadrons">EA Origin</a></strong>
+	<td>W/-/- <td>(Silver)				<td class=n4me>
+ <tr><td colspan=5>MP space combat, 5×5 online battles, VR support
+
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="all 4"
+	><a href="https://www.humblebundle.com/membership/july-2022"
+	>July 2022</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/1139940"
+	>ATOM RPG Trudograd</a>
+	<td>W/M/L <td class=ln>				<td class=took>   (Why not?)
+ <tr><td colspan=5>Sequel to <a href="/app/552620"
+		class=title>ATOM RPG</a>,
+		After nuclear apocalyse, GURPS-ish, Fallout 1&2 in Russia
+
+<tr class=hr><td><a href="/app/1075740"
+	>Banners of Ruin</a>
+	<td>W/-/- <td>Platinum				<td class=todo>Leaning “NO”
+ <tr><td colspan=5>Roguelike Deckbuilder, Anthropomorphic animals, Steam reviews ⇒ no
+
+<tr class=hr><td><a href="/app/548430"
+	>Deep Rock Galactic</a>
+	<td>W/-/- <td>Platinum				<td class=took>   Yes!
+ <tr><td colspan=5>FPS, Co-op PVE, 100% destructable environment, Procedural generation
+
+<tr class=hr><td><a href="/app/1480560"
+	>Lawn Mowing Simulator</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Simulates ride-on mowers in Britain
+
+<tr class=hr><td><a href="/app/978520"
+	>Legend of Keepers: Career of a Dungeon Manager</a>
+	<td>W/M/L <td class=ln>				<td class=took>   (Why not?)
+ <tr><td colspan=5>Roguelite-ish Dungeon Manager, TBT
+
+<tr class=hr><td><a href="/app/469600"
+	>Legion TD 2 - Multiplayer Tower Defense</a>
+	<td>W/-/- <td>Gold				<td class=todo>Leaning "Yes"
+ <tr><td colspan=5>TD, 1P or Online PvP or Online Co-op, From Warcraft 3 mod
+
+<tr class=hr><td><a href="/app/1222370"
+	>Necromunda: Hired Gun</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>FPS, Warhammer 40K universe
+
+<tr class=hr><td><a href="/app/1115690"
+	>Yes, Your Grace</a>
+	<td>W/M/- <td>Platinum				<td class=took>   (Yes?)
+ <tr><td colspan=5>“Kingdom management RPG”, Choices (mostly?) matter
+
+</table>
+</details>
+
+
+<details class=skipped>
+<summary class=c note="I skipped this month"
+	><a href="https://www.humblebundle.com/membership/august-2022"
+	>August 2022</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/979690"
+	>The Ascent</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Top-down shooter, RPG, Cyberpunk, 1P or co-op
+
+<tr class=hr><td><a href="/app/978460"
+	>Emily is Away <3</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Dating sim(?), 2008 social media, HS seniors
+
+<tr class=hr><td><a href="/app/1149620"
+	>Gas Station Simulator</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Business Sim
+
+<tr class=hr><td><a href="/app/1271700"
+	>Hot Wheels Unleashed</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Arcade, Racing, Toy car sim, Track-building
+
+<tr class=hr><td><a href="/app/1119980"
+	>In Sound Mind</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>1P psychological horror
+
+<tr class=hr><td><a href="/app/1389550"
+	>Mind Scanners</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Psychiatry sim, Retro-futuristic dystopia
+
+<tr class=hr><td><a href="/app/969760"
+	>Omno</a>
+	<td>W/-/- <td>Platinum				<td class=want>WLed; US$19
+ <tr><td colspan=5>Adventure/exploration/Puzzles, Wholesome, Short
+
+<tr class=hr><td><a href="/app/752590"
+	>A Plague Tale: Innocence</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>Story-rich, Adventure, 1349, Black Death, 15yo girl protag
+
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="all 4"
+	><a href="https://www.humblebundle.com/membership/september-2022"
+	>September 2022</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/1000010"
+	>Crown Trick</a>
+	<td>W/-/- <td>Silver				<td class=took> Why not?
+ <tr><td colspan=5>Roguelike, Turn-based combat, Skill/item strategy,
+	“labyrinth that moves as you move”
+
+<tr class=hr><td><a href="/app/1158310"
+	>Crusader Kings III</a>
+	<td>W/M/L <td class=ln>				<td class=took> AU$70!
+ <tr><td colspan=5>Grand Strategy, Dynasties
+
+<tr class=hr><td><a href="/app/681280"
+	>Descenders</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>Downhill bicycle riding sim
+
+<tr class=hr><td><a href="/app/1590910"
+	>Forgive Me Father</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Retro horror FPS
+
+<tr class=hr><td><a href="/app/1172650"
+	>Industria</a>
+	<td>W/-/- <td>Gold				<td class=todo>Hmmm
+ <tr><td colspan=5>FPS, SF, Commie East Berlin, parallel dimension, fighting robots
+
+<tr class=hr><td><a href="/bundle/12348"
+	>Just Cause 4</a> Complete Edition
+	<td>W/-/- <td>Gold				<td class=todo>Hmmmmmm
+ <tr><td colspan=5>Action, Open World, Some prefer <i>Just Cause 3</i>
+
+<tr class=hr><td><a href="/app/1318690"
+	>shapez</a>
+	<td>W/M/L <td class=ln>				<td class=have>
+ <tr><td colspan=5>Puzzle, Builder
+
+<tr class=hr><td><a href="/app/1625400"
+	>shapez — Puzzle DLC</a>
+	<td>W/M/L <td class=ln>				<td class=took> Why not?
+ <tr><td colspan=5>Puzzle editor, Community content GUI
+
+<tr class=hr><td><a href="/app/970830"
+	>The Dungeon Of Naheulbeuk: The Amulet Of Chaos</a>
+	<td>W/M/- <td>Gold				<td class=took> Yes
+ <tr><td colspan=5>‘Wacky’ parody FRPG, turn-based, party, dubious ‘heroes’
+
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="5 of 8"	bvg="https://barter.vg/bundle/6435/"
+	><a href="https://www.humblebundle.com/membership/october-2022"
+	>October 2022</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/1194630"
+	>The Dark Pictures Anthology: Little Hope</a>
+	<td>W/-/- <td>Pt				<td class=n4me>
+ <tr><td colspan=5>Horror, 1P/MP, cinematic, branching storylines, Stream reviews: buggy
+
+<tr class=hr><td><a href="/app/1252330"
+	>Deathloop</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>FPS, Stealth, two-rival-assassins, time-loop
+
+<tr class=hr><td><a href="/app/1287840"
+	>Disciples Liberation</a>
+	<td>W/-/- <td>Gold				<td class=took> Yep
+ <tr><td colspan=5>
+	<div class=aside>Now A$60; has been A$30</div>
+	Strategy RPG, TBT, Dark Fantasy
+
+<tr class=hr><td><a href="/app/1312960"
+	>Epic Chef</a>
+	<td>W/-/- <td class=nsp>			<td class=n4me>
+ <tr><td colspan=5>Cooking sim / adventure, comedy(?), ingredients grinding?
+
+<tr class=hr><td><a href="/app/1151050"
+	>Golf Gang</a>
+	<td>W/-/- <td>Pt				<td class=n4me>
+ <tr><td colspan=5>Party game, racing golf, 1P or online 8-player PvP
+
+<tr class=hr><td><a href="/app/826940"
+	>Maid of Sker</a>
+	<td>W/-/- <td>Pt				<td class=n4me>
+ <tr><td colspan=5>First-person Survival Horror
+
+<tr class=hr><td><a href="/app/1102190"
+	>Monster Train</a> + 1 DLC
+	<td>W/-/- <td>Gold				<td class=took> (DLC later)
+ <tr><td colspan=5>“strategic roguelike deck build[er]”, unlock stuff for future runs,
+	train to hell, tactics, <a href="https://steamcommunity.com/profiles/76561198160991881/recommended/1359320/">defer DLC</a>
+
+<tr class=hr><td><a href="/app/797400"
+	>Railroad Corporation</a>
+	<td>W/-/- <td>Pt				<td class=took>
+ <tr><td colspan=5>Railroad sim, Micromanagement, 1800s North America
+
+
+</table>
+</details>
+
+
+<details  open=true  >
+<summary class=c note="Will take" |nLeft="???"
+	><a href="https://www.humblebundle.com/membership/november-2022"
+	>November 2022</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/1108590"
+	>Eldest Souls</a>
+	<td>W/-/- <td>Gold				<td class=want>Why not?
+ <tr><td colspan=5><i>Souls</i>-like, Dark Fantasty, Pixel Graphics
+
+<tr class=hr><td><a href="/app/686810"
+	>Hell Let Loose</a>
+	<td>W/-/- <td class=nsp>			<td class=n4me> ?
+ <tr><td colspan=5>WW2 FPS, 50×50 MP, Infantry+Tanks+Artillery, Logistics meta-game
+
+<tr class=hr><td><a href="/sub/470702/"
+	>Kingdoms of Amalur: ReReckoning</a> FATE Edition
+	<td>W/-/- <td>Pt				<td class=want>Will take
+ <tr><td colspan=5>FRPG, Remastered, Content DLC and OST, 1P
+
+<tr class=hr><td><a href="/app/1140890"
+	>Morbid The Seven Acolytes</a>
+	<td>W/-/- <td>Pt				<td class=n4me> ?
+ <tr><td colspan=5>Horrorpunk Action RPG, Lovecraftian, Gore, <i>Souls</i>-like
+
+<tr class=hr><td><a href="/app/730390"
+	>Raji: An Ancient Epic</a>
+	<td>W/-/- <td>Gold				<td class=want>Will take
+ <tr><td colspan=5>Adventure, Ancient India, Hindu Deities, Hand-drawn,
+
+<tr class=hr><td><a href="/app/692890"
+	>Roboquest</a>
+	<td>W/-/- <td>Gold				<td class=want>Prob. take
+ <tr><td colspan=5>“Fast-paced” FPS Roguelite, SF, Early Access
+
+<tr class=hr><td><a href="/app/1579380"
+	>Shadow Tactics: Aiko’s Choice</a>
+	<td>W/-/- <td class=ln>				<td class=want>Will take
+ <tr><td colspan=5>Stealth/Tactics, Strategy, C17th Japan
+
+<tr class=hr><td><a href="/app/1203710"
+	>UnMetal</a>
+	<td>W/-/- <td>Pt				<td class=want>Will take
+ <tr><td colspan=5>Retro, Stealth, Satire/Humor
+
+</table>
+</details>
+
+<p id=end>
+Thanks go to the folks at <a href="https://barter.vg/">barter.vg</a> and to a
+fellow antipodean, Naithin at <a href="https://www.timetoloot.com/"
+>www.timetoloot.com</a>, for lots of useful information.
+
+<!--
+When Naithin skips a month, try Barter.vg.
+
+>>>>>>>>>
+<details  [ open=true ]  >
+<summary class=c note|nLeft="???"
+	><a href=""
+	> 2022</a></summary>
+<table>
+
+<tr class=hr><td><a href=""
+	></a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Action,
+
+</table>
+</details>
+-->
+
+</body>
+</html>

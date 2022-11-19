@@ -1,0 +1,330 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<title>Chris Nuttall’s books</title>
+<style type=text/css>
+ body		{ width: 69rem; margin: 3px auto; font-family: serif; font-size: 91%; }
+ .EdNote A:link	{ color: #0CF; }
+ .EdNote	{ font:      100% sans-serif; color: #088; }
+ h1		{ font: bold 150% sans-serif; margin: 1rem 0 0; }
+ p		{ margin: 0.5em 0 0; }
+ .rhs		{ float: right; }
+ .tiny		{ font-size: 0.7rem; line-height: 100%; }
+ table		{ border-collapse: collapse; margin: 0.5rem 0; border: 1px solid; }
+ table  th	{ padding: 1pt 2pt 1pt 0.25rem;	text-align: left; }
+ table  td	{ padding: 0pt 2pt;		text-align: left; }
+ table.series,  table.non-series,  table.key
+		{ width: 22rem; }
+ table.non-series + table.non-series,  table.non-series + table.key
+		{ margin-top: 1rem; }
+ tr.h2 > th	{ font: bold 125% sans-serif; text-align: center; background: #AAA; }
+ table.key th	{ font: bold 111% serif; background: #CCC; }
+ table.key td	{ border: 1px solid; #AAA; }
+ th > div,  td > div
+		{ float: right; font: italic 91% serif; padding-top: 0.09em; }
+ th > div	{ color: #600; }
+ th > div.note	{ color: black; }
+ .future	{ font-style: italic; color: #00F; opacity: 0.6; }
+ /*--- For series: */
+ table.series	{ float: left; margin-right: 1rem; }
+ /* MT = Main Title; ST = Subseries Title */
+ tr.mt > th	{ border-top: 1px solid; padding-top: 3pt; padding-bottom: 0; }
+ tr.st > th	{ padding-left: 0.75rem; font-size: 91%; }
+ table.series td:nth-child(2)		{ padding-left: 5pt; font-size: 91%; }
+ table.series td:nth-child(3) > a	{ font-style: italic; white-space: nowrap; }
+/*--- For non-series books: */
+ table.non-series td
+		{ border: 1px solid; padding-top: 0.3rem; padding-bottom: 0.3rem; }
+ table.non-series td:nth-child(2)
+		{ font-style: italic; white-space: nowrap; }
+/*--- For series (on title rows) -and- individual books (on TR): */
+ .no		{ background: #FAA; }
+ .unlikely	{ background: #FCC; }
+ .maaaybe	{ background: #FDD; }
+ .maybe		{ background: #FEE; }
+ .likely	{ background: #DFD; }
+ .for-sure	{ background: #CFC; }
+ .finished	{ background: #DDF; }
+/*--- For individual books: */
+ tr[s]	  > td:first-child
+		{ font-weight: bold; padding-left: 1rem; text-align: center; }
+ tr[s=DH] > td:first-child::before,  .DH::before	/*Don't Have*/
+		{ content: "×"; color: #AAA; }
+ tr[s=fr] > td:first-child::before,  .FR::before	/*Fully Read*/
+		{ content: "✔"; color: #008; }
+ tr[s=pr] > td:first-child::before,  .PR::before	/*Partly Read*/
+		{ content: "S"; color: #080; }
+ tr[s=nr] > td:first-child::before,  .NR::before	/*Not Read*/
+		{ content: "U"; color: #262; }
+
+</style>
+<base href="https://www.amazon.com.au/dp/">
+</head>
+<body>
+
+<p class=rhs>
+Main source: <a href="https://www.fantasticfiction.com/n/christopher-nuttall/"
+		>FantasticFiction.com</a>.<br>Sorted on <em>first</em> publication date
+<h1><a href="http://chrishanger.net/">Christopher G. Nuttall</a>’s books
+	<small>as of 21-Nov-2021,
+		<a href="http://chrishanger.net/freebooks/Freebooks.html"
+		   title="Use archive.org if downloads fail">freebies</a>
+		excluded</small></h1>
+
+<table class=series>
+<tr class=h2><th colspan=4>Earlier Series</th>
+
+<tr class="mt maaaybe"><th colspan=4>Martial Law</th>
+ <tr s=DH><td><td> 1 <td><a href="B005U3HT4M/">Patriotic Treason</a>		<td>2011
+ <tr s=DH><td><td> 2 <td><a href="B006BC15YG/">Picking Up The Pieces</a>	<td>2011
+
+<tr class="mt maybe"><th colspan=4>Outside Context Problem</th>
+ <tr s=DH><td><td> 1 <td><a href="B009TR6VXU/">Outside Context Problem</a>	<td>2012
+ <tr s=DH><td><td> 2 <td><a href="B00AHAY3J2/">Under Foot</a>			<td>2012
+ <tr s=DH><td><td> 3 <td><a href="B00CPWDRLU/">The Slightest Hope of Victory</a><td>2013
+
+<tr class="mt unlikely"><th colspan=4>Royal Sorceress</th>
+ <tr s=DH><td><td> 1 <td><a href="B009MQQJDU/">The Royal Sorceress</a>		<td>2012
+ <tr s=DH><td><td> 2 <td><a href="B00EKVOMCM/">The Great Game</a>		<td>2013
+ <tr s=DH><td><td> 3 <td><a href="B00MI8S7NE/">Necropolis</a>			<td>2014
+ <tr s=DH><td><td> 4 <td><a href="B01DVDJ774/">Sons of Liberty</a>		<td>2016
+
+<tr class="mt maaaybe"><th colspan=4>Dizzy Spells</th>
+ <tr s=DH><td><td> 1 <td><a href="B00CPVOJAY/">A Life Less Ordinary</a>		<td>2012
+
+<tr class="mt maaaybe"><th colspan=4>Science and Sorcery</th>
+ <tr s=DH><td><td> 1 <td><a href="B00BNFXNA0/">Science and Sorcery</a>		<td>2013
+
+<tr class="mt for-sure"><th colspan=4>Bookworm & Unwritten Words</th>
+<tr class="st finished"><th colspan=4>Bookworm</th>
+ <tr s=fr><td><td> 1 <td><a href="B00B2GBYWE/">Bookworm</a>			<td>2013
+ <tr s=fr><td><td> 2 <td><a href="B00HNIARLE/">The Very Ugly Duckling</a>	<td>2014
+ <tr s=fr><td><td> 3 <td><a href="B00STVSH66/">The Best Laid Plans</a>		<td>2015
+ <tr s=fr><td><td> 4 <td><a href="B01551B822/">Full Circle</a>			<td>2015
+<tr class="st for-sure"><th colspan=4>The Unwritten Words</th>
+ <tr s=fr><td><td> 1 <td><a href="B079HGW1GB/">The Promised Lie</a>		<td>2018
+ <tr s=pr><td><td> 2 <td><a href="B083G1MX6C/">The Ancient Lie</a>		<td>2020
+ <tr s=DH><td><td> 3 <td><a href="B08KWGGM2P/">The Truthful Lie</a>		<td>2020
+
+<tr class="mt likely"><th colspan=4>Inverse Shadows Universe
+				<div>Abandoned series</div></th>
+ <tr s=pr><td><td> 1 <td><a href="B00DVZM1WQ/"
+				>Sufficiently Advanced Technology</a>		<td>2013
+</tbody>
+
+<tr class="mt no"><th colspan=4>Democracy’s Right
+				<div>Unfinished Trilogy</div></th>
+ <tr s=DH><td><td> 1 <td><a href="B00E5T512Y/">Democracy’s Right</a>		<td>2013
+ <tr s=DH><td><td> 2 <td><a href="B00GR0GQVY/">Democracy’s Might</a>		<td>2013
+
+<tr class="mt likely"><th colspan=4>Ark Royal</th>
+<tr class="st finished"><th colspan=4><i>Ark Royal</i> Arc</th>
+ <tr s=fr><td><td> 1 <td><a href="B00HVKCMQC/">Ark Royal</a>			<td>2014
+ <tr s=fr><td><td> 2 <td><a href="B00J6DKWSM/">The Nelson Touch</a>		<td>2014
+ <tr s=fr><td><td> 3 <td><a href="B00KS23P6G/">The Trafalgar Gambit</a>		<td>2014
+<tr class="st likely"><th colspan=4><i>Warspite</i> Arc</th>
+ <tr s=DH><td><td> 4 <td><a href="B00QKXZ0AQ/">Warspite</a>			<td>2014
+ <tr s=DH><td><td> 5 <td><a href="B00VTDUZDO/">A Savage War Of Peace</a>	<td>2015
+ <tr s=DH><td><td> 6 <td><a href="B013YN51XA/">A Small Colonial War</a>		<td>2015
+<tr class="st likely"><th colspan=4><i>Vanguard</i> Arc</th>
+ <tr s=DH><td><td> 7 <td><a href="B01ATZINT0/">Vanguard</a>			<td>2016
+ <tr s=DH><td><td> 8 <td><a href="B01HSDJQTM/">Fear God And Dread Naught</a>	<td>2016
+ <tr s=DH><td><td> 9 <td><a href="B01N1XVIBL/">We Lead</a>			<td>2016
+<tr class="st likely"><th colspan=4>Other stories</th>
+ <tr s=DH><td><td>10 <td><a href="B0731Q3GNB/">The Longest Day</a>		<td>2017
+ <tr s=DH><td><td>11 <td><a href="B0777R4QHB/">The Cruel Stars</a>		<td>2017
+ <tr s=DH><td><td>12 <td><a href="B07BBV3Z18/">Invincible</a>			<td>2018
+ <tr s=DH><td><td>13 <td><a href="B07KCKFDVY/">Para Bellum</a>			<td>2018
+ <tr s=DH><td><td>14 <td><a href="B07RN7YV8R/">The Right of the Line</a>	<td>2019
+ <tr s=DH><td><td>15 <td><a href="B08GHWN6J3/">The Lion and the Unicorn</a>	<td>2020
+ <tr s=DH><td><td>16 <td><a href="B08RC6BYC5/">Fighting For The Crown</a>	<td>2020
+ <tr s=DH><td><td>17 <td><a href="B0951C35P8/">Drake’s Drum</a>			<td>2021
+
+<tr class="mt no"><th colspan=4>Darkest Hour
+				<div>Dead series?</div></th>
+ <tr s=DH><td><td> 1 <td><a href="B00LXR8Y70/">Their Darkest Hour</a>		<td>2014
+
+<tr class="mt likely"><th colspan=4>Learning Experience</th>
+ <tr s=DH><td><td> 1 <td><a href="B00IR97M98/">A Learning Experience</a>	<td>2014
+ <tr s=DH><td><td> 2 <td><a href="B00OGNP1Q0/">Hard Lessons</a>			<td>2014
+ <tr s=DH><td><td> 3 <td><a href="B0183YDLXC/">The Black Sheep</a>		<td>2015
+ <tr s=DH><td><td> 4 <td><a href="B06XKN2L17/">The Long Road Home</a>		<td>2017
+ <tr s=DH><td><td> 5 <td><a href="B07FCY797F/">The Long-Range War</a>		<td>2018
+ <tr s=DH><td><td> 6 <td><a href="B08256HF58/">Their Last Full Measure</a>	<td>2019
+
+<tr class="mt maaaybe"><th colspan=4>Decline and Fall of the Galactic Empire</th>
+ <tr s=fr><td><td> 1 <td><a href="B00KK55IHK/">Barbarians at the Gates</a>	<td>2014
+ <tr s=DH><td><td> 2 <td><a href="B00PPI8IAG/"
+					>The Shadow of Cincinnatus</a>		<td>2014
+ <tr s=DH><td><td> 3 <td><a href="B01C4WEN2M/">The Barbarian Bride</a>		<td>2016
+
+<tr class="mt finished"><th colspan=4>Imperium Cicernus
+				<div class=note>Shared world; few sequels</div></th>
+ <tr s=fr><td><td> 1 <td><a href="B00KCLJ39G/"
+				>On The Imperium’s Secret Service</a>		<td>2014
+
+<tr class="mt maaaybe"><th colspan=4>Twilight Of The Gods
+				<div class=note>Alt-hist WW2</div></th>
+ <tr s=DH><td><td> 1 <td><a href="B019A86KLU/">Storm Front</a>			<td>2015
+ <tr s=DH><td><td> 2 <td><a href="B01F4B46HW/">Chosen of the Valkyries</a>	<td>2016
+ <tr s=DH><td><td> 3 <td><a href="B01LEX9WQO/">Ragnarok</a>			<td>2016
+
+<tr class="mt for-sure"><th colspan=4>Kat Falcone universe
+<tr class="st"><th colspan=4>Angel in the Whirlwind
+ <tr s=fr><td><td> 1 <td><a href="B00UXX5BLM/">The Oncoming Storm</a>		<td>2015
+ <tr s=fr><td><td> 2 <td><a href="B0117SVQS8/">Falcone Strike</a>		<td>2016
+ <tr s=pr><td><td> 3 <td><a href="B01LQ6467Y/">Cursed Command</a>		<td>2017
+ <tr s=nr><td><td> 4 <td><a href="B01N99IRYY/">Desperate Fire</a>		<td>2017
+ <tr s=nr><td><td>   <td><a href="B0757X2RLZ/">The Hyperspace Trap</a>
+			<div>Side Story</div>					<td>2018
+<tr class="st"><th colspan=4>Embers of War</th>
+ <tr s=nr><td><td> 1 <td><a href="B0814NHC9C/">Debt of Honor</a>		<td>2020
+ <tr s=nr><td><td> 2 <td><a href="B084VPMFL6/">Debt of Loyalty</a>		<td>2020
+ <tr s=nr><td><td> 3 <td><a href="B087X31XGW/">Debt of War</a>			<td>2020
+
+
+</table>
+
+<table class=series>
+<tr class=h2><th colspan=4>Later Series</th>
+
+<tr class="nls for-sure"><th colspan=4>Empire’s Corps</th>
+ <tr s=fr><td><td> 1 <td><a href="B008RX4K2G/">The Empire’s Corps</a>		<td>2012
+ <tr s=fr><td><td> 2 <td><a href="B00ANN0VR6/">No Worse Enemy</a>		<td>2012
+ <tr s=fr><td><td> 3 <td><a href="B00BFCCGZY/">When The Bough Breaks</a>	<td>2013
+ <tr s=fr><td><td> 4 <td><a href="B00CAIU47Y/">Semper Fi</a>			<td>2013
+ <tr s=fr><td><td> 5 <td><a href="B00DIDKITO/">The Outcast</a>			<td>2013
+ <tr s=fr><td><td> 6 <td><a href="B00EMFQQGG/">To The Shores ...</a>		<td>2013
+ <tr s=fr><td><td> 7 <td><a href="B00G4UEXL2/">Reality Check</a>		<td>2014
+ <tr s=fr><td><td> 8 <td><a href="B00IATJTG4/">Retreat Hell</a>			<td>2014
+ <tr s=pr><td><td> 9 <td><a href="B00MV8VMSS/">The Thin Blue Line</a>		<td>2014
+ <tr s=DH><td><td>10 <td><a href="B00TCUV0IA/">Never Surrender</a>		<td>2015
+ <tr s=DH><td><td>11 <td><a href="B010E9QZJG/">First To Fight</a>		<td>2015
+ <tr s=DH><td><td>12 <td><a href="B01CPBGVJK/">They Shall Not Pass</a>		<td>2016
+ <tr s=DH><td><td>13 <td><a href="B01M3TV65N/">Culture Shock</a>		<td>2016
+ <tr s=DH><td><td>14 <td><a href="B0716NXNKY/">Wolf’s Bane</a>			<td>2017
+ <tr s=DH><td><td>15 <td><a href="B07NBR44N7/">Cry Wolf</a>			<td>2019
+ <tr s=DH><td><td>16 <td><a href="B07YCTJ94C/">Favor The Bold</a>		<td>2019
+ <tr s=DH><td><td>17 <td><a href="B089G8NCB1/">Knife Edge</a>			<td>2020
+ <tr s=DH><td><td>18 <td><a href="B08KJJD4NF/">The Halls of Montezuma</a>	<td>2020
+ <tr s=DH><td><td>19 <td><a href="B09CNS7D2F/">The Prince’s War</a>		<td>2021
+
+<tr class="mt for-sure"><th colspan=4>Nameless World</th>
+<tr class="st"><th colspan=4>Schooled in Magic</th>
+ <tr s=fr><td><td> 1 <td><a href="B00INFP20W/">Schooled in Magic</a>		<td>2014
+ <tr s=fr><td><td> 2 <td><a href="B00KDQTJG2/">Lessons in Etiquette</a>		<td>2014
+ <tr s=fr><td><td> 3 <td><a href="B00M4SFOGQ/">Study in Slaughter</a>		<td>2014
+ <tr s=pr><td><td> 4 <td><a href="B00OWDT426/">Work Experience</a>		<td>2014
+ <tr s=nr><td><td> 5 <td><a href="B00RXVFJMI/">The School of Hard Knocks</a>	<td>2015
+ <tr s=nr><td><td> 6 <td><a href="B00UT0VA6O/">Love’s Labor’s Won</a>		<td>2015
+ <tr s=DH><td><td> 7 <td><a href="B011JPQQSY/">Trial By Fire</a>		<td>2015
+ <tr s=DH><td><td> 8 <td><a href="B018ZM66LQ/">Wedding Hells</a>		<td>2015
+ <tr s=DH><td><td> 9 <td><a href="B01G2QRCQ0/">Infinite Regress</a>		<td>2016
+ <tr s=DH><td><td>10 <td><a href="B01ISIRMQA/">Past Tense</a>			<td>2016
+ <tr s=DH><td><td>11 <td><a href="B01NAQRCLI/"
+				>The Sergeant’s Apprentice</a>			<td>2017
+ <tr s=DH><td><td>12 <td><a href="B07173LQX6/">Fists of Justice</a>		<td>2017
+ <tr s=DH><td><td>13 <td><a href="B075WWR4P6/">The Gordian Knot</a>		<td>2017
+ <tr s=DH><td><td>14 <td><a href="B077RF1T4Z/">Graduation Day</a>		<td>2017
+ <tr s=DH><td><td>14.5<td><a href="B0796JXH6S/">Alassa’s Tale</a>		<td>2018
+ <tr s=DH><td><td>15 <td><a href="B07CVPRRLV/">The Princess in the Tower</a>	<td>2018
+ <tr s=DH><td><td>16 <td><a href="B07K6Y1LC3/">The Broken Throne</a>		<td>2018
+ <tr s=DH><td><td>17 <td><a href="B07RRCTKSY/">Cursed</a>			<td>2019
+ <tr s=DH><td><td>18 <td><a href="B07ZRY6TBS/">Mirror Image</a>			<td>2019
+ <tr s=DH><td><td>19 <td><a href="B087PLWL5V/">The Artful Apprentice</a>	<td>2020
+ <tr s=DH><td><td>20 <td><a href="B08CZ2G495/">Oathkeeper</a>			<td>2020
+ <tr s=DH><td><td>21 <td><a href="B08R65SPQC/">Little Witches</a>		<td>2020
+ <tr s=DH><td><td>22 <td><a href="B08X1ZS2MF/">The Right Side of History</a>	<td>2021
+ <tr s=DH><td><td>23 <td><a href="B092SR48GX/">The Face of the Enemy</a>	<td>2021
+ <tr s=DH><td><td>23.5<td><a href="B0951X97FM/">Void’s Tale</a>			<td>2021
+ <tr s=DH><td><td>24 <td><a href="B09F6RJX5V/">Child of Destiny</a>		<td>2021
+<tr class="st"><th colspan=4>Stuck in Magic</th>
+ <tr s=DH><td><td> 1 <td><a href="B09B6FQ1XB/">Stuck In Magic</a>		<td>2021
+ <tr s=DH><td><td> 2	<td class=future>Her Majesty’s Warlord			<td>202?
+<tr class="st"><th colspan=4>The Cunning Man</th>
+ <tr s=DH><td><td> 1 <td><a href="B09H672F6Q/">The Cunning Man</a>		<td>2021
+
+<tr class="mt for-sure"><th colspan=4>Zero Enigma</th>
+ <tr s=fr><td><td> 1 <td><a href="B06XPXGHKV/">The Zero Blessing</a>		<td>2017
+ <tr s=fr><td><td> 2 <td><a href="B075M9K3MW/">The Zero Curse</a>		<td>2017
+ <tr s=fr><td><td> 3 <td><a href="B079RLXBK2/">The Zero Equation</a>		<td>2018
+ <tr s=pr><td><td> 4 <td><a href="B07D3C3DJF/">The Family Shame</a>		<td>2018
+ <tr s=pr><td><td> 5 <td><a href="B07LCN7W5Z/">The Alchemist’s Apprentice</a>	<td>2018
+ <tr s=nr><td><td> 6 <td><a href="B07VQQXFRJ/">The Family Pride</a>		<td>2019
+ <tr s=nr><td><td> 7 <td><a href="B084SV3VVD/">The King’s Man</a>		<td>2020
+ <tr s=nr><td><td> 8 <td><a href="B08HY6KHRB/">The Lady Heiress</a>		<td>2020
+ <tr s=DH><td><td> 9 <td><a href="B08XK88KBK/">The Family Name</a>		<td>2021
+ <tr s=DH><td><td>10 <td><a href="B097N41JZ4/">The Zero Secret</a>		<td>2021
+
+<tr class="mt for-sure"><th colspan=4>Cast Adrift</th>
+ <tr s=fr><td><td> 1 <td><a href="B0917MVDQK/">Cast Adrift</a>			<td>2021
+ <tr s=fr><td><td> 2 <td><a href="B09MKXKG62/">Standing Alone</a>		<td>2022
+
+</table>
+
+<table class=non-series>
+<tr class=h2><th colspan=3>Standalone Novels</th>
+ <tr s=DH><td><td><a href="B007HOGMKO/">Storming Heaven</a>			<td>2012
+ <tr s=DH><td><td><a href="B007RLGGSU/">Invasion</a>				<td>2012
+ <tr s=DH><td><td><a href="B0083FXTWK/">The Cross-time Road Trip</a>		<td>2012
+ <tr s=DH><td><td><a href="B008GBVGDA/">Guardian Glass</a>			<td>2012
+ <tr s=DH><td><td><a href="B009GE8OLS/">The Living Will Envy The Dead</a>	<td>2012
+ <tr s=DH><td><td><a href="B00A6SGZMS/">The Black Knife</a>			<td>2012
+ <tr s=DH><td><td><a href="B00AP5Q03G/">Alone</a>	  <div>Novella</div>	<td>2012
+ <tr s=DH><td><td><a href="B00CNLQHUG/">The Coward’s Way of War</a>		<td>2013
+ <tr s=DH><td><td><a href="B00EX66ZKG/">The Invasion of 1950</a>		<td>2013
+ <tr s=DH><td><td><a href="B00FO6WWS8/">Knight’s Move</a>			<td>2013
+ <tr s=DH><td><td><a href="B00IIWQSN0/">The Fall of Night</a>			<td>2014
+ <tr s=DH><td><td><a href="B00JPMV29W/">The Trojan Horse</a>			<td>2014
+ <tr s=DH><td><td><a href="B07Z945LC5/">First Strike</a>			<td>2014
+ <tr s=DH><td><td><a href="B00OY8LSK0/">The Mind’s Eye</a>			<td>2014
+ <tr s=DH><td><td><a href="B015QGC8WA/">Team Omega</a>				<td>2015
+ <tr s=fr><td><td><a href="B082DL5WRZ/">Thunder and Lightning</a>
+			  <div class=tiny>with Leo<br>Champion</div>		<td>2019
+
+</table>
+
+<!--
+				<hr style=clear:both>
+<tr class=subhead><th colspan=4>Boxed Set</th>
+ <tr class=ob><td><td>
+	<td><a href="1909636134/"
+		>The Empire at War: British Military Science Fiction</a>			<td>2016
+  <tr class=note><td colspan=3>4 novels + 3 SS; with PP Corcoran, Richard Phillips and Tim C Taylor; HC AU$97
+
+<tr class=subhead><th colspan=4>Anthologies</th>
+-->
+<table class=non-series>
+<tr class=h2><th colspan=3>Anthologies</th>
+ <tr s=DH><td><td><a href="B012J7R662/">Synchronic: 13 Tales of Time Travel</a>	<td>2014
+ <tr s=DH><td><td><a href="B01C4CDTOA/">Existence is Elsewhen</a>		<td>2016
+ <tr s=DH><td><td><a href="B07GJ4P34M/">Future Days Anthology</a>		<td>2018
+ <tr s=DH><td><td><a href="B07XK1QH2H/">To Slip the Surly Bonds</a>
+			<div class=tiny>Book 2 of<br><b>Phases of Mars</b>	<td>2019
+</table>
+
+<table class=non-series>
+<tr class=h2><th colspan=3>Non-fiction</th>
+ <tr s=DH><td><td><a href="B07N79LQV1/">Heinlein in Reflection</a>		<td>2019
+</table>
+
+<table class=key>
+<tr class=h2><th colspan=2 class=key>Key</th>
+<tr><td><span class=future>Some Title</span>
+	<td>Not published yet, but announced
+<tr><td>Background<br>colors
+	<td>
+	<span class=no>Do Not Want</span>,  
+	<span class=unlikely>Unlikely</span>,  
+	<span class=maaaybe>Maaaybe</span>,<br>
+	<span class=maybe>Maybe</span>,  
+	<span class=likely>Likely</span>,  
+	<span class=for-sure>Will read</span>,  
+	<span class=finished>Have read</span>
+<tr><td class=FR><td>have ebook, have read it
+<tr><td class=PR><td>have ebook, started but not finished
+<tr><td class=NR><td>have ebook, have not started it
+<tr><td class=DH><td>do not have book
+</table>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<title>‘Summer’ 2020 Anime Series in Australia</title>
+<link rel="stylesheet" href="animelist.css">
+<script src="animelist.js"></script>
+</head>
+<body>
+
+<h1>‘Summer’ (Jul-Sep) 2020 Anime Series in Australia</h1>
+<div class=next><a href="20-10.html">Fall 2020</a></div>
+<div class=prev><a href="20-04.html">Spring 2020</a></div>
+
+<ul class=tight>
+<li>Simulcast times are AEST, and only reliable for Crunchyroll.
+<li>Areas with background color have mouse-over texts.
+<!--
+<li>“MB” is <a href="https://www.youtube.com/watch?v=r4FXCzAR224"
+	>Mother’s Basement (Geoff Thew)</a>.-->
+<li>Compiled by Chris Chittleborough; last column is my personal ratings and comments.
+</ul>
+
+<table id="main"></table>
+
+<p class=outdent>
+Sources:<ul class=tight>
+<li><a href="https://en.wikipedia.org/wiki/Category:2020_anime_television_series_debuts"
+	>Category:2020 anime television series</a> at Wikipedia
+<li>Anime News Network’s <a href=
+	"https://www.animenewsnetwork.com/preview-guide/2020/summer/.161222"
+	>Summer 2020 Anime Preview Guide</a> and encyclopedia
+<li>TV Tropes <a href=
+	"https://tvtropes.org/pmwiki/posts.php?discussion=15921726710A56040200"
+	>forum thread</a> and <a href=
+	"https://tvtropes.org/pmwiki/pmwiki.php/Main/AnimeAndMangaOfThe2020s"
+	>Anime and Manga of the 2020s page</a>
+<li><a href="https://www.crunchyroll.com/lineup">Crunchyroll’s lineup page</a>
+<li><a href="https://www.animelab.com/racks/simulcast-schedule"
+	>AnimeLab’s Simulcast Schedule</a>
+</ul>
+
+<script>
+"use strict";
+/*
+function add_show (
+    name, jnames,	    // my name; japanese name(s) if relevant or else ""
+    myrating, mycomment,    // rating (rYesYes etc); personal comment
+    site, sitepath, when,   // AnLab etc; URL tail; Thursday+0130 etc
+    ANNEnum, tvt, wp,	    // # in ANN encyclopedia; URL tails to TV Tropes, WP
+    tags,		    // Array of strings
+    desc)		    // Optional description; need tag(s) if present
+*/
+
+add_show("Appare-Ranman!", "",
+	 rSoSo, "Very Shōnen",
+	 AnLab, "appare-ranman", "Fri AM",
+	 22558, "Anime/AppareRanman", "Appare-Ranman!",
+	 [ "Comedy/Action", "Odd-couple", "Wacky-history", "resumed" ]);
+
+/* I ignored Black Clover, Digimon Adventure and One Piece, so hide this one.
+add_show("Boruto: Naruto Next Generations", "",
+	 rNo, "Not for me",
+	 AnLab, "boruto-naruto-next-generations", "Sun AM",
+	 18934, "Manga/Boruto", "Boruto: Naruto Next Generations",
+	 [ "Shōnen", "Ninja", "Sequel", "Eps-155ff" ]);
+*/
+
+add_show("Black Clover (Season 3)", "",
+	 rNo, "Shōnen, >100 eps",
+	 CrRoll, "black-clover", "Tue 08:25",
+	 19743, "Manga/BlackClover", "Black Clover",
+	 [ "Shōnen", "Fantasy", "Long-running" ]);
+
+add_show("Bungo and Alchemist", "-Gears of Judgement-",
+	 // No relation to Bungo Stray Dogs
+	 rToTryLikely, "3 eps?",
+	 AnLab, "bungo-and-alchemist--gears-of-judgement-", "Sat AM",
+	 23033, "VideoGame/BungoToAlchemist", NoWP,
+	 [ "Authors", "From-gacha-game", "Fixing-corrupted-books", "resumed" ]);
+
+add_show("A Certain Scientific Railgun T", "(ACSR season 3)",
+	 rYes, "S1, S2 first",
+	 CrRoll, "a-certain-scientific-railgun", "Sat 02:05",
+	 21484, "Manga/ACertainScientificRailgun", "A Certain Scientific Railgun",
+	 [ "Season-3", "Overlaps-with-ACMI" ]);
+
+add_show("Deca-Dence", "",
+	 rYesYes, "Yep!",
+	 AnLab, "deca-dence", "Thu AM",
+	 22721, "Anime/DecaDence", "Deca-Dence",
+	 [ "Original-anime", "After-the-monsters-win", "Action" ]);
+
+add_show("Diary of Our Days at the Breakwater", "",
+	 rNo, "Not for me",
+	 AnLab, "diary-of-our-days-at-the-breakwater", "Wed AM",
+	 22570, "Manga/DiaryOfOurDaysAtTheBreakwater",
+		"Diary of Our Days at the Breakwater",
+	 [ "Cute-HS-girls-doing-cute···fishing!?", "Slice-of-life", "resumed" ]);
+
+add_show("Fire Force (Season 2)", "",
+	 rNo, "S1 too shōnen",
+	 AnLab, "fire-force", "Sat AM",
+	 22952, "Manga/FireForce", "Fire Force",
+	 [ "Shōnen", "Fantasy", "Demons", "Great-Visuals" ]);
+
+add_show("Fruits Basket (season 2)", "",
+	 rYes, "S1 first",
+	 CrRoll, "fruits-basket", "Sat 11:00",
+	 21588, "Manga/FruitsBasket", "Fruits Basket",
+	 [ "Shōjo", "Fantasy", "Comedy", "Classic-rebooted-better" ]);
+
+add_show("Gibiate", "",
+	 rToTryLikely, "≥ 2 eps",
+	 CrRoll, "X", UnknownSchedule,
+	 22314, "Anime/Gibiate", "Gibiate",
+	 [ "SF(?)", "Monsters", "Samurai+Shinobi-from-the-past" ]);
+
+add_show("The God of High School", "",
+	 rToTryMaybe, "Try 1 ep?",
+	 CrRoll, "the-god-of-high-school", "Tue 00:30",
+	 23279, "Webcomic/TheGodOfHighSchool", "The God of High School",
+	 [ "From-Manhwa", "Shōnen", "HS-boys-fighting", "Great-action", "Silly" ]);
+
+/* 'Eps 1-12 available' later ???
+add_show("Healin' Good Pretty Cure", "",
+	 rToTryMaybe, "",
+	 CrRoll, "healin-good-pretty-cure", "Sun 11:30",
+	 , "", "",
+	 [ "", "", "", "" ]);
+*/
+
+add_show("Lapis Re:LiGHTs", "",
+	 rNo, "Too Shōjo",
+	 AnLab, "lapis-relights", "Sun AM",
+	 22935, NoTvT, "Lapis Re:Lights",
+	 [ "Multimedia", "Fantasy-world", "Girls-school", "Idols/Witches" ]);
+
+add_show("The Millionaire Detective", "Fugou Keiji Balance Unlimited",
+	 rYesYes, "Funny enough?",
+	 AnLab, "balance-unlimited", "Fri AM",
+	 22980, "Anime/TheMillionaireDetectiveBalanceUnlimited",
+		"Fugō Keiji Balance: Unlimited",
+	 [ "Unconventional-detective", "Comedy", "Satire(?)", "resumed" ]);
+
+add_show("The Misfit of Demon King Academy", "",
+ /*"History's Strongest Demon King Reincarnates and Goes to School with His Descendants"*/
+	 rToTryMaybe, "Maa-aybe",
+	 CrRoll, "the-misfit-of-demon-king-academy", "Sun 02:00",
+	 22555, NoTvT, "The Misfit of Demon King Academy",
+	 [ "Demon-King", "OP-Protag", "Parody-ish(?)", "Faded-heritage" ]);
+
+add_show("Monster Girl Doctor", "Monster Musume no Oisha-san",
+	 rNoNo, "Bad and boring",
+	 CrRoll, "monster-girl-doctor", "Wed 18:00",
+	 23370, "LightNovel/MonsterGirlDoctor", "Monster Girl Doctor",
+	 [ "Fantasy", "Monster-girls", "Doctors", "Ecchi", "Poor-writing" ]);
+
+add_show("Mr Love: Queen’s Choice", "",
+	 rNo, "Very unlikely",
+	 CrRoll, "mr-love-queens-choice", "Thu 02:00",
+	 22299, "VisualNovel/MrLoveQueensChoice", "Mr Love: Queen's Choice",
+	 [ "Reverse-Harem", "Superpowers", "TV-show", "Chinese" ]);
+
+add_show("Muhyo & Roji's Bureau of Supernatural Investigation (Season 2)", "",
+	 rToTryMaybe, "Try S1?",
+	 AnLab, "muhyo--rojis-bureau-of-supernatural-investigation", "Tue AM",
+	 22979, "Manga/MuhyoAndRoji",
+		"Muhyo & Roji's Bureau of Supernatural Investigation",
+	 [ "Shōnen", "Japanese-folk-myth", "Magic-Law", "Watch-S1-first" ]);
+
+add_show("My Teen Romantic Comedy SNAFU Climax", "OreGairu (season 3)",
+	 rYesYes, "S1, S2 first",
+	 CrRoll, "?", UnknownSchedule,
+	 21999, "LightNovel/MyYouthRomanticComedyIsWrongAsIExpected",
+		"LightNovel/MyYouthRomanticComedyIsWrongAsIExpected",
+	 [ "High-school", "Slice-of-life", "Comedy", "Growing-up" ]);
+
+add_show("Ninja Collection", "",
+	 rToTryMaybe, "?",
+	 CrRoll, "?", UnknownSchedule,
+	 23474, "Anime/YamiShibai", "Yamishibai: Japanese Ghost Stories",
+	 [ "Spinoff", "Ninjas", "Ghost-Stories", "Modern-Tokyo" ]);
+
+add_show("No Guns Life (Season 2)", "",
+	 rYes, "Finish ‘OK’ S1?",
+	 AnLab, "no-guns-life", "Fri AM",
+	 21978, "Manga/NoGunsLife", "No Guns Life",
+	 [ "Cyberpunk", "Noir", "Man-with-gun-for-head", "Seinen" ]);
+
+add_show("Peter Grill and the Philosopher's Time", "",
+	 rNoNo, "Stupid ecchi",
+	 CrRoll, "peter-grill-and-the-philosophers-time", "Sat 02:50",
+	 22963, "Manga/PeterGrillAndThePhilosophersTime",
+		"Peter Grill and the Philosopher's Time",
+	 [ "Shōnen", "Fantasy", "Ecchi", "Has-uncensored-version" ]);
+
+add_show("Rent-a-Girlfriend", "",
+	 rToTryMaybe, "3 eps rule",
+	 CrRoll, "rent-a-girlfriend", "Sat 04:30",
+	 22933, "Manga/RentAGirlfriend", "Rent-A-Girlfriend",
+	 [ "Comedy(?)", "Slice-of-life", "Romance?", "Growing-up" ]);
+
+add_show("ReZero - Starting Life in Another World (Season 2)", "",
+	 rYesYesYes, "Finish S1 first",
+	 CrRoll, "rezero-starting-life-in-another-world-", "Thu 00:30",
+	 22005, "LightNovel/ReZero", "Re:Zero − Starting Life in Another World",
+	 [ "Isekai", "Fantasy" ]);
+
+add_show("Shadowverse", "",
+	 rNoNo, "Not for me",
+	 CrRoll, "shadowverse", "Tue 20:00",
+	 22550, "VideoGame/Shadowverse", "Shadowverse",
+	 [ "From-Phone-Game", "Kids-Playing-Phone-Game", "For-Kids", "resumed" ]);
+
+add_show("Super HxEroes: \"H\"eroes Save the World", "Dokyū Hentai HxEros",
+	 rNoNo, "Bad Shōnen",
+	 AnLab, "super-hxeros", "Sat AM",
+	 22606, NoTvT, "Super HxEros",
+	 [ "Ecchi", "Shōnen", "SF", "Harem", "Horniness", "Comedy", "Romance?" ]);
+
+// Sword Art Online Alicization War of Underworld Part 2	AnLab(Sun AM)?
+
+add_show("That Time I Got Reincarnated as a Slime (OAD)", "",
+	 rYes, "Maaaaybe?", // S2 due fall
+	 CrRoll, "that-time-i-got-reincarnated-as-a-slime", "Fri 02:30",
+	 23357, "LightNovel/ThatTimeIGotReincarnatedAsASlime",
+		"That Time I Got Reincarnated as a Slime",
+	 [ "Isekai", "Adult-protag", "Fantasy", "Spinoff" ]);
+
+add_show("Umayon", "",
+	 rNo, "Not for me",
+	 CrRoll, "umayon", "Tue 11:30",
+	 23494, "Anime/UmaMusume", "Uma Musume Pretty Derby",
+	 [ "Short-eps", "Moe", "Yonkoma", "Horse-girls", "Spinoff" ]);
+
+add_show("Uzaki-chan Wants to Hang Out!", "",
+	 rYesYesYes, "Best of season",
+	 AnLab, "uzaki-chan-wants-to-hang-out", "Fri AM",
+	 23371, "Manga/UzakiChanWantsToHangOut", "Uzaki-chan Wants to Hang Out!",
+	 [ "College-students", "Slice-of-life", "Comedy", "Personality-clash" ]);
+
+/*
+add_show("", "",
+	 rNo, "",
+	 CrRoll, "", UnknownSchedule,
+	 , "", "",
+	 [ "", "", "", "" ]);
+*/
+
+</script>
+
+</body>
+</html>

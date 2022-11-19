@@ -1,0 +1,377 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<title>‘Fall’ 2019 Anime Series in Australia</title>
+<link rel="stylesheet" href="animelist.css">
+<script src="animelist.js"></script>
+<style>
+ p.outdent	{ margin-left: 2em; text-indent: -2em; }
+ p.outdent + ul	{ margin-bottom: 1em; }
+ a[href$="/?"]	{ opacity: 0.3; }
+</style>
+</head>
+<body>
+
+<h1>‘Fall’ (Oct-Dec) 2019 Anime Series in Australia</h1>
+<div class=next><a href="20-01.html">Winter 2020</a></div>
+<div class=prev><a href="19-07.html">Summer 2019</a></div>
+
+<ul class=tight>
+<li>Times are AEST, and only reliable for Crunchyroll.
+<li>Areas with background color have mouse-over texts.
+<li>“MB” is <a href="https://www.youtube.com/watch?v=r4FXCzAR224"
+	>Mother’s Basement (Geoff Thew)</a>.
+<li>Compiled by Chris Chittleborough; last column is my personal ratings and comments.
+</ul>
+
+<table id="main"></table>
+
+<p class=outdent>
+Sources:<ul class=tight>
+<li><a href="https://en.wikipedia.org/wiki/Category:2019_anime_television_series_debuts"
+	>Category:2019 anime television series</a> at Wikipedia
+<li>Anime News Network’s <a href=
+	"https://www.animenewsnetwork.com/preview-guide/2019/fall/.151713"
+	>Spring 2019 Anime Preview Guide</a> and encyclopedia
+<li><a href="https://tvtropes.org/pmwiki/posts.php?discussion=15637830340A62634100"
+	>TV Tropes forum thread</a>
+<li><a href="https://www.crunchyroll.com/lineup">Crunchyroll’s lineup page</a>
+<li><a href="https://www.animelab.com/simulcasts/all"
+	>AnimeLab’s "Simulcasting Now" page</a>
+</ul>
+
+<script>
+"use strict";
+/*
+function add_show (
+    name, jnames,	    // my name; japanese name(s) if relevant or else ""
+    myrating, mycomment,    // rating (rYesYes etc); personal comment
+    site, sitepath, when,   // AnLab etc; URL tail; Thursday+0130 etc
+    ANNEnum, tvt, wp,	    // # in ANN encyclopedia; URL tails to TV Tropes, WP
+    tags,		    // Array of strings
+    desc)		    // Optional description; need tag(s) if present
+*/
+
+
+add_show("Actors: Songs Connection", "",
+	 rNo, "Unlikely",
+	 Funimation, "actors-songs-connection/", "Mon 02:30",
+	 21769, "AudioPlay/ExitTunesPresentsACTORS", NoWP,
+	 [ "Vocaloid-tiein", "HS-Singing-club", "Lotsa-Bishonen" ]);
+
+add_show("African Office Worker", "",
+	 rNo, "First Ep is BAD",
+	 Funimation, "africa-salaryman/", "Mon 03:30",
+	 22001, NoTvT, "African Office Worker",
+	 [ "Comedy", "Humanoid-Animals", "Japanese-Office", "Shōjo" ]);
+
+add_show("After School Dice Club", "Houkago Saikoro Club",
+	 rYesYes, "Good so far",
+	 Funimation, "after-school-dice-club/", "Thu 05:11",
+	 22246, "Manga/AfterschoolDiceClub", "Hōkago Saikoro Club",
+	 [ "Slice-of-life", "Schoolgirls", "Eurogames", "Rec-by-MB" ]);
+
+add_show("Ahiru No Sora", "",
+	 rNoNo, "Shōnen HS Sport",
+	 CrRoll, "ahiru-no-sora", "Wed 20:25",
+	 22207, NoTvT, "Ahiru no Sora",
+	 [ "Shōnen", "HS-Basketball", "Short-weak-protag", "Four-cours" ]);//"Rec-by-MB"
+
+add_show("Ascendance of a Bookworm", "Honzuki no Gekokujō",
+	 rToTryForSure, "Restart",
+	 CrRoll, "ascendance-of-a-bookworm", "Thu 02:30",
+	 22255, "LightNovel/AscendanceOfABookworm", "Ascendance of a Bookworm",
+	 [ "Isekai", "NOT-a-power-fantasy", "Medieval-life-sucks" ]);
+
+add_show("Assassin’s Pride", "",
+	 rToTryMaybe, "Try it again",
+	 AnLab, "assassins-pride", "Fri 02:00",
+	 // CrRoll, "assassins-pride", "Fri 02:00",
+	 22217, "LightNovel/AssassinsPride", "Assassin's Pride",
+	 [ "Fantasy", "Assassin/Tutor", "Girl" ]);
+
+add_show("Azur Lane", "",
+	 rNoNo, "Not for me",
+	 AnLab, "azur-lane", "Fri ??:??",
+	 21760, "VideoGame/AzurLane", "Azur Lane",
+	 [ "Ship-Girls", "Fan-service", "Alt-WW2", "Chinese-shmup-game" ]);
+
+add_show("Babylon", "",
+	 rToTryMaybe, "1 poor review",
+	 AmazonP, "B07YQPR7X3", NotWeekly,
+	 20775, "Literature/Babylon", "Babylon (novel series)",
+	 [ "Crime", "Procedural", "Conspiracy", "Not-SFF", "Rec-by-MB" ]);
+
+add_show("Bananya and the Curious Bunch", "Bananya S2",
+	 rNoNoNo, "For kids",
+	 CrRoll, "bananya", "Tue 09:30",
+	 22414, "Anime/Bananya", "Bananya",
+	 [ "5-min-eps", "Children(?)"]);
+
+add_show("Beastars", "",
+	 rNone, "Drama?",
+	 Netflix, "?", NotWeekly,
+	 21880, "Manga/Beastars", "Beastars",
+	 [ "Shōnen", "Humanoid-Animals", "Carnivores/Herbivores" ]);
+
+add_show("Black Clover", "", // S2 ???
+	 rNo, "Shōnen, >100 eps",
+	 CrRoll, "black-clover", "Tue 20:25",
+	 19743, "Manga/BlackClover", "Black Clover",
+	 [ "Shōnen", "Fantasy", "Long-running" ]);
+
+// Blackfox (https://www.crunchyroll.com/blackfox/blackfox-blackfox-789392)
+// is a _movie_ (90 minutes).
+
+add_show("Blade of the Immortal", "",
+	 rNo, "Graphic violence",
+	 AmazonP, "B07YTGQ5VZ", NotWeekly,
+	 22465, "Manga/BladeOfTheImmortal", "Blade of the Immortal",
+	 [ "Seinen", "Action", "Violence", "Gore", "Rapist" ]);
+
+add_show("Case File № 221: Kabukicho", "Kabukichō Sherlock",
+	 rYes, "Weird but fun",
+	 AnLab, "case-file-no-221-kabukicho", "Sat ??:??",
+	 21556, "Anime/CaseFileNoTwoTwoOneKabukicho", "Kabukichō Sherlock",
+	 [ "Sherlock-Holmes-IN-JAPAN", "Comedy?", "Parody?", "Drama?" ]);//"Rec-by-MB"
+
+add_show("Cautious Hero", "The Hero Is Overpowered But Overly Cautious",
+	 // Shinchō Yūsha - Kono Yūsha ga Ore TUEEE Kuse ni Shinchō Sugiru
+	 rYesYesYes, "Funny",
+	 AnLab, "the-hero-is-overpowered-but-overly-cautious", "Thu ??:??",
+	 22213, "LightNovel/TheHeroIsOverpoweredButOverlyCautious",
+		"The Hero is Overpowered but Overly Cautious",
+	 [ "Isekai", "Comedy", "Parody", "Rec-by-MB" ]);
+
+add_show("Chidori RSC", "",	// From yonkoma manga "Rifle Is Beautiful"
+	 rNo, "Moe+, Funny-",
+	 HiDive, "chidori-rsc", "Mon 02:00",
+	 22361, NoTvT, "Rifle is Beautiful",
+	 [ "Comedy", "From-Yonkoma", "Moe-HS-girls" ]);
+
+add_show("Chihayafuru", "",
+	 rSoSo, "Some love it",
+	 CrRoll, "chihayafuru", "Tue 02:30",
+	 21851, "Manga/Chihayafuru", "Chihayafuru",
+	 ["Josei", "Karuta", "3rd-season", "24-eps"]);
+
+add_show("Days of Urashimasakatasen", "",
+	 rNo, "No laughs",
+	 CrRoll, "days-of-urashimasakatasen", "Thu 00:00",
+	 22386, NoTvT, NoWP,
+	 [ "High-school", "4-min-eps", "Comedy" ]);
+
+add_show("Didn’t I say to make my abilities average in the next life?!", "",
+	 // Watashi, Nōryoku wa Heikinchi de tte Itta yo ne!
+	 rSoSo, "poor adaptation",
+	 CrRoll, "didnt-i-say-to-make-my-abilities-average-in-the-next-life",
+		 "Tue 02:30",
+	 22283, "LightNovel/DidntISayToMakeMyAbilitiesAverageInTheNextLife",
+		"Didn’t I Say to Make My Abilities Average in the Next Life?!",
+	 [ "Isekai", "Female-protagonist", "Teen-girls-adventuring"]);
+
+add_show("Dr. Stone", "",
+	 rNo, "Not this year",
+	 CrRoll, "dr-stone", "Sat 12:30",
+	 21703, "Manga/DrStone", "Dr. Stone",
+	 [ "Shōnen", "SF", "Post-Apocalypse", "Rebuilding", "eps-13-24" ]);
+
+add_show("Fairy gone (S2)", "",
+	 rNoNoNo, "S1 is crap",
+	 Funimation, "fairy-gone/", "Mon 03:00",
+	 22341, "Anime/FairyGone", "Fairy Gone",
+	 [ "Action", "Fantasy" ]);
+
+add_show("Fate/Grand Order Absolute Demonic Front: Babylonia", "",
+	 rYes, "See FGO:LO 1st", //72-min movie, in my AnLab shows
+	 AnLab, "fategrand-order---absolute-demonic-front-babylonia", "Sun ??:??",
+	 21240, "VideoGame/FateGrandOrder",
+		"Fate/Grand Order - Absolute Demonic Front: Babylonia",
+	 [ "From-mobile-game", "Rec-by-MB" ]);
+
+add_show("Food Wars: The Fourth Plate", "Shokugeki no Soma",
+	 rNo, "Season 4",
+	 CrRoll, "food-wars-shokugeki-no-soma", "Sat 03:30",
+	 22395, "Manga/ShokugekiNoSoma", "Food Wars!: Shokugeki no Soma",
+	 [ "Action", "Comedy", "Slice-of-life", "Food-Porn" ]);
+
+add_show("Granblue Fantasy The Animation (S2)", "",
+	 rNo, "Very Shōnen",
+	 AnLab, "granblu-fantasy", "Sat ??:??",
+	 // CrRoll, "granblue-fantasy-the-animation", "Sat 02:30",
+	 22508, "Anime/GranblueFantasy", "Granblue Fantasy The Animation",
+	 [ "From-Gacha", "Airships", "Magic", "Combat" ]);
+
+add_show("Gundam Build Divers Re:Rise", "",
+	 rNo, "Not for me",
+	 CrRoll, "gundam-build-divers", "Thu 22:30",
+	 22300, "Anime/GundamBuildDiversRerise", "Gundam Build Divers Re:Rise",
+	 [ "Sequel", "Gunpla-Game", "Online-Game", "Middle-schoolers" ]);
+
+add_show("High School Prodigies have it easy even in Another World", " Choyoyu!",
+	 rNoNo, "Childish",
+	 CrRoll, "high-school-prodigies-have-it-easy-even-in-another-world", "Fri 00:00",
+	 22498, "LightNovel/HighSchoolProdigiesHaveItEasyEvenInAnotherWorld",
+		"High School Prodigies Have It Easy Even In Another World",
+	 [ "Isekai", "Blatant-Power-Fantasy" ]);
+
+add_show("High Score Girl (S2)", "",
+	 rNone, "Watch S1 first?",
+	 Netflix, "80997338", NotWeekly,
+	 22466, "Manga/HighScoreGirl", "Hi Score Girl",
+	 [ "1990s", "Coin-Op-Games", "Seinen", "Loser-Boy", "Silent-Rich-Girl" ]);
+
+add_show("Kandagawa Jet Girls", "",
+	 rNo, "Not for me",
+	 AnLab, "kandagawa-jet-girls", "Wed ??:??",
+	 22385, "Anime/KandagawaJetGirls", "Kandagawa Jet Girls",
+	 [ "Multimedia-Franchise", "Ecchi", "Girls-Sport", "Jet-Skis" ]);
+
+add_show("Kemono Michi: Rise Up!", "",
+	 rYesYes, "LOL",
+	 AnLab, "kemono-michi-rise-up", "Thu ??:??",
+	 22360, "Manga/KemonoMichi", "Kemonomichi",
+	 [ "Comedy", "Isekai", "Wrestler", "Wonderfully-Silly", "Rec-by-MB" ]);
+
+add_show("Kengan Ashura", "",
+	rNoNoNo, "Not for me",
+	Netflix, "80992228", NotWeekly,
+	20427, "Manga/KenganAshura", "Kengan Ashura",
+	[ "Shōnen", "Eps-13-24", "Unarmed-Gladiators", "Secret-Arenas" ]);
+
+add_show("Kono Oto Tomare! Sounds of Life (S2)", "",
+	rToTryForSure, "Likely",
+		Funimation, "kono-oto-tomare-sounds-of-life/", "Sun 04:30",
+	 22389, "Manga/KonoOtoTomare", "Kono Oto Tomare! Sounds of Life",
+	[ "Shōnen", "School", "Music", "Slice-of-life" ]);
+
+add_show("Legend of the Galactic Heroes: Die Neue These (S2)", "",
+	 rYesYes, "finish S1 1st",
+	 CrRoll, "legend-of-the-galactic-heroes-die-neue-these", "Fri 09:30",
+	 20145, "Anime/LegendOfGalacticHeroes", "Legend of the Galactic Heroes",
+	 [ "Space", "SF", "Movies-split-into-4-eps-each" ]);
+
+add_show("My Hero Academia (S4)", "",
+	 rYes, "One day",
+	 CrRoll, "my-hero-academia", "Sat ??:??",
+	 22265, "Manga/MyHeroAcademia", "My Hero Academia",
+	 [ "Shōnen", "Superhero" ]);
+
+add_show("No Guns Life", "",
+	 rYes, "OK action/drama",
+	 AnLab, "no-guns-life", "Fri ??:??",
+	 21978, "Manga/NoGunsLife", "No Guns Life",		//"Rec-by-MB"
+	 [ "Cyberpunk", "Noir", "Man-with-gun-for-head", "Seinen" ]);
+
+add_show("Null & Peta", "",
+	 rToTryMaybe, "Binge later?",
+	 CrRoll, "null-peta", "Sat 00:45",
+	 22507, NoTvT, NoWP,
+	 [ "5½min-eps", "sisters-slapstick-comedy", "robot-sister" ]);
+
+add_show("Oresuki: Are you the only one who loves me?", "",
+	 // "Ore Wo Suki Na No Wa Omae Dake Ka Yo",
+	 rYes, "OK or great?",
+	 AnLab, "oresuki-are-you-the-only-one-who-loves-me", "Thu 03:00",
+	 // Also CrRoll
+	 21483, NoTvT, "Ore o Suki nano wa Omae dake kayo",
+	 [ "High-School", "Comedy", "Harem", "Parody", "Rec-by-MB" ]);
+
+add_show("Outburst Dreamer Boys", "",
+	 rToTryLikely, "Funny?",
+	 HiDive, "outburst-dreamer-boys", "Sat 01:30",
+	 21982, "Anime/OutburstDreamerBoys", NoWP,
+	 [ "Comedy", "Reverse-Harem", "Chūnibyō-boys", "Fantasy?" ]);
+
+add_show("Phantasy Star Online 2: Episode Oracle", "",
+	 rNoNo, "Way too shōnen",
+	 Funimation, "phantasy-star-online-2-episode-oracle/", "Tue 01:30",
+	 22344, "Anime/PhantasyStarOnline2EpisodeOracle", "Phantasy Star Online 2",
+	 [ "From-Game", "Space", "SF", "Eldritch-Foes", "Reboot(ish)" ]);
+
+add_show("Psycho-Pass (S3)", "",
+	 rNo, "Maybe try S1?",
+	 AmazonP, "?", NotWeekly,
+	 21952, "Anime/PsychoPass", "Psycho-Pass",
+	 [ "Cyberpunk", "Crime", "Pre-Crime", "???" ]);
+
+add_show("Radiant (S2)", "",
+	 rToTryMaybe, "Maybe",
+	 CrRoll, "radiant", "Wed 11:00",
+	 21877, "Manga/Radiant", "Radiant (manfra)",
+	 [ "Shōnen", "French-comic" ]);
+
+// Saga of Tanya the Evil - The Movie
+
+add_show("The Seven Deadly Sins: Wrath of the Gods", "",
+	 rNo, "Liked S1; get S2?",
+	 Netflix, "?", NotWeekly,
+	 22138, "Manga/TheSevenDeadlySins", "The Seven Deadly Sins (manga)",
+	 [ "Season-3", "Shōnen", "Fantasy", "???" ]);
+
+add_show("SD Gundam World Sangoku Soketsuden", "",
+	 rNo, "Not for me",
+	 CrRoll, "sd-gundam-world-sangoku-soketsuden", NotWeekly,
+	 22268, "Anime/SDGundamWorldSangokuSoketsuden",
+		"SD Gundam World Sangoku Soketsuden",
+	 [ "SD-Gundam", "RomanceOf3Kingdoms(!)" ]);
+
+add_show("Special 7: Special Crime Investigation Unit", "Tokunana",
+	 // Keishichō Tokumu-bu Tokushu Kyōaku-han Taisaku-Shitsu Dai-Nana-ka -Tokunana-
+	 rYes, "OK so far",
+	 AnLab, "special-7-special-crime-investigation-unit", "Mon ??:??",
+	 22016, "Anime/SpecialSevenSpecialCrimeInvestigationUnit",
+		"Special Crime Investigation Unit Special 7",
+	 [ "Shōnen", "Alt-Tokyo", "Urban-Fantasy", "Multi-species", "Misfit-Cops" ]);
+
+add_show("Stand My Heroes: Piece of Truth", "",
+	 rNo, "Unlikely",
+	 AnLab, "stand-my-heroes-pieces-of-truth", "Tue ??:??",
+	 21405, NoTvT, NoWP,
+	 [ "Reverse-Harem", "Bishonen", "From-web-Otome-game", "Crime" ]);
+
+add_show("Stars Align", "Hoshiai No Sora",
+	 rYesYes, "Promising Drama",
+	 AnLab, "stars-align", "Fri ??:??",
+	 21283, "Anime/StarsAlign", "Stars Align",//"Rec-by-MB"
+	 [ "Coming-of-Age", "Drama", "Middle-School-boys", "Abusive-Parents" ] );
+
+add_show("Sword Art Online: Alicization – War of Underworld", "",
+	 rYes, "Eventually",
+	 CrRoll, "sword-art-online", "Sun 03:30",
+	 22044, "LightNovel/SwordArtOnline",
+		"List_of_Sword_Art_Online:_Alicization_episodes",
+	 [ "Second half of Sword Art Online: Alicization, AKA SAO S3" ]);
+
+add_show("True Cooking Master Boy", "Chūka Ichiban",
+	 rToTryLikely, "Hmm… cooking?",
+	 CrRoll, "true-cooking-master-boy", "Sat 05:45",
+	 22490, "Manga/ChuukaIchiban", "Chūka Ichiban!",
+	 [ "Wandering-genius-chef", "Alt-18th-Century-China" ]);
+
+add_show("Val x Love", "",
+	 rNo, "Ecchi with Plot",
+	 AnLab, "val-x-love", "Sun ??:??",
+	 22214, "Manga/ValXLove", "Val × Love",
+	 [ "Shōnen", "9-Valkyries", "Harem", "Ecchi", "Powerup-of-Love" ]);
+
+add_show("Welcome to Demon School, Iruma-kun", "Mairimashita! Iruma-kun",
+	 rYesYes, "Hayate-ish!",
+	 CrRoll, "welcome-to-demon-school-iruma-kun", "Sat 09:15",
+	 21927, "Manga/MairimashitaIrumaKun", "Mairimashita! Iruma-kun",
+	 [ "Comedy", "Shōnen", "Demons", "School" ]);
+
+add_show("We Never Learn (S2)", "Bokuben (S2)",
+	 rYes, "OK",
+	 AnLab, "we-never-learn", "Sun 04:00",
+	 21294, "Manga/WeNeverLearn", "We Never Learn",
+	 [ "Shōnen", "Comedy", "Romance", "Slice-of-life", "School" ]);
+
+add_show("ZX Code Reunion", "",
+	 rNoNo, "CCG tie-in",
+	 HiDive, "z-x-code-reunion", "Wed 01:00",
+	 22388, NoTvT, "Z/X",
+	 [ "Shōnen", "SF", "Earth-Invaded", "Girls-school" ]);
+
+</script>
+</body>
+</html>

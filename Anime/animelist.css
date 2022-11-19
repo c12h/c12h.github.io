@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/*
+ *  File:	animelist.css
+ *  Purpose:	style lists of anime series
+ *  By:		Chris Chittleborough, June 2019
+ *
+ *  Each show is represented by two rows in <table id=main>, like this:
+ *	<tr class=row1>
+ *	  <td class=name-s colspan=4><a href="...">...</a>
+ *			[[<span class=oname[[ title="..."]]>...</span>]]
+ *	  <td class=reaction rowspan=2>
+ *			<span class=rRATING>TICKSetc</span>
+ *			<div class=rRATING>TEXT</div>
+ *	<tr class=row2>
+ *	  <td class=tags>TAGS
+ *	  <td class=... title="...">...
+ *	  <td class=TVTlink>((—||<a href="...">TvT</a>))
+ *	  <td class=WPlink>((—||<a href="...">TvT</a>))
+ *  with two possible variants.
+ *	⦿ The second cell of row2 takes 3 possible forms:
+ *	    * For simulcast shows with their own page:
+ *		<td class=waw><a href="SHOW-PAGE" title="SITE-NAME">
+ *		  <span class=site>ABBREV</span>
+ *		  <span class=dow>DOW</span>
+ *		  <span class=hhmm>HH:MM</span>
+ *		</a>
+ *	    * For simulcast shows with no page yet
+ *		<td class=waw><a href="SHOW-PAGE" title="SITE-NAME">
+ *		  <span class=site>ABBREV</span>
+ *		  <span class=dow>DOW</span>
+ *		  <span class=hhmm>HH:MM</span>
+ *		</a>
+ *	     * When the streaming site is not known yet:
+ *		<td class="waw unknown" title="...">(Unknown)
+ *	     * Otherwise (Netflix, shows from previous seasons):
+ *		<td class="waw no-schedule"><a href="SHOW-PAGE">SITE-NAME</a>
+ *	⦿ If a (non-empty) description string is supplied, <td class=tags>TAGS becomes
+ *		  <td class=tags-desc><details>
+ *			<summary class=tags>TAGS</summary><div>DESC</div></details>
+ *	   which hides the description with a toggle.
+ *
+ *  Abbreviations used:
+ *	waw  = Website And When	(but the When part only applies to simulcasts)
+ *	dow  = Day Of Week
+ *	hhmm = time of day as "HH:MM"
+ *	tvt  = TV Tropes, the greatest time-suck on the web
+ *	wp   = Wikipedia (specifically the English Wikipedia)
+ */
+
+ body		{ width: 48em; margin: 3px auto; font-family: serif; }
+
+ h1		{ font: bold 150% sans-serif; margin: 0; }
+ h2		{ font: bold 125% sans-serif; margin: 1em 0 0; }
+ p		{ margin: 1ex 0 0; }
+ ul.tight,
+  ul.tight > li	{ margin-top: 1px; margin-bottom: 0; }
+
+ a[title], span[title], td[title]
+		{ background: #EEE; }
+
+ table#main	{ margin: 0 0 1ex; border-collapse: collapse; width: 100%;
+		  border-width: 1px; border-style: solid none; margin: 1ex 0; }
+ table#main th, table#main td
+		{ text-align: left; vertical-align: top;
+		  border: none; padding: 1px 2px; }
+ table#main td:first-child { width: 85%; }	/* Arguably a BUG */
+ table#main tr.row1 > td
+		{ padding-top: 1ex; }
+ table#main tr:last-child > td
+		{ padding-bottom: 1ex; }
+
+ .oname		{ font: italic 100% serif; color: #555; margin-left: 1ex; }
+
+ td.reaction		{ vertical-align: bottom; }
+ td.reaction > *	{ width: 16ex; text-align: center; }
+ td.reaction > span	{ display: inline-block; }
+ td.reaction > div	{ font-weight: normal; white-space: pre; overflow-x: hidden; }
+ .rYes3		{ background: #DFD; color: #0A0; }
+ .rYes2		{ background: #CEC; color: #2A2; }
+ .rYes1		{ background: #BDB; color: #4A4; }
+ .rSoSo		{ background: #CCC; color: #000; font-weight: bold; }
+ .rNone		{ background: #888; color: #000; font-weight: bold; }
+ .rNo1		{ background: #FAA; color: #A44; }
+ .rNo2		{ background: #F88; color: #922; }
+ .rNo3		{ background: #F44; color: #800; }
+
+ tr.row2 .tags,  tr.row2 summary
+			{ font-family: sans-serif; }
+ td.waw			{ font: 0.91rem sans-serif; text-align: right; white-space: pre; }
+ td.waw.no-schedule	{ }
+ td.waw.unknown-site	{ color: #800; }
+ td.waw  span		{ display: inline-block; }
+ td.waw  span.site	{ width: 3ex; text-align: left; }
+ td.waw  span.dow	{ width: 4ex; text-align: left; font: 0.91rem monospace; }
+ td.waw  span.hhmm	{ width: 5ex; text-align: right; }
+ td.waw  span.no-hhmm	{ width: 5ex; text-align: center; }
+ tr.row2 > td.TVTlink,  tr.row2 > td.WPlink
+			{ width:  2.5ex; font: 0.91rem sans-serif;
+			  text-align: center; }
+ details > div		{ opacity: 0.6; }
+
+/* For linking to Previous/Next Season docs */
+ .prev, .next	{ float: right; display: block;
+		  margin: 0 1ex; border: 1px solid;
+		  padding: 2pt 1pt; background: #8FC; }
+ .prev::before	{ content: "< "; }
+ .prev::after	{ content: " <"; }
+ .next::before	{ content: "> "; }
+ .next::after	{ content: " >"; }
+
+/* Misc */
+ p.outdent	{ margin-left: 2em; text-indent: -2em; }
+ p.outdent + ul	{ margin-bottom: 1em; }
+ a[href$="/?"]	{ opacity: 0.3; }

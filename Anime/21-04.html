@@ -1,0 +1,360 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<title>‘Spring’ 2021 Anime Series in Australia</title>
+<link rel="stylesheet" href="animelist.css">
+<script src="animelist.js"></script>
+</head>
+<body>
+
+<h1>‘Spring’ (Apr-Jun) 2021 Anime Series in Australia</h1>
+<div class=next><a href="21-07.html">Summer 2021</a></div>
+<div class=prev><a href="21-01.html">Winter 2021</a></div>
+<ul class=tight>
+<li>Areas with background color have mouse-over texts.
+<li>Simulcast times are AEST.
+<li>“Rec-GT” means “recommended by Geoff Thew, AKA Mother’s Basement”
+<li>Compiled by Chris Chittleborough; last column is my personal ratings and comments.
+</ul>
+
+<table id="main"></table>
+
+<p class=outdent>
+Sources:<ul class=tight>
+<li><a href="https://en.wikipedia.org/wiki/Category:2021_anime_television_series_debuts"
+	target=_blank>Category:2021 anime television series</a> at Wikipedia
+<li>Anime News Network’s <a href=
+	"https://www.animenewsnetwork.com/preview-guide/2021/spring/.170873"
+	target=_blank>Spring 2021 Anime Preview Guide</a> and encyclopedia
+<li>TV Tropes <a href=
+	"https://tvtropes.org/pmwiki/posts.php?discussion=16112194210A54373700"
+	target=_blank>forum thread</a> and <a href=
+	"https://tvtropes.org/pmwiki/pmwiki.php/Main/AnimeAndMangaOfThe2020s"
+	target=_blank>Anime and Manga of the 2020s page</a>
+<li><a href="https://www.crunchyroll.com/lineup">Crunchyroll’s lineup page</a>
+<li><a href="https://www.animelab.com/racks/simulcast-schedule"
+	target=_blank>AnimeLab’s Simulcast Schedule</a>
+</ul>
+
+<script>
+"use strict";
+/*
+function add_show (
+    name, jnames,	    // my name; alt/japanese name(s) or notes or ""
+    myrating, mycomment,    // rating (rYesYes etc); personal comment
+    site, sitepath, when,   // AnLab etc; URL tail; Thursday 01:30 etc
+    ANNEnum, tvt, wp,	    // # in ANN encyclopedia; URL tails to TV Tropes, WP
+    tags,		    // Array of strings
+    desc)		    // Optional description; need tag(s) if present
+
+add_show("", "",
+	 rNo, "",
+	 UnknownSite, "X", UnknownSchedule,
+	 , NoTvT, "",
+	 [ "", "", "", "" ]);
+*/
+
+add_show("86", "",
+	 rYesYesYes, "Superb, tho grim",
+	 CrRoll, "86-eighty-six", "Sun 02:30",	// Two cours, second AFTER Jul-Sep
+	 23089, "LightNovel/EightySix", "86 (novel series)",
+	 [ "SF", "Drama", "War", "Robot-Armies", "Racial-persecution" ]);
+
+// “ARIA the Crepuscolo” (TvT=Manga/ARIA) is a movie, as is “ARIA the Benedizione”
+
+add_show("Backflip!!", "Bakuten!!",
+	 rNo, "Not for me",
+	 CrRoll, "backflip", "Fri 04:15",
+	 23955, NoTvT, "Bakuten!!",
+	 [ "HS-boys-sports-club", "Rhythmic-gymnastics", "Great-animation" ]);
+
+add_show("Battle Athletes Victory ReSTART!", "",
+	 rNoNo, "Not for me",
+	 AnLab, "X", "Sat ??:??",//10/4
+	 23597, "Anime/BattleAthletes", "Battle_Athletes",
+	 [ "Reboot(ish)-199x", "Aliens", "Women’s-tournament-instead-of-war" ]);
+
+add_show("Blue Reflection Ray", "",
+	 rNoNo, "Not for me",
+	 AnLab, "X", "Fri ??:??",//9/4
+	 24041, "VideoGame/BlueReflection", "Blue Reflection",
+	 [ "From-RPG", "HS-girls", "Fighting", "Parallel-world" ]);
+
+add_show("Burning Kabaddi", "",
+	 rNo, "Not for me",
+	 CrRoll, "burning-kabaddi", "Sat 05:00",
+	 23757, NoTvT, "Burning Kabaddi",
+	 [ "HS-boys", "Sports-club", "Poorly-animated" ]);
+
+add_show("Cestvs: The Roman Fighter", "",
+	 rNo, "ANNers ⇒ awful",
+	 CrRoll, "cestvs-the-roman-fighter-", "Thu 04:30",
+	 24017, NoTvT, "Cestvs: The Roman Fighter",
+	 [ "Seinen", "Roman Empire", "Slave", "Boxing", "Colosseum" ]);
+
+add_show("Combatants Will Be Dispatched", "",
+	 rYes, "Some laughs",
+	 AnLab, "combatants-will-be-dispatched", "Sun AM",
+	 23090, "LightNovel/CombatantsWillBeDispatched",
+		"Combatants Will Be Dispatched!",
+	 [ "Parody", "Evil-company", "Sent-to-another-world" ],
+	 "By Natsume <u>Akatsuki</u>, who wrote <i>Konosuba</i>");
+
+add_show("Don’t Toy with Me, Miss Nagatoro", "",
+	 rNo, "Not funny enough",
+	 CrRoll, "dont-toy-with-me-miss-nagatoro", "Sun 02:00",
+	 23755, "Manga/DontToyWithMeMissNagatoro", "Don't Toy With Me, Miss Nagatoro",
+	 [ "Comedy", "Bullying/Romance", "Ecchi", "HS" ]);
+
+add_show("Dragon Goes House-Hunting", "",
+	 rNoNo, "Not funny for me",
+	 AnLab, "dragon-goes-house-hunting", "Sun AM",
+	 23561, "Manga/DragonGoesHouseHunting", "Dragon Goes House-Hunting",
+	 [ "Comedy", "Parody", "Timid-dragon" ]);
+
+add_show("Fairy Ranmaru", "",
+	 rNo, "Not for me",
+	 CrRoll, "fairy-ranmaru", "Fri 01:00",
+	 23933, "Anime/FairyRanmaru", "Fairy Ranmaru",
+	 [ "Fairies", "‘Manservice’", "BL", "Bar" ]);
+
+// Dettmar Cramer from Germany is considered the father of Japanese soccer
+add_show("Farewell, My Dear Cramer", "",
+	 rNoNo, "Unlikely",
+	 CrRoll, "farewell-my-dear-cramer", "Mon 02:00",
+	 23925, "Manga/FarewellMyDearCramer", "Farewell, My Dear Cramer",
+	 [ "Soccer", "HS-girls", "Sequel-to-Sayonara-Football" ]);
+
+// “Fate/Grand Order - Divine Realm of the Round Table: Camelot” = two-movie ‘series’
+
+add_show("Fruits Basket the Final", "S3 (of 3)",
+	 rYes, "Retry from S1",
+	 CrRoll, "fruits-basket", "Tue 03:35",
+	 23980, "Manga/FruitsBasket", "Fruits Basket",
+	 [ "Shōjo", "HS-girl", "Cursed-family", "Chinese-Zodiac" ]);
+
+add_show("Full Dive",
+		"Kyuukyoku Shinka Shita Full Dive RPG ...",
+	 rNoNo, "Jerkasserty",
+	 AnLab,
+ "full-dive-this-ultimate-next-gen-full-dive-rpg-is-even-shittier-than-real-life",
+	 "Thu AM",
+	 23820, "LightNovel/KyuukyokuShinkaShitaFullDiveRPGGaGenjitsuYoriMoKusogeDattara",
+ "Full Dive: This Ultimate Next-Gen Full Dive RPG Is Even Shittier than Real Life!",
+	 [ "Parody(?)", "Grindy-VRMMO", "Tragedy", "Fan-service" ]);
+
+// Fushigi Dagashiya Zenitendō			23665	For-Children, Cont-from-Fall-20
+
+add_show("Gloomy The Naughty Grizzly", "",
+	 rNoNo, "WTF? No!",
+	 CrRoll, "gloomy-the-naughty-grizzly", "Tue 01:30",
+	 23902, NoTvT, "Gloomy The Naughty Grizzly",
+	 [ "60-sec-eps", "Boy-and-‘Pet’-grizzly", "Blood", "Violence-for-comedy" ]);
+
+add_show("Hetalia World Stars", "S7",
+	 rNo, "Not for me",
+	 AnLab, "hetalia-axis-powers", "Thu AM",
+	 23864, "Webcomic/HetaliaAxisPowers", "Hetalia: Axis Powers",
+	 [ "Anthropomorphic-nations", "Bishōnen", "Season-7" ]);
+
+add_show("Higehiro", "After Being Rejected, I Shaved and Took In a High School Runaway",
+	 rYesYesYes, "Good drama (!?)",
+	 CrRoll, "X", "Tue 01:00",
+	 23528, "LightNovel/Higehiro", "Higehiro",
+	 [ "26yo-man", "Runaway-HS-girl", "Drama", "Romance", "Comedy" ]);
+
+add_show("How NOT to Summon a Demon Lord Ω", "S2",
+	 rNo, "Lazy Shōnen",
+	 CrRoll, "how-not-to-summon-a-demon-lord", "Fri 04:45",
+	 23505, "LightNovel/HowNotToSummonADemonLord", "How Not to Summon a Demon Lord",
+	 [ "Isekai", "Unsocial-hero", "Fan-service", "Waste-of-good-setup" ]);
+
+add_show("I’ve Been Killing Slimes for 300 Years and Maxed Out My Level", "",
+	 rSoSo, "A bit too Shōjo",
+	 CrRoll, "ive-been-killing-slimes-for-300-years-and-maxed-out-my-level",
+		"Sat 23:30",
+	 22583, "LightNovel/IveBeenKillingSlimesForThreeHundredYearsAndMaxedOutMyLevel",
+	 "I've Been Killing Slimes for 300 Years and Maxed Out My Level",
+	 [ "Isekai", "Fantasy", "Iyashikei", "Surprised-worldbeater" ]);
+
+add_show("Joran: The Princess of Snow and Blood", "",
+	 rToTryMaybe, "Way too shōnen?",
+	 CrRoll, "joran-the-princess-of-snow-and-blood", "Wed 03:00",
+	 24030, "Anime/JoranThePrincessOfSnowAndBlood",
+		"Joran: The Princess of Snow and Blood",
+	 [ "Alt-Japan-1931", "Government-assassins", "Action", "Stylish-looks" ]);
+
+add_show("Kiyo in Kyoto: From the Maiko House", "",
+	 rNo, "Not for me",
+	 CrRoll, "kiyo-in-kyoto-from-the-maiko-house", "Thu 13:00",
+	 23951, NoTvT, "Kiyo in Kyoto: From the Maiko House",
+	 [ "Geishas", "Edutainment", "Soothing", "Cooking" ]);
+
+// Knights of Sidonia: Ai Tsumugu Hoshi (= KoS: The Star Where Love is Spun) is a movie
+
+add_show("Koikimo", "It’s Sickening to Call This Love",
+	 rNo, "Will skip",
+	 CrRoll, "koikimo", "Mon 23:45",
+	 24011, NoTvT, "Koikimo",
+	 [ "Josei", "17yo-girl", "Womanising-27yo-man", "Gets-better(?)" ]);
+
+add_show("Let's Make a Mug Too", "",
+	 rNo, "Not for me",
+	 CrRoll, "lets-make-a-mug-too", "Tue 12:30",
+	 23544, NoTvT, "Let's Make a Mug Too",
+	 [ "15-min-eps", "Pottery", "HS-girl", "Dead-mother-was-potter" ]);
+
+add_show("Mars Red", "",
+	 rToTryMaybe, "After 2 eps: Hmm.",
+	 AnLab, "mars-red", "Tue AM",
+	 23889, NoTvT, "Mars Red",
+	 [ "Vampires", "Alt-1923", "From-1man-play", "Oscar-Wilde’s-Salomé" ]);
+
+add_show("Megalobox 2: Nomad", "",
+	 rNoNo, "Not for me",
+	 AnLab, "megalobox", "Mon AM",
+	 23970, "Anime/MegaloBox", "Megalo Box",
+	 [ "Boxing", "Underground-competition", "Season-2" ]);
+
+add_show("Miss Kobayashi's Dragon Maid S", "Shorts, < 2 min",
+	 rYesYesYes, "Yep! (S2 in July)",
+	 CrRoll, "UnknownSite", "Thu 07:00",
+	 24247, "Manga/MissKobayashisDragonMaid", "Miss Kobayashi's Dragon Maid",
+	 [ "Very-short-eps", "Dragons", "Maids", "Female-protag(s)" ]);
+
+// Mobile Suit Gundam: Hathaway's Flash = trilogy of movies; first due 7-May-2021
+
+add_show("Moriarty the Patriot", "continued",
+	 rNo, "S1 v. poorly plotted",
+	 AnLab, "moriarty-the-patriot", "Mon AM",
+	 23976, "Manga/MoriartyThePatriot", "Moriarty the Patriot",
+	 [ "Britain", "Late-C19th", "Class-struggle", "Sherlock-Holmes" ]);
+
+add_show("My Hero Academia", "Season 5",
+	 rYesYes, "One day ...",
+	 AnLab, "my-hero-academia", "Sat AM",
+	 23862, "Manga/MyHeroAcademia", "My Hero Academia",
+	 [ "Superheroes", "HS-boys", "Shōnen" ]);
+
+add_show("Odd Taxi", "",
+	 rToTryMaybe, "1 ep? 3 eps?",
+	 CrRoll, "oddtaxi", "Tue 04:30",
+	 23921, "Anime/OddTaxi", "Odd Taxi",
+	 [ "Oddball", "Anthropomorphs", "Reclusive-taxi-driver", "Mystery" ]);
+
+add_show("OsaMake", "Romcom Where The Childhood Friend Won’t Lose",
+	 rNo, "Ep 1 ⇒ Yuck",
+	 CrRoll, "osamake-romcom-where-the-childhood-friend-wont-lose", "Wed 11:00",
+	 23945, "LightNovel/Osamake",
+		"Osamake: Romcom Where The Childhood Friend Won't Lose",
+	 [ "Rom-Com", "HS-students", "First-crush-vs-childhood-friend" ]);
+
+add_show("Pretty Boy Detective Club", "",
+	 rToTryMaybe, "Unlikely",
+	 AnLab, "pretty-boy-detective", "Sun AM",
+	 23985, NoTvT, "Pretty Boy Detective Club",
+	 [ "Middle-school", "Airhead-bishies+1-girl", "Stylish", "Mystery?" ]);
+
+add_show("The Saint’s Magic Power is Omnipotent", "",
+	 rYes, "LNs > Anime",
+	 AnLab, "the-saints-magic-power-is-omnipotent", "Wed AM",
+	 23896, "LightNovel/TheSaintsMagicPowerIsOmnipotent",
+		"The Saint's Magic Power Is Omnipotent",
+	 [ "Isekai", "Female-protag", "Fantasy", "Potions" ]);
+
+add_show("SD Gundam World Heroes", "",
+	 rToTryMaybe, "Hmm",
+	 CrRoll, "sd-gundam-world-heroes", "Thu 20:00",
+	 24158, "Anime/SDGundamWorldHeroes", "SD Gundam World Sangoku Soketsuden",
+	 [ "Gundam", "Dimension-hopping", "Chinese-myth" ]);
+
+add_show("Seven Knights Revolution: Eiyū no Keishōsha", "",
+	 rToTryMaybe, "1 ep?",
+	 CrRoll, "seven-knights-revolution-hero-successor", "Mon 02:30",
+	 24021, "VideoGame/SevenKnights", "Seven Knights",
+	 [ "From-Korean-PhoneRPG", "Fantasy", "Combat" ]);
+
+add_show("Shadows House", "",
+	 rToTryMaybe, "3 eps",
+	 AnLab, "shadows-house", "Sun AM",
+	 23751, "Manga/ShadowsHouse", "Shadows House",
+	 [ "Weird-house", "Living-Shadows", "Servant-girl", "Mystery/horror/…?" ]);
+
+add_show("The Slime Diaries", "",
+	 rToTryMaybe, "Finish S1 first",
+	 CrRoll, "the-slime-diaries", "Wed 01:00",
+	 23359, "LightNovel/ThatTimeIGotReincarnatedAsASlime",
+		"That Time I Got Reincarnated as a Slime",
+	 [ "Second-Slife", "From-spinoff-manga", "After-S1-before-S2" ]);
+
+add_show("So I’m a Spider, So What?", "S1 continued",
+	 rYesYes, "Lotsa fun",
+	 CrRoll, "so-im-a-spider-so-what", "Sat 12:30",
+	 21180, "LightNovel/SoImASpiderSoWhat", "So I'm a Spider, So What?",
+	 [ "Isekai", "Female-protag", "Weak-protag", "Complex-Plot" ]);
+
+add_show("SSSS.Dynazenon", "SSSS.Dynʌzenon",
+	 rYesYesYes, "Superb. (WTF?!)",
+	 AnLab, "ssssdynazenon", "Sat AM",
+	 23822, "Anime/SSSSDynazenon", "SSSS.Dynazenon",
+	 [ "Toku", "Kaiju", "Reboot", "By-SSSS.Gridman-team" ]);
+
+add_show("Super Cub", "",
+	 rYesYesYes, "Low-key, Iyashikei, VG",
+	 AnLab, "X", "Thu AM",
+	 23261, "LightNovel/SuperCub", "Super Cub (novel series)",
+	 [ "Sad-HS-girl", "Motorbikes", "Friendships", "Iyashikei",
+	   "Honda-ad" ]);
+
+add_show("Those Snow White Notes", "Mashiro no Oto",
+	 rToTryForSure, "3 eps",
+	 CrRoll, "those-snow-white-notes", "Sat 05:45",
+	 23554, "Manga/ThoseSnowWhiteNotes", "Those Snow White Notes",
+	 [ "Shamisen-music", "Drama", "Grieving-artist" ]);
+
+add_show("Thunderbolt Fantasy Sword Seekers 3", "S3",
+	 rYes, "Start at S1",
+	 CrRoll, "X", "Sun 01:00",
+	 24025, "Series/ThunderboltFantasy", "Thunderbolt Fantasy",
+	 [ "Wuxia", "Action", "Fantasy", "Puppets" ]);
+
+add_show("Tokyo Revengers", "",
+	 rNo, "Too shōnen?",
+	 CrRoll, "tokyo-revengers", "Sun 05:00",
+	 23847, "Manga/TokyoRevengers", "Tokyo Revengers",
+	 [ "Failed-Male", "Time-Travel", "Redo-Middle-School" ]);
+
+add_show("To Your Eternity", "",
+	 rToTryForSure, "One day",
+	 CrRoll, "to-your-eternity", "Tue 02:30",
+	 23600, "Manga/ToYourEternity", "To Your Eternity",
+	 [ "Immortal-being", "Growing-from-nothing-to-greatness" ]);
+
+add_show("Vivy -Fluorite Eye's Song-", "",
+	 rToTryForSure, "3 eps",
+	 AnLab, "vivy--fluorite-eyes-song-", "Sun AM",
+	 23935, NoTvT, "Vivy: Fluorite Eye's Song",
+	 [ "SF", "AIs", "Preventing-AI/human-war", "Anime-original" ]);
+
+add_show("Welcome to Demon School, Iruma-kun", "S2",
+	 rNo, "Gave up on S1",
+	 CrRoll, "welcome-to-demon-school-iruma-kun", "Sat 21:15",
+	 24018, "Manga/WelcomeToDemonSchoolIrumaKun",
+		"Welcome to Demon School! Iruma-kun",
+	 [ "By-Hayate-author", "Demons", "HS", "Comedy", "Only-1-human" ]);
+
+add_show("The World Ends with You", "",
+	 rNo, "Skippable",
+	 AnLab, "the-world-ends-with-you-the-animation", "Fri AM",
+	 23510, "Anime/TheWorldEndsWithYou", "The World Ends with You",
+	 [ "Death-game", "From-ARPG", "Tokyo-streets", "Sequel-game-Tie-in" ]);
+
+add_show("Zombie Land Saga Revenge", "S2 of Zombie Land Saga",
+	 rToTryForSure, "S1 is fun",
+	 CrRoll, "zombie-land-saga", "Fri AM",
+	 24019, "Anime/ZombieLandSaga", "Zombie Land Saga",
+	 [ "Zombies", "Idols", "Saga-prefecture", "Comedy", "Satire" ]);
+
+</script>
+
+</body>
+</html>

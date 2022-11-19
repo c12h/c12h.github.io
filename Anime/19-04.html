@@ -1,0 +1,162 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<title>Spring 2019 Anime</title>
+<link rel="stylesheet" href="animelist.css">
+<script src="animelist.js"></script>
+</head>
+<body>
+
+<h1>Spring 2019 Anime</h1>
+<div class=next><a href="19-07.html">Summer 2019</a></div>
+<div class=prev><a href="19-01.html">Winter 2019</a></div>
+
+<p>
+Simulcast times are AEST. Areas with background color have mouse-over texts.
+
+<table id="main"></table>
+
+<p class=outdent>
+Sources:<br>
+<a href="https://en.wikipedia.org/wiki/Category:2019_anime_television_series_debuts"
+	>Category:2019 anime television series</a> at Wikipedia<br>
+Anime News Network’s <a href=
+	"https://www.animenewsnetwork.com/preview-guide/2019/spring/.145279"
+	>Spring 2019 Anime Preview Guide</a>
+
+<script>
+"use strict";
+
+add_show("Ace of the Diamond Act II", "",
+	rNoNo, "Nope", CrRoll, "ace-of-the-diamond", "Tue 19:55",
+	21598, "Manga/AceOfTheDiamond", "Ace of Diamond",
+	[ "Shōnen", "Baseball", "School" ]);
+add_show("Afterlost", "",
+	rYes, "Try it???", Funimation, "afterlost/", "Mon 01:30",
+	21032, NoTvT, "Afterlost",
+	[ "Action", "SF", "From-gacha-RPG", "Panned-by-ANN" ]);
+add_show("Amazing Stranger", "",
+	rSoSo, "Ho-hum", CrRoll, "amazing-stranger", "Sun 01:00",
+	21819, NoTvT, "Over Drive Girl 1/6",
+	[ "Short-eps", "Comedy" ]);
+add_show("Ao-chan Can’t Study!", "",
+	rNo, "Not for me", CrRoll, "ao-chan-cant-study", "Sat 03:55",
+	21814, NoTvT, "Ao-chan Can't Study!",
+	[ "Shōnen", "Short-eps", "Comedy", "School", "Double-entendre" ]);
+add_show("Attack on Titan (season 3)", "",
+	rNo, "Not for me", AnLab, "attack-on-titan", "Mon 11:45",
+	21812, "Manga/AttackOnTitan", "Attack on Titan",
+	[ "Shōnen", "Dark", "Fantasy", "Action" ]);
+add_show("Bakumatsu Crisis", "",
+	rNo, "Not for me", CrRoll, "bakumatsu", "Fri 06:30",
+	20795, NoTvT, "Renai Bakumatsu Kareshi",
+	[ "Action", "History", "Time-travel", "Otome-game", "Season-2" ]);
+add_show("Bungo Stray Dogs (season 3)", "",
+	rToTryLikely, "Try S1", CrRoll, "bungo-stray-dogs", "Sat 12:30",
+	21733, "Manga/BungoStrayDogs", "Manga/BungoStrayDogs",
+	[ "Seinen", "Fantasy", "Literature" ]);
+add_show("Cinderella Nine", "",
+	rNoNo, "Nope.", CrRoll, "cinderella-nine", "Mon 03:45",
+	21671, NoTvT, "Hachigatsu no Cinderella Nine",
+	[ "Girls Baseball", "School"]); //GTrec:#4
+add_show("Demon Slayer: Kimetsu no Yaiba", "",
+	rToTryMaybe, "Unlikely", AnLab, "demon-slayer", "Sun 02:00",
+	20224, "Manga/KimetsuNoYaiba", "Demon Slayer: Kimetsu no Yaiba",
+	[ "Shōnen", "Action", "Horror", "Fantasy" ]);
+add_show("Fairy gone", "",
+	rNoNo, "Plonk", Funimation, "fairy-gone/", "Mon 02:00",
+	21766, "Anime/FairyGone", "Fairy Gone",
+	[ "Action", "Fantasy" ]);
+add_show("Fruits Basket", "",
+	rYesYes, "Binge it?", CrRoll, "fruits-basket", "Sat 11:00",
+	21588, "Manga/FruitsBasket", "Fruits Basket",
+	[ "Shōjo", "Fantasy", "Comedy", "Classic" ]);
+add_show("Helpful Fox Senko-san", "Sewayaki Kitsune no Senko-san",
+	rYes, "Hmm", CrRoll, "the-helpful-fox-senko-san", "Thu 00:30",
+	21908, "Manga/TheHelpfulFoxSenkoSan", "The Helpful Fox Senko-san",
+	[ "Soothing", "Fantasy", "Slow-paced" ]);
+add_show("Hitori Bocchi no Marumaru Seikatsu", "",
+	rToTryLikely, "Maybe", CrRoll, "hitoribocchi-no-marumaruseikatsu", "Sat 05:15",
+	20806, "Manga/HitoribocchiNoOOSeikatsu", "Hitori Bocchi no Marumaru Seikatsu",
+	[ "Comedy", "Very-shy-girl", "School", "Yonkoma" ]);
+add_show("Isekai Quartet", "",
+	rYesYes, "Yep", CrRoll, "isekai-quartet", "Wed 02:00",
+	21992, "Anime/IsekaiQuartet", "Isekai Quartet",
+	[ "Isekai", "(duh!)" ]); // Haven’t finished Re:Zero & Tanya yet
+add_show("Joshi Kausei", "",
+	rNoNo, "Icky", CrRoll, "joshi-kausei", "Sun 01:15",
+	21807, "Manga/JoshiKausei", "Joshi Kausei",
+	[ "Shōnen", "V-short-eps", "Comedy", "Silent", "Schoolgirls", "Thighs" ]);
+add_show("Kono Oto Tomare! Sounds of Life", "",
+	rToTryForSure, "Likely",
+		Funimation, "kono-oto-tomare-sounds-of-life/", "Sat 20:30",
+	21237, "Manga/KonoOtoTomare", "Kono Oto Tomare! Sounds of Life",
+	[ "Shōnen", "School", "Music", "Slice-of-life" ]);
+add_show("Midnight Occult Civil Servants", "",
+	rSoSo, "Dull", CrRoll, "midnight-occult-civil-servants", "Mon 02:30",
+	21190, "Manga/MidnightOccultCivilServants", "Midnight Occult Civil Servants",
+	[ "Fantasy", "Urban" ]);
+add_show("Mix", "",
+	rNo, "For kids", Funimation, "mix/", "Sun 21:00",
+	21648, NoTvT, "Mix (manga)",
+	[ "Shōnen", "School", "Baseball" ]);
+add_show("Namuamidabutsu!-utena-", "",
+	rNoNo, "Nope", HiDive, "namuamidabutsu-utena-", "Mon 22:30",
+	21274, NoTvT, NoWP,
+	[ "Bhuddist", "Bishonen", "Comedy(?)" ]);
+add_show("Nobunaga Teacher’s Young Bride", "Nobunaga Sensei no Osanazuma",
+	rNoNoNo, "No!", CrRoll, "nobunaga-teachers-young-bride", "Sun 01:20",
+	21679, NoTvT, "Nobunaga teacher's young bride",
+	[ "Short-eps", "Lolicon" ]);
+add_show("One-Punch Man (season 2)", "",
+	rYesYesYes, "Yes", AnLab, "one-punch-man", "Wed ??:??",
+	21282, "Webcomic/OnePunchMan", "One-Punch Man",
+	[ "Superhero", "Oddball", "Funny" ]);
+add_show("The Rising of the Shield Hero", "",
+	rYesYesYes, "Yes!", CrRoll, "the-rising-of-the-shield-hero", "Thu 02:30",
+	19826, "LightNovel/TheRisingOfTheShieldHero", "The Rising of the Shield Hero",
+	[ "Isekai", "Drama", "continued-from-Winter" ]);
+add_show("RobiHachi", "",
+	rNoNo, "Annoying", Funimation, "robihachi/", "Tue 01:30",
+	21590, NoTvT, "RobiHachi",
+	[ "Odd-couple", "Space", "Comedy", "Dub-better?" ]);
+add_show("Sarazanmai", "",
+	rToTryMaybe, "?", CrRoll, "sarazanmai", "Fri 05:55",
+	21544, "Anime/Sarazanmai", "Sarazanmai",
+	[ "Avant-garde", "Fantasy", "Kappas" ]);
+add_show("Senryū Girl", "",
+	rYes, "It’s OK", HiDive, "senryu-girl", "Sat 04:10",
+	21646, "Manga/SenryuGirl", "Senryu Girl",
+	[ "Short-eps", "Yonkoma", "School", "Romance" ]);
+add_show("Strike Witches: 501st Unit Takes Off!", "",
+	rNoNo, "Not for me",
+		AnLab, "strike-witches-501st-unit-takes-off", "Wed ??:??",
+	21876, "Manga/StrikeWitches", "Strike Witches",
+	[ "Short-eps", "Comedy", "Enormous-backstory" ]);
+add_show("We Never Learn: BOKUBEN", "",
+	rYesYes, "OK", AnLab, "we-never-learn", "Sun 03:00",
+	21294, "Manga/WeNeverLearn", "We Never Learn",
+	[ "Shōnen", "Comedy", "Romance", "Slice-of-life", "School" ]);
+add_show("Why the Hell are You Here, Teacher!?", "",
+	rNoNoNo, "Gross", HiDive, "why-the-hell-are-you-here-teacher", "?",
+	21469, "Manga/NandeKokoNiSenseiGa",
+		"Why the Hell are You Here, Teacher!?",
+	["Short-eps", "Porno-‘comedy’" ]);
+add_show("Wise Man’s Grandchild", "",
+	rYes, "Not all bad", CrRoll, "wise-mans-grandchild", "Thu 01:30",
+	21419, "LightNovel/TheWiseGrandson", "Wise Man's Grandchild",
+	[ "Shōnen", "Action", "Fantasy", "Isekai-ish" ]);
+add_show("Yatogame-chan Kansatsu Nikki", "",
+	rNoNo, "No!", CrRoll, "yatogame-chan-kansatsu-nikki", "Mon 23:15",
+	21593, NoTvT, "Yatogame-chan Kansatsu Nikki",
+	[ "v-short-eps", "yonkoma", "cruel" ]);
+add_show("YU-NO: A Girl Who Chants Love At The Bound Of This World",
+	 "Kono ... Shōjo YU-NO	Kono Yo no Hate de Koi o Utau Shōjo YU-NO",
+	rYes, "Has a plot",
+	CrRoll, "yu-no-a-girl-who-chants-love-at-the-bound-of-this-world",
+		"Thu 05:15",
+	20479, "VisualNovel/YuNo",
+		"YU-NO: A Girl Who Chants Love at the Bound of this World",
+	[ "Parallel-worlds", "Harem", "Classic-VN", "From-Hentai" ]);
+</script>
+</body>
+</html>

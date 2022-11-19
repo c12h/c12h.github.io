@@ -1,0 +1,314 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<title>‘Spring’ 2020 Anime Series in Australia</title>
+<link rel="stylesheet" href="animelist.css">
+<script src="animelist.js"></script>
+</head>
+<body>
+
+<h1>‘Spring’ (Apr-Jun) 2020 Anime Series in Australia</h1>
+<div class=next><a href="20-07.html">Summer 2020</a></div>
+<div class=prev><a href="20-01.html">Winter 2020</a></div>
+
+<ul class=tight>
+<li>Times are AEST, and only reliable for Crunchyroll.
+<li>Areas with background color have mouse-over texts.
+<!--
+<li>“MB” is <a href="https://www.youtube.com/watch?v=r4FXCzAR224"
+	>Mother’s Basement (Geoff Thew)</a>.-->
+<li>Compiled by Chris Chittleborough; last column is my personal ratings and comments.
+</ul>
+
+<table id="main"></table>
+
+<p class=outdent>
+Sources:<ul class=tight>
+<li><a href="https://en.wikipedia.org/wiki/Category:2020_anime_television_series_debuts"
+	>Category:2020 anime television series</a> at Wikipedia
+<li>Anime News Network’s <a href=
+	"https://www.animenewsnetwork.com/preview-guide/2020/spring/.158161"
+	>Spring 2020 Anime Preview Guide</a> and encyclopedia
+<li>TV Tropes <a href=
+	"https://tvtropes.org/pmwiki/posts.php?discussion=15716307180A75434300"
+	>forum thread</a> and <a href=
+	"https://tvtropes.org/pmwiki/pmwiki.php/Main/AnimeAndMangaOfThe2020s"
+	>Anime and Manga of the 2020s page</a>
+<li><a href="https://www.crunchyroll.com/lineup">Crunchyroll’s lineup page</a>
+<li><a href="https://www.animelab.com/racks/simulcast-schedule"
+	>AnimeLab’s Simulcast Schedule</a>
+</ul>
+
+<script>
+"use strict";
+/*
+function add_show (
+    name, jnames,	    // my name; japanese name(s) if relevant or else ""
+    myrating, mycomment,    // rating (rYesYes etc); personal comment
+    site, sitepath, when,   // AnLab etc; URL tail; Thursday+0130 etc
+    ANNEnum, tvt, wp,	    // # in ANN encyclopedia; URL tails to TV Tropes, WP
+    tags,		    // Array of strings
+    desc)		    // Optional description; need tag(s) if present
+*/
+
+add_show("The 8th Son? Are you kidding me?", "Hachinantte Sore Wa Nai Deshou",
+	 rYes, "Too shōnen?",
+	 CrRoll, "the-8th-son-are-you-kidding-me", "Fri 00:00",
+	 22285, NoTvT, "The 8th Son? Are You Kidding Me?",
+	 [ "Iseka", "Fantasy", "Impoverished-Noble", "Gifted-at-Magic", "Politics" ]);
+
+// A3					Tue
+//	https://www.animelab.com/shows/a3-season-spring-and-summer
+
+add_show("Appare-Ranman!", "",			// Rec-by-MB: #2
+	 rSoSo, "Very Shōnen",
+	 AnLab, "appare-ranman", "Fri ??:??",
+	 22558, "Anime/AppareRanman", "Appare-Ranman!",
+	 [ "Comedy/Action", "Japanese-odd-couple", "Wacky-history" ]);
+
+add_show("Arte", "",
+	 rToTryForSure, "Worth a look",
+	 AnLab, "arte", "Sun ??:??",
+	 22338, "Manga/Arte", "Arte (manga)",
+	 [ "Female-painter", "Renaissance-Florence", "Shakespeare-refs" ]);
+
+add_show("Argonavis from BanG Dream!", "",
+	 rNo, "Not for me",
+	 UnknownSite, "?", UnknownSchedule,
+	 23027, "Music/Argonavis", "Argonavis from BanG Dream!",
+	 [ "Male-idol-group" ]);
+
+add_show("Ascendance of a Bookworm (S2)", "",
+	 rYesYesYes, "(Watch S1 first)",
+	 CrRoll, "ascendance-of-a-bookworm", "Sun 04:45",
+	 23026, "LightNovel/AscendanceOfABookworm", "Ascendance of a Bookworm",
+	 [ "Isekai", "NOT-a-power-fantasy", "Medieval-life-sucks" ]);
+
+add_show("Bungo and Alchemist", "-Gears of Judgement-",
+	 // No relation to Bungo Stray Dogs
+	 rToTryLikely, "3 eps?",
+	 AnLab, "bungo-and-alchemist--gears-of-judgement-", "Sat ??:??",
+	 23033, "VideoGame/BungoToAlchemist", NoWP,
+	 [ "Authors", "From-gacha-game", "Fixing-corrupted-books" ]);
+
+add_show("Diary of Our Days at the Breakwater", "",
+	 rNo, "Not for me",
+	 AnLab, "diary-of-our-days-at-the-breakwater", "Wed ??:??",
+	 22570, "Manga/DiaryOfOurDaysAtTheBreakwater",
+		"Diary of Our Days at the Breakwater",
+	 [ "Cute-girls-doing-cute···fishing!?", "HS-girls", "Slice-of-life" ]);
+
+add_show("Digimon Adventure (2020)", "",	// Rec-by-MB: #8
+	 // Official title is "Digimon Adventure:".
+	 rNo, "For kids",
+	 CrRoll, "digimon-adventure-2020", "Sun 12:30",
+	 22976, "Digimon Adventure: (2020)", "Digimon Adventure (2020 TV series)",
+	 [ "Shōnen", "Monsters", "Reboot-of-1999-series" ]);
+
+add_show("Dropkick On My Devil!! Dash", "S2 of DoMD, continued",
+	 rNo, "Gave up on S1",
+	 CrRoll, "dropkick-on-my-devil-dash", "Tue 02:20",
+	 22563, "Manga/DropkickOnMyDevil", "Dropkick On My Devil!",
+	 [ "Comedy", "Yonkoma", "Fantasy", "Demoness" ]);
+
+add_show("Food Wars! (S5)", "Shokugeki no Soma: The Fifth Plate",
+	 rNo, "Not for me",
+	 CrRoll, "food-wars-shokugeki-no-soma", UnknownSchedule,
+	 23036, "Manga/ShokugekiNoSoma", "Food Wars!: Shokugeki no Soma",
+	 [ "Cooking", "HS-students", "Cooking-Duels" ]);
+
+add_show("Fruits Basket (S2)", "",
+	 rYesYes, "One day ...",
+	 CrRoll, "fruits-basket", "Tue 03:30",
+	 22588, "Manga/FruitsBasket", "Fruits Basket",
+	 [ "Shōjo", "Fantasy", "Comedy", "Classic-Manga", "Reboot" ]);
+
+add_show("Future Folktales", "",
+	 rNo, "For kids",
+	 HiDive, "future-folktales", UnknownSchedule,
+	 23156, NoTvT, NoWP,
+	 [ "Arabian-Folklore", "Bowdlerised", "For-Children" ]);
+
+add_show("Gal & Dino", "",
+	 rNoNo, "Pointless",
+	 AnLab, "gal-dino", "Sun ??:??",
+	 22492, NoTvT, "My Roomie Is a Dino",
+	 [ "Gal", "Dinosaur", "Roomies", "Comedy", "Slice-of-life" ]);
+
+add_show("Gleipnir", "",			// Rec-by-MB: #6
+	 rToTryLikely, "Unlikely",
+	 AnLab, "gleipnir", "Mon ??:??",
+	 21888, "Manga/Gleipnir", "Gleipnir (manga)",
+	 [ "Shōnen", "HS-boy", "Mascot-dog-Shapeshifter", "Ecchi", "Horror" ]);
+
+add_show("Gundam Build Divers Re:Rise (S2)", "",
+	 rNo, "Not for me",
+	 CrRoll, "gundam-build-divers", "Thu 21:00",
+	 22959, "Anime/GundamBuildDiversReRise", "Gundam Build Divers Re:Rise",
+	 [ "Gundam", "Online-Gunpla-Game", "Sequel-to-GBD" ]);
+
+add_show("The House Spirit Tatami-chan", "Zashiki-Warashi no Tatami-chan",
+	 rNo, "Abrasive",
+	 CrRoll, "the-house-spirit-tatami-chan", "Fri 09:15",
+	 22991, NoTvT, NoWP,
+	 [ "4min-eps", "ONA", "Comedy", "Horror(?)", "Supernatural" ]);
+
+add_show("IDOLiSH7 Second Beat!", "S2 of IDOLiSH7",
+	 rNo, "Not for me",
+	 CrRoll, "idolish7", "Mon 00:30",
+	 22315, "VideoGame/IDOLiSH7", "Idolish7",
+	 [ "Male-idol-group", "Music", "From-RhythmGame/VN" ]);
+
+add_show("Kaguya-sama: Love is War (S2)", "",
+	 rYesYesYes, "Loved S1",
+	 AnLab, "kaguya-sama-love-is-war", "Sun ??:??",
+	 21401, "Manga/KaguyaSamaLoveIsWar", "Kaguya-sama: Love Is War",
+	 [ "Comedy", "Romance", "Drama", "Elite-HS" ]);
+
+add_show("Kakushigoto", "",			// Rec-by-MB: #9
+	 rToTryLikely, "ANNers like",
+	 AnLab, "Kakushigoto", "Fri ??:??",
+	 22900, "Manga/KakushigotoMyDadsSecretAmbition",
+		"Kakushigoto: My Dad's Secret Ambition",
+	 [ "Comedy", "Young-girl(s)", "Dorky-Dad", "Japanese-Puns" ]);
+
+add_show("Kingdom (S3)", "",
+	 rToTryMaybePerhaps, "Unlikely",
+	 AnLab, "kingdom", "Mon ??:??",
+	 22931, "Manga/Kingdom", "Kingdom (manga)",
+	 [ "Shōnen", "Historical" ]);
+
+add_show("Listeners", "",			// Rec-by-MB: #7
+	 rToTryForSure, "Doubtful",
+	 AnLab, "listeners", "Sat ??:??",
+	 23008, "Anime/Listeners", "Listeners",
+	 [ "Mecha", "Earth-Invaded", "Power-of-Rock" ]);
+
+add_show("Major 2nd (S2)", "",
+	 rNo, "Not for me",
+	 CrRoll, "major-2nd", "Sat 10:00",
+	 22564, "Manga/MajorSecond", "Major 2nd",
+	 [ "Baseball", "HS-boys" ]);
+
+add_show("The Millionaire Detective", "Fugou Keiji Balance Unlimited",
+	 rYesYes, "Funny enough?",		// Rec-by-MB: #5
+	 AnLab, "balance-unlimited", "Fri ??:??",
+	 22980, "Anime/TheMillionaireDetectiveBalanceUnlimited",
+		"Fugō Keiji Balance: Unlimited",
+	 [ "Unconventional-detective", "Comedy", "Satire(?)" ]);
+
+// AnLab finished S4 of  "My Hero Acadamia"  at start of April
+
+add_show("My Next Life as a Villainess: All Routes Lead to Doom!", "",
+	 rYesYes, "Should be good",		// Rec-by-MB: #4
+	 CrRoll, "my-next-life-as-a-villainess-all-routes-lead-to-doom", "Sun 03:30",
+	 22339, "LightNovel/MyNextLifeAsAVillainessAllRoutesLeadToDoom",
+		"My Next Life as a Villainess: All Routes Lead to Doom!",
+	 [ "Comedy", "Isekai", "Otome-game", "Female-protag", "Dense-Protag" ]);
+
+/* Delayed due to Covid-19
+add_show("My Teen Romantic Comedy SNAFU Climax", "(S3)",
+	 // "My Youth Romantic Comedy Is Wrong, As I Expected",
+	 rToTryLikely, "S1, S2 first?",
+	 HiDive, "my-teen-romantic-comedy-snafu-climax", UnknownSchedule,
+	 21999, "LightNovel/MyYouthRomanticComedyIsWrongAsIExpected",
+		"My Youth Romantic Comedy Is Wrong, As I Expected",
+	 [ "HS", "Dour-Protagonist", "Problem-solving" ]);
+*/
+
+/* "No Guns Life" ‘second half’ delayed due to Covid-19 */
+
+add_show("Princess Connect! Re: Dive", "",	// Rec-by-MB: #10
+	 rToTryLikely, "Suprise OK?",
+	 CrRoll, "princess-connect-re-dive", "Tue 02:30",
+	 21808, "VideoGame/PrincessConnect", "Princess Connect! Re:Dive",
+	 [ "Comedy", "Moe", "Fantasy", "Harem(?)", "From-game" ]);
+
+// Per WP, 1st OVA/movie "Memory Snow" screened in Japanese theatres in Oct 2018.
+// See <https://www.crunchyroll.com/rezero-starting-life-in-another-world-/rezero-starting-life-in-another-world-directors-cut-memory-snow-793684>
+// This, the 2nd OVA/movie, is a prequel dealing with Emelia's past life, from Nov 2019.
+add_show("Re:ZERO - The Frozen Bond",
+	 "Re:Zero Hyōketsu no Kizuna",
+	 rYesYesYes, "Watch S1 first",
+	 CrRoll, "?", UnknownSchedule,
+	 21998, "LightNovel/ReZero", "Re:Zero − Starting Life in Another World",
+	 [ "1-ep-OVA", "30-Apr-2020" ]);
+
+add_show("Sakura Wars", "Shin Sakura Taisen",	// Loathed-by-MB
+	 rToTryMaybe, "WTF?!",
+	 AnLab, "new-sakura-wars", "Sat ??:??",
+	 22510, "Anime/SakuraWarsTheAnimation", "Sakura Wars (2019 video game)",
+	 [ "From-PS4-game", "CGI", "Combat-Revue", "Girls-v-demons", "1940s" ]);
+
+add_show("Shachibato! President, It's Time for Battle!",
+		"Shachō, Battle no Jikan Desu!",
+	 rNoNo, "For children",
+	 AnLab, "shachibato-president-its-time-for-battle", "Mon ??:??",
+	 22910, NoTvT, "Shachō, Battle no Jikan Desu!",
+	 [ "From-strategy-game", "Portals-appear", "Adventurers" ]);
+
+add_show("Shadowverse", "",
+	 rNoNo, "Not for me",
+	 CrRoll, "shadowverse", "Tue 20:00",
+	 22550, "VideoGame/Shadowverse", "Shadowverse",
+	 [ "From-Phone-Game", "Kids-Playing-Phone-Game", "For-Kids" ]);
+
+add_show("Shironeko Project: Zero Chronicle", "",
+	 rToTryMaybe, "Unlikely",
+	 AnLab, "shiro-neko-project-zero-chronicle", "Tue ??:??",
+	 22323, NoTvT, "White Cat Project",
+	 [ "From-mobile-game-event", "Fantasy" ]);
+
+add_show("Sing ‘Yesterday’ for Me", "",		// Rec-by-MB: #1
+	 rToTryLikely, "Hmmm",
+	 CrRoll, "sing-yesterday-for-me", "Sun 04:00",
+	 22975, NoTvT, "Sing \"Yesterday\" for Me",
+	 [ "Seinen", "Drama", "", "Late-90s-Manga" ]);
+
+add_show("Sword Art Online Alicization War of Underworld (Part 2)", "",
+	 rYesYes, "One day ...",
+	 CrRoll, "sword-art-online", UnknownSchedule,
+	 23030, "LightNovel/SwordArtOnline", "Sword Art Online",
+	 [ "VRMMORPG", "People-Dying" ]);
+
+add_show("Tamayomi: The Baseball Girls", "",
+	 rNo, "Not for me",
+	 AnLab, "tamayomi-the-baseball-girls", "Thu ??:??",
+	 22526, NoTvT, "Tamayomi",
+	 [ "HS-girls", "Baseball" ]);
+
+add_show("Tower of God", "",			// Rec-by-MB: #3
+	 rYesYes, "At least 3 eps",
+	 CrRoll, "tower-of-god", "Thu 01:30",
+	 23068, "Webcomic/TowerOfGod", "Tower of God",
+	 [ "Korean", "Fantasy", "Shōnen" ]);
+
+add_show("Tsugumomo (S2)", "Tsugu Tsugumomo",
+	 rNo, "Rejected S1",
+	 CrRoll, "tsugumomo", "Mon 00:00",
+	 22978, "Manga/Tsugumomo", "Tsugumomo",
+	 [ "tsukumogami", "Fan-Service", "Ecchi-with-plot" ]);
+
+add_show("Wave, Listen to Me!", "",
+	 rToTryLikely, "3 eps rule",
+	 AnLab, "wave-listen-to-me", "Sat ??:??",
+	 22551, "Manga/WaveListenToMe", "Wave, Listen to Me!",
+	 [ "Radio", "Comedy", "Slice-of-life", "Adults" ]);
+
+add_show("Woodpecker Detective's Office", "",
+	 rToTryLikely, "RebeccaS +ive",
+	 CrRoll, "woodpecker-detectives-office", "Tue 01:00",
+	 22000, NoTvT, "Woodpecker Detective's Office",
+	 [ "Historical", "Mystery", "", "" ]);
+
+/*
+add_show("", "",
+	 rNo, "",
+	 CrRoll, "", UnknownSchedule,
+	 , "", "",
+	 [ "", "", "", "" ]);
+*/
+
+</script>
+
+</body>
+</html>

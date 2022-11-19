@@ -1,0 +1,165 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<title>C12h’s lists of Humble Bundles</title>
+<style type=text/css>
+ body		{ width: 42em; margin: 3px auto; font-family: serif; }
+ h1		{ font: bold 150% sans-serif; margin: 0; }
+ h2		{ font: bold 111% sans-serif; margin: 1rem 0 0; }
+ ul, ul>li	{ margin-top: 0.3em; margin-bottom: 0; }
+ p		{ margin: 0.5rem 0 0; }
+ tt		{ font: 100% sans-serif; text-transform: small-caps; }
+ .w		{ color: #800; }
+ .aside		{ font-size: 80%; margin: 1pt 2em; }
+</style>
+</head>
+<body>
+
+<h1>C12h’s lists of Humble Bundles</h1>
+<p>
+The video games that Humble Bundle sells mostly come as Steam keys, but
+HumbleBundle.com does not provide links to the Steam Store page for games. 
+Even more annoyingly, the two websites sometimes use different names for the
+same games. 
+In <em>these</em> lists, (nearly) every game title is a link to the
+corresponding Steam Store page.
+<p>
+These lists also show which games have official Linux versions (“Linux
+native”). 
+Many Windows games can also run on Linux using Steam’s <a href=
+"https://en.wikipedia.org/wiki/Proton_(software)">Proton</a> subsytem. 
+I use the crowd-sourced database at <a href="https://www.protondb.com/"
+>ProtonDB.com</a>, which classifies each game as
+ <tt>PLATINUM</tt> (it Just Works),
+ <tt>GOLD</tt>,
+ <tt>SILVER</tt>,
+ <tt>BRONZE</tt> (crashes a lot),
+ <tt>BORKED</tt> (not at all playable) or
+ <tt>PENDING</tt> (no reports yet). 
+<strong class=w>Warning</strong>: I rarely update these ratings, but they can
+change over time, so check before relying on them.
+
+<div class=aside>BTW, I use and recommend <a href=
+"https://addons.mozilla.org/en-US/firefox/addon/protondb-steam-summary/"
+>this Firefox extension</a>.</div>
+
+<h2>Humble Choice</h2>
+<p>
+This <a href="Humble-monthlies.html">large (and growing!) document</a> lists all
+the Humble Choice bundles (and the last few Humble Monthly bundles).  Clicking
+on a line will show or hide the bundle information, except that clicking on the
+month-year part takes you to the bundle’s page on humblebundle.com (in another tab).
+
+<!-- We need JSON data of the form
+  --	[
+  --	 [ "«END-DATE»", "«FILE-NAME»", "«LINK TEXT»", "«FOLLOWING-HTML»" ],
+  --	 [ "«END-DATE»", "«FILE-NAME»", "«LINK TEXT»", "«FOLLOWING-HTML»" ]
+  --	]
+  -- My helper code looks for lines matching “<script id="bundles" … >”
+  -- and “</script><!--JSON…->”.
+-->
+<!-- JSON data generated 2022-11-17 03:11:33 UTC: -->
+<script id="bundles" type="application/json">
+[
+ ["2020-08-06", "20-08-Best-of-Paradox-bundle.html",
+	"Humble Best of Paradox Interactive Bundle",
+	"(August 2020)"],
+ ["2020-10-20", "20-10-One-Special-Day-2020-bundle.html",
+	"Humble One Special Day Bundle 2020",
+	"(October 2020; for gamers with disabilities)"],
+ ["2022-04-17", "22-03-Kodansha-Comics-2022-bundle.html",
+	"Humble 2022 Kodansha Manga Bundle",
+	"(March 2022)"],
+ ["2022-03-25", "22-03-Ukraine-bundle.html",
+	"Humble Stand with Ukraine Bundle",
+	"(March 2022)"],
+ ["2022-04-22", "22-04-Asmodee-bundle.html",
+	"Humble Game Night! by Asmodee Bundle",
+	"(April 2022)"],
+ ["2022-06-09", "22-05-Battles-of-Yore-bundle.html",
+	"Humble Battles of Yore Bundle",
+	"(May 2022)"],
+ ["2022-05-26", "22-05-GameOverT1D-bundle.html",
+	"Humble \342\200\234Game Over, T1D\342\200\235 Bundle",
+	"(May 2022; \342\200\234T1D\342\200\235 is Type 1 Diabetes)"],
+ ["2022-08-20", "22-07-Amazing-Adventures-bundle.html",
+	"Humble Amazing Adventures bundle",
+	"(July 2022)"],
+ ["2022-08-13", "22-07-Deck-Builder-bundle.html",
+	"Humble Deck-Builder Bundle",
+	"(July 2022)"],
+ ["2022-07-28", "22-07-FocusEntertainment-bundle.html",
+	"Humble Focus Entertainment Bundle",
+	"(July 2022)"],
+ ["2022-09-07T18:00:00+00:00", "22-09-2K-Megahits-bundle.html",
+	"Humble 2K Megahits Bundle",
+	"(September 2022)"],
+ ["2022-09-22", "22-09-Dungeons-bundle.html",
+	"Humble <i>Dungeons</i> Bundle",
+	"(September 2022; <i>Dungeons</i> games)"],
+ ["2022-09-30", "22-09-Total-War-bundle.html",
+	"Humble Total War Classics Bundle",
+	"(September 2022)"],
+ ["2022-10-27", "22-10-RPG-Legends-bundle.html",
+	"Humble RPG Legends: <i>Baldur\342\200\231s Gate</i> and Beyond",
+	"(October 2022)"],
+ ["2022-11-19T02+00:00", "22-11-Complete-11Bit-bundle.html",
+	"Humble 11 Bit Studios Bundle",
+	"(November 2022)"],
+ ["2022-11-26T02:00:00", "22-11-Twin-Sails-Tabletop-Classics-bundle.html",
+	"Humble Twin Sails Tabletop Classics Bundle",
+	"(November 2022; popular board games)"]
+]
+</script><!--JSON-->
+<script>
+  "use strict;"
+  try {
+      let json_el = document.getElementById("bundles");
+      let files = JSON.parse(json_el.text);
+      files = files.sort((a, b) => {
+	  if ( a[0] > b[0] ) {
+	      return 1;
+	  } else if ( a[0] < b[0] ) {
+	      return -1;
+	  } else if ( a[1] > a[1] ) {
+	      return 1;
+	  } else {
+	      return -1;
+	  }});
+      //
+      let now = new Date(); now = now.toISOString();
+      let active_bundles_list = null, old_bundles_list = null;
+      for ( const fi of files ) {
+	  if ( fi[0] < now ) {
+	      if ( ! old_bundles_list )
+		  old_bundles_list = create_h2_ul("Some Expired Bundles",
+						  json_el.nextSibling)
+	      add_li(old_bundles_list, fi[1], fi[2], fi[3]);
+	  } else {
+	      if ( ! active_bundles_list )
+		  active_bundles_list = create_h2_ul("Active Bundles", json_el);
+	      add_li(active_bundles_list, fi[1], fi[2], fi[3]);
+	  }
+      }
+  } catch (e) { alert(e); }
+  function create_h2_ul(text, before) {
+      const parent = before.parentElement;
+      var h2 = document.createElement("h2");
+      h2.appendChild(document.createTextNode(text));
+      parent.insertBefore(h2, before);
+      var ul = document.createElement("ul");
+      parent.insertBefore(ul, before);
+      return ul;
+  }
+  function add_li(ul_el, href, text, suffix) {
+      li = document.createElement("li")
+      ul_el.appendChild(li)
+      a = document.createElement("a");
+      li.appendChild(a)
+      a.href= href;
+      a.innerHTML = "Humble " + text;
+      a.insertAdjacentHTML("afterend", " " + suffix);
+  }
+</script>
+
+</body>
+</html>

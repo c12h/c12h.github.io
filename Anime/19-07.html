@@ -1,0 +1,244 @@
+<!DOCTYPE html><html><head>
+<meta charset="utf-8">
+<title>‘Summer’ 2019 Anime in Australia</title>
+<link rel="stylesheet" href="animelist.css">
+<script src="animelist.js"></script>
+</head>
+<body>
+
+<h1>‘Summer’ (Jul-Sep) 2019 Anime in Australia</h1>
+<div class=next><a href="19-10.html">Fall 2019</a></div>
+<div class=prev><a href="19-04.html">Spring 2019</a></div>
+
+<ul class=tight>
+<li>Simulcast times are AEST, and only reliable for Crunchyroll.
+<li>Areas with background color have mouse-over texts.
+<li>“MB” is <a href="https://www.youtube.com/channel/UCBs2Y3i14e1NWQxOGliatmg/videos"
+	>Mother's Basement (Geoff Thew)</a>.
+<li>Compiled by Chris Chittleborough; last column is my personal ratings and comments.
+</ul>
+
+<table id="main"></table>
+
+<p class=outdent>
+Sources:<ul class=tight>
+<li><a href="https://en.wikipedia.org/wiki/Category:2019_anime_television_series_debuts"
+	>Category:2019 anime television series</a> at Wikipedia
+<li>Anime News Network’s <a href=
+	"https://www.animenewsnetwork.com/preview-guide/2019/summer/.148457"
+	>Spring 2019 Anime Preview Guide</a> and encyclopedia
+<li><a href="https://tvtropes.org/pmwiki/posts.php?discussion=15564472590A84035900"
+ >TV Tropes forum thread</a>
+</ul>
+
+<script>
+"use strict";
+/*
+function add_show (
+    name, jnames,	    // my name; japanese name(s) if relevant or else ""
+    myrating, mycomment,    // rating (rYesYes etc); personal comment
+    site, sitepath, when,   // AnLab etc; URL tail; Thursday+0130 etc
+    ANNEnum, tvt, wp,	    // # in ANN encyclopedia; URL tails to TV Tropes, WP
+    tags,		    // Array of strings
+    desc)		    // Optional description; need tag(s) if present
+*/
+
+add_show("7 Seeds", "",
+	rNoNoNo, "BAD reviews",
+	Netflix, "80183051", NotWeekly,
+	21601, "Manga/SevenSeeds", "7 Seeds",
+	[ "SF", "Post-apocalypse", "Shōjo", "Drama", "Terrible-reviews" ]);
+add_show("A Certain Scientific Accelerator", "",
+	rNo, "Later?",
+	CrRoll, "a-certain-scientific-accelerator", "Sat 03:30",
+	21485, "Manga/ACertainScientificAccelerator", "A Certain Scientific Accelerator",
+	[ "Shōnen", "Action", "Spin-off" ]);
+add_show("Are You Lost?", "",
+	rNoNo, "Silly",
+	CrRoll, "are-you-lost", "Wed 12:45",
+	21890, "Manga/AreYouLost", "Are You Lost?",
+	[ "12½min-episodes", "Ecchi", "Survival-tips", "Yes,Really" ]);
+add_show("Arifureta: From Commonplace to World's Strongest", "",
+	rYes, "Schadenfreude",
+	AnLab, "arifureta-from-commonplace-to-worlds-strongest", "Tue 09:30"/*???*/,
+	20363, "LightNovel/ArifuretaFromCommonplaceToWorldsStrongest",
+		"Arifureta: From Commonplace to World's Strongest",
+	[ "Dark", "Isekai", "Highschool", "Harem", "Poor-visuals"],
+	("Japanese Highschool class get taken to another world to defeat invading"+
+	 " demons. All get top powers, except bullied otaku ..."))
+add_show("Astra Lost in Space", "",
+	rYes, "OK Drama",
+	AnLab, "astra-lost-in-space", "Wed 21:30"/*?*/,
+	21779, "Manga/AstraLostInSpace", "Astra Lost in Space",
+	[ "Shōnen", "Adventure/Drama", "SF", "Space"]);
+add_show("BEM", "Yōkai Ningen Bem",
+	rYesYes, "Classy Shōnen",
+	Funimation, "bem/", "Mon 01:35",
+	21994, "Anime/HumanoidMonsterBem", "Yōkai Ningen Bem",
+	[ "Yōkai", "Detective", "Remake", "Dark", "Shōnen", "Good-Music" ]);
+add_show("Cop Craft", "",
+	rYesYes, "Good action",
+	AnLab, "cop-craft/", "Tue 15:30"/*?*/,
+	22012, "LightNovel/CopCraft", "Cop Craft",
+	[ "Detectives", "Old-cop/cute-partner", "Fantasy", "Other-Plane" ]);
+add_show("The Demon Girl Next Door", "Machikado Mazoku",
+	rYes, "Has laughs",
+	HiDive, "the-demon-girl-next-door", "Fri 03:30",
+	22008, "Manga/TheDemonGirlNextDoor", "The Demon Girl Next Door",
+	[ "Yonkoma", "Comedy", "Magical-Girl", "Demon-Girl", "High-School" ],
+	"Ordinary 15yo girl gets turned into a demon, faces lots of difficulties");
+add_show("Demon Lord, Retry!", "Maō-sama, Ritorai!",
+	rNo, "Not awful …?",
+	AnLab, "demon-lord-retry", "Thu 00:00",
+	"21809", NoTvT, "Maō-sama, Retry!",
+	[ "Isekai", "Moe", "Harem", "Fantasy" ]);
+add_show("Do You Love Your Mom and Her Two-Hit Multi-Target Attacks?", "",
+	rYesYes, "Great snark",
+	CrRoll, "do-you-love-your-mom-and-her-two-hit-multi-target-attacks",
+		"Sat 02:30",
+	21508, "LightNovel/DoYouLoveYourMomAndHerTwoHitMultiTargetAttacks",
+		"Do You Love Your Mom and Her Two-Hit Multi-Target Attacks%3F",
+	[ "Comedy", "Mothers", "Teenagers", "Sarcasm", "Isekai", "Fan-Service" ]);
+add_show("Dr. Stone", "",
+	rNo, "Not this year",
+	CrRoll, "dr-stone", "Sat 12:30",
+	21703, "Manga/DrStone", "Dr. Stone",
+	[ "Shōnen", "SF", "Post-Apocalypse", "Rebuilding", "24-eps" ]);
+add_show("Ensemble Stars!", "",
+	rNo, "Not for me",
+	AnLab, "ensemble-stars-the-animation", "Sun 22:00"/*?*/,
+	22259, "VideoGame/EnsembleStars", "Ensemble Stars!",
+	[ "From-Mobile-Game", "Idols", "Reverse-Harem", "Ho-Yay" ]);
+add_show("Fire Force", "Enen no Shouboutai",
+	rYes, "MB v. keen",
+	CrRoll, "fire-force", "Sat 03:25", /* AnLab has dub */
+	21852, "Manga/FireForce", "Fire Force",
+	[ "Shōnen", "Fantasy", "Demons", "Great-Visuals", "24-eps", "Rec-by-MB" ]);
+add_show("Given", "",
+	rNo, "Boys Love",
+	CrRoll, "given", "Fri 05:55",
+	21958, NoTvT, "Given (manga)",
+	[ "Music", "Yaoi", "Highschool-Boys" ]);
+add_show("Granbelm", "",
+	rYes, "Hmm.",
+	CrRoll, "granbelm", "Sat 04:55",
+	21873, "Anime/Granbelm", "Granbelm",
+	[ "Magical-Girls", "Mecha", "Fantasy", "Battle-Royale", "Rec-by-MB" ]);
+add_show("Hakata Mentai! Pirikarako-chan", "",
+	rNo, "For Kids (?)",
+	CrRoll, "hakata-mentai-pirikarako-chan", "Sun 08:15",
+	22257, NoTvT, NoWP,
+	[ "4min-Eps", "Comedy", "Shopping", "Food", "Fairies", "Moe", "Promo" ]);
+add_show("High School Star Musical (Season 3)", "STARMYU",
+	rNo, "Too Bishie",
+	CrRoll, "starmyu", "Tue 01:30",
+	21981, "Anime/HighSchoolStarMusical", "Star-Myu",
+	[ "BL-ish", "Bishonen", "Highschool-boys" ]);
+add_show("Hensuki",
+	 "Are you willing to fall in love with a pervert, as long as she’s a cutie?",
+	rNoNo, "Yuck; Silly",
+	AnLab, "hensuki-are-you-willing-to-fall-in-love-with-a-pervert-as-long-as-shes-a-cutie/", "Mon 20:00"/*?*/,
+	22018,"LightNovel/HensukiAreYouWillingToFallInLoveWithAPervertAsLongAsShesACutie",
+	"Hensuki: Are you willing to fall in love with a pervert, as long as she’s a cutie?",
+	[ "Ecchi", "Fetishes", "School", "‘Comedy’"]);
+add_show("How Heavy Are The Dumbbells You Lift?", "Dumbbell Nan-Kilo Moteru?",
+	rYes, "OK so far",
+	AnLab, "how-heavy-are-the-dumbbells-you-lift", "Wed 22:30"/*?*/,
+	21764, "Manga/HowHeavyAreTheDumbbellsYouLift",
+		"How Heavy Are the Dumbbells You Lift%3F",
+	[ "Comedy", "Fitness", "Fan-Servicey", "Exercise-tips", "Diet-tips" ]);
+add_show("If It’s for My Daughter, I’d Even Defeat a Demon Lord", "",
+	rNo, "Moe fans only",
+	CrRoll, "if-its-for-my-daughter-id-even-defeat-a-demon-lord", "Fri 02:00",
+	22006, "LightNovel/IfItsForMyDaughterIdEvenDefeatADemonLord",
+		"If It's for My Daughter, I'd Even Defeat a Demon Lord",
+	[ "Fantasy", "Moe", "Adoptive-Father", "Not-Isekai" ]);
+add_show("Is It Wrong to Try to Pick Up Girls in a Dungeon? (Season 2)",
+ "DanMachi S2\tDungeon ni Deai o Motomeru no wa Machigatteiru Darō ka Familia Myth II",
+	rYes, "Fun enough",
+	CrRoll, "is-it-wrong-to-try-to-pick-up-girls-in-a-dungeon", "Sun 03:30",
+	20673, "LightNovel/IsItWrongToTryToPickUpGirlsInADungeon",
+		"Is It Wrong to Try to Pick Up Girls in a Dungeon?",
+	[ "Action", "Comedy", "Fantasy", "World-Building", "RPGverse"],
+ "The movie <i>IIWTPUGIAD?: Arrow of the Orion</i> will be released in the US July 23");
+add_show("Isekai Cheat Magician", "",
+	rYes, "Painless",
+	CrRoll, "isekai-cheat-magician", "Thu 00:00",
+	21891, "LightNovel/IsekaiCheatMagician", "Isekai Cheat Magician",
+	[ "Shōnen", "Blatant", "Power-Fantasy" ]);
+add_show("Kengan Ashura", "",
+	rNoNo, "Not for me",
+	Netflix, "80992228", NotWeekly,
+	20427, "Manga/KenganAshura", "Kengan Ashura",
+	[ "Shōnen", "Unarmed-Combat", "Gladiator-ish", "Secret-Arenas" ]);
+add_show("Knights of the Zodiac: Saint Seiya", "",
+	rNo, "Not for me",
+	Netflix, "80186926", NotWeekly,
+	19985, "Manga/SaintSeiya", "Knights of the Zodiac: Saint Seiya (2019 series)",
+	[ "CG", "Remake", "Shōnen", "Fighting", "Fantasy",
+	  "Greek-Myth-ish-kinda" ]);
+add_show("Kochoki: Wakaki Nobunaga", "",
+	rToTryMaybe, "Not for me?",
+	Funimation, "kochoki/", "Mon 22:00"/*?*/,
+	21915, NoTvT, NoWP,
+	[ "Historical-fiction", "Oda Nobunaga", "Action/Drama" ],
+	"Oda Nobunaga as a teenager ... may take some liberties with history");
+add_show("Lord El-Melloi II's Case Files {Rail Zeppelin} Grace note", "",
+	rYesYes, "Good",
+	CrRoll, "lord-el-melloi-iis-case-files-rail-zeppelin-grace-note", "Sun 02:30",
+  //	AnLab, "lord-el-melloi-iIs-case-files", "Sun ?",
+	21727, "LightNovel/LordElMelloiIICaseFiles",
+		 "The Case Files of Lord El-Melloi II",
+	[ "Fate/Zero-Sequel", "Drama", "Detective", "MB-recommends" ],
+	("Adapts one chapter from a 9-volume Light Novel series about Waver Velvet "+
+	 "from Fate/Zero, who 10 years later is now Lord El-Melloi II."));
+add_show("Magical Sempai", "",
+	rNo, "Fails for me",
+	CrRoll, "magical-sempai", "Wed 12:30",
+	21549, "Manga/MagicalSempai", "Magical Sempai",
+	[ "12½min-episodes", "Ecchi", "Comedy" ]);
+add_show("O Maidens in Your Savage Season", "Araburu Kisetsu no Otome-domo yo",
+	rYesYes, "Highly rated",
+	HiDive, "o-maidens-in-your-savage-season", "Sat 09:25",
+	21874, "Manga/AraburuKisetsuNoOtomeDomoYo", "O Maidens in Your Savage Season",
+	[ "Highschool-Girls", "Adolescence", "Comedy", "Romance", "Rec-by-MB" ]);
+add_show("The Ones Within", "Naka no Hito Genome [Jikkyōchū]",
+	rYesYes, "Promising",
+	AnLab, "the-ones-within/", "Sun 22:00"/*?*/,
+	21408, "Manga/TheOnesWithin", "The Ones Within",
+	[ "Gamers", "Youtubers", "Comedy", "Shōjo", "Isekai" ]);
+add_show("Re:Stage! Dream Days", "",
+	rNo, "Not for me?",
+	HiDive, "restage-dream-days" /*???*/, "Mon 06:00",
+	21866, NoTvT, "Re:Stage!",
+	[ "Idols", "Highschool-Girls", "From-Mobile-Game" ]);
+add_show("Senki Zesshou Symphogear XV", "",
+	rToTryMaybe, "Can start @S5",
+	CrRoll, "symphogear", "Sun 04:00",
+	22019, "Anime/SenkiZesshouSymphogear", "Symphogear",
+	[ "Magical-Girls", "Power-of-Music", "Eldritch-Abominations", "Season-5" ]);
+add_show("To the Abandoned Sacred Beasts", "",
+	rToTryMaybe, "Take a look",
+	CrRoll, "to-the-abandoned-sacred-beasts", "Tue 01:00",
+	21778, "Manga/ToTheAbandonedSacredBeasts",
+		"to the Abandoned Sacred Beasts",
+	[ "Shōnen", "Dark-Fantasy" ]);
+add_show("Try Knights", "",
+	rNo, "Too shōnen",
+	CrRoll, "try-knights", "Wed 03:30",
+	21956, NoTvT, "Try Knights",
+	[ "Rugby", "Highschool-Boys" ]);
+add_show("Vinland Saga", "",
+	rToTryForSure, "Popular",
+	AmazonP, "B07TVV16BV", "Mon 00:00",
+	20778, "Manga/VinlandSaga", "Vinland Saga (manga)",
+	[ "Historical", "Action", "Great-Visuals", "Rec-by-MB" ]);
+add_show("Wasteful Days of High School Girls", "Joshi Kōsei no Mudazukai",
+	rNoNo, "Idiotic",
+	HiDive, "wasteful-days-of-high-school-girls", "Sat 09:30",
+	21762, NoTvT, "Wasteful Days of High School Girls",
+	[ "Comedy", "Idiot-protagonist", "Highschool-Girls" ]);
+
+</script>
+</body>
+</html>
