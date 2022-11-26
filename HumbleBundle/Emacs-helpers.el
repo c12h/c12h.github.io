@@ -91,64 +91,65 @@ Return nil if no change needed, t if the JSON is/was wrong."
   (interactive "*")
   (save-match-data
     ;; Find the start and end of the <script ...> element and check for problems.
-    (goto-char (point-min))
-    (unless (re-search-forward "\n<script id=\"bundles\" [^<>]+>\n" nil t)
-      (error "Cannot find “<script id=\"bundles\"…>” in this buffer"))
-    (let ((boJSON (point))		; Point is now at b-o-l after <script …>
-	  (cur-dir (file-name-directory buffer-file-name)))
-      (unless (re-search-forward "\n</script><!--JSON-->" nil t)
-	(error "Cannot find “</script><!--JSON-->” line"))
-      (unless cur-dir
-	(error "Cannot find current directory (!)"))
-      (beginning-of-line)		; Point is now at "<" in "</script>"
-      (unless (char-equal (char-after boJSON) ?\[)
-	(error "<script id=\"bundles\" ...> does not start with ‘[’"))
-      ; Get list of bundle files in cur-dir, sorted in Unicodal order.
-      (let ((items (directory-files cur-dir nil
-				    "^[0-9][0-9]-[01][0-9].*-bundle\\.html$"))
-	    (prefix "[\n")
-	    new-text)
-	(unless items
-	  (error "No YY-MM-*-bundle.html files found in directory %s" cur-dir))
-	(with-temp-buffer
-	  (dolist (fname items)
-	    (let* (;; Get "MONTH, YEAR" from file name
-		   (year-int (+ (read (substring fname 0 2)) 2000))
-		   (mont-int (read (substring fname 3 5)))
-		   (time-val (encode-time (list 0 0 0 17 mont-int year-int 0 0 0)))
-		   (m-y-text (format-time-string "%B %Y" time-val))
-		   ;; Get END-D-ISO, LINK-HTML, NOTE-HTML (all strings) from file
-		   (b-f-data (c12h--parse-my-bundle-file fname))
-		   (end-d-ISO (nth 0 b-f-data))
-		   (link-html (nth 1 b-f-data))
-		   (note-html (nth 2 b-f-data))
-		   ;; Compute FOLL-HTML
-		   (foll-html (concat "(" m-y-text note-html ")")))
-	      (insert (format "%s [%S, %S,\n\t%S,\n\t%S]"
-			      prefix
-			      end-d-ISO fname link-html foll-html))
-	      (setq prefix ",\n")))
-	  (insert "\n]\n")
-	  (setq new-text (buffer-substring-no-properties (point-min) (point-max))))
-	;; Back to the target buffer
-	(let ((ok (string-equal new-text
-				(buffer-substring-no-properties boJSON (point)))))
-	  (when maybe-update
-	    (if ok
-		(message "No changes needed.")
-	      (delete-region boJSON (point))
-	      (insert new-text)
-	      (goto-char boJSON)
-	      (forward-line -2)
-	      ;; Update or insert any HTML comment line preceding <script ...> line.
-	      (let ((gen-time-text (format-time-string "%F %T" nil t))) ; t here ⇒ UTC
-		(if (looking-at
-		     "<!-- JSON data generated \\([0-9-]+ [0-9:.+-]+\\) UTC: -->")
-		    (replace-match gen-time-text t t nil 1)
-		  (forward-line 1)
-		  (insert "<!-- JSON data generated " gen-time-text " UTC: -->\n")))
-	      (message "JSON data updated.")))
-	  (not ok))))))
+    (let ((case-fold-search t))
+      (goto-char (point-min))
+      (unless (re-search-forward "\n<script id=\"bundles\" [^<>]+>\n" nil t)
+	(error "Cannot find “<script id=\"bundles\"…>” in this buffer"))
+      (let ((boJSON (point))		; Point is now at b-o-l after <script …>
+	    (cur-dir (file-name-directory buffer-file-name)))
+	(unless (re-search-forward "\n</script><!--JSON-->" nil t)
+	  (error "Cannot find “</script><!--JSON-->” line"))
+	(unless cur-dir
+	  (error "Cannot find current directory (!)"))
+	(beginning-of-line)		; Point is now at "<" in "</script>"
+	(unless (char-equal (char-after boJSON) ?\[)
+	  (error "<script id=\"bundles\" ...> does not start with ‘[’"))
+	;; Get list of bundle files in cur-dir, sorted in Unicodal order.
+	(let ((items (directory-files cur-dir nil
+				      "^[0-9][0-9]-[01][0-9].*-bundle\\.html$"))
+	      (prefix "[\n")
+	      new-text)
+	  (unless items
+	    (error "No YY-MM-*-bundle.html files found in directory %s" cur-dir))
+	  (with-temp-buffer
+	    (dolist (fname items)
+	      (let* (;; Get "MONTH, YEAR" from file name
+		     (year-int (+ (read (substring fname 0 2)) 2000))
+		     (mont-int (read (substring fname 3 5)))
+		     (time-val (encode-time (list 0 0 0 17 mont-int year-int 0 0 0)))
+		     (m-y-text (format-time-string "%B %Y" time-val))
+		     ;; Get END-D-ISO, LINK-HTML, NOTE-HTML (all strings) from file
+		     (b-f-data (c12h--parse-my-bundle-file fname))
+		     (end-d-ISO (nth 0 b-f-data))
+		     (link-html (nth 1 b-f-data))
+		     (note-html (nth 2 b-f-data))
+		     ;; Compute FOLL-HTML
+		     (foll-html (concat "(" m-y-text note-html ")")))
+		(insert (format "%s [%S, %S,\n\t%S,\n\t%S]"
+				prefix
+				end-d-ISO fname link-html foll-html))
+		(setq prefix ",\n")))
+	    (insert "\n]\n")
+	    (setq new-text (buffer-substring-no-properties (point-min) (point-max))))
+	  ;; Back to the target buffer
+	  (let ((ok (string-equal new-text
+				  (buffer-substring-no-properties boJSON (point)))))
+	    (when maybe-update
+	      (if ok
+		  (message "No changes needed.")
+		(delete-region boJSON (point))
+		(insert new-text)
+		(goto-char boJSON)
+		(forward-line -2)
+		;; Update or insert any HTML comment line preceding <script ...> line.
+		(let ((gen-time-text (format-time-string "%F %T" nil t))) ; t here ⇒ UTC
+		  (if (looking-at
+		       "<!-- JSON data generated \\([0-9-]+ [0-9:.+-]+\\) UTC: -->")
+		      (replace-match gen-time-text t t nil 1)
+		    (forward-line 1)
+		    (insert "<!-- JSON data generated " gen-time-text " UTC: -->\n")))
+		(message "JSON data updated.")))
+	    (not ok)))))))
 
 
 ;;; This helper function parses one of my YY-MM-*-bundle.html files.  On
@@ -183,7 +184,8 @@ title."
    ((string-equal fname "22-03-Kodansha-Comics-2022-bundle.html")
     (list "2022-04-17" "Humble 2022 Kodansha Manga Bundle" ""))
    (t
-    (let ((re (concat "<h1><a [^<>]+>\\(.+?\\)</a>[^<>]+</h1>\\s-*"
+    (let ((case-fold-search t)
+	  (re (concat "<h1><a [^<>]+>\\(.+?\\)</a>[^<>]+</h1>\\s-*"
 		      "<div id=end\\(?: data-note=\"\\([^\"]+\\)\"\\)?>\\s-*"
 		      "end[eds]+ <time datetime=\"\\([^\"]+\\)\""))
 	  note)
@@ -232,32 +234,58 @@ title."
 ;;; where TITLE is the content of the <title> element with any leading and
 ;;; trailing white-space removed.
 ;;;
+(defconst c12h--re-html-title
+  "<title>\\s-*\\(\\S-[^<>]+\\S-\\)\\s-*</title>")
+(defconst c12h--re-HB-avail
+  (concat "<script\\>[^<>]+\\<"
+	  "type=\\([\"']\\)?application/ld\\+json\\1[<>]*>[\n\t ]*{"))
+(defconst c12h--re-HB-ended
+  ;; Could change "<strong>“ to ”<[a-z]+[^<>]*>“ for extra robustnes:
+  (concat "This bundle was live .*? to <strong>"
+	  "\\([A-Za-z]+\\) \\([0-9]+\\), \\(20[0-9][0-9]\\)</strong>"))
 (defun c12h--parse-bundle-home-page (url)
-  "Extracts end date & title from HTML of a Humble Bundle’s page."
+  "Extracts end date & title from HTML of a Humble Bundle’s page.
+URL must be HTTP or HTTPS."
   (save-match-data
-    (let ((title-re "<title>\\s-*\\(\\S-[^<>]+\\S-\\)\\s-*</title>")
-	  (avail-re (concat "<script\\>[^<>]+\\<"
-			    "type=\\([\"']\\)?application/ld\\+json\\1[<>]*>[\n\t ]*{"))
-	  (ended-re (concat "This bundle was live .*? to <strong>"
-			   "\\([A-Za-z]+\\) \\([0-9]+\\), \\(20[0-9][0-9]\\)</strong>"))
+    (let ((case-fold-search t)
+	  (deactivate-mark nil)	; Don’t deactive mark in current buffer.
 	  (active t) title end-date
-	  alist offers availEnds time-val)
-      (let ((temp-buffer (url-retrieve-synchronously url nil t 30)))
-	;;	WARNING: buffer gets ENTIRE response, including headers!
+	  (url-obj (url-generic-parse-url url))
+	  temp-buffer b-o-resp alist offers availEnds time-val)
+      (unless (and url-obj (member (url-type url-obj) '("http" "https")))
+	(error "Need https://… or http://… url, not %S" url))
+      (setq temp-buffer (url-retrieve-synchronously url-obj nil t 30))
 	(unless temp-buffer
 	  (error "No data for URL protocol in %S" url))
 	(with-current-buffer temp-buffer
-	  ;; Search for a <title> element.
 	  (goto-char (point-min))
-	  (unless (re-search-forward title-re nil t)
-	    (error "No <title> element (not really HTML?) in %S" url))
+	  ;; Check the HTTP response line and headers.
+	  (unless (looking-at "HTTP/[0-9.]+ \\([0-9][0-9][0-9]\\) \\([^\n]+\\)")
+	    (forward-line)
+	    (error "Get non-HTTP response line %S for URL %s"
+		   (buffer-substring (point-min) (point)) url))
+	  (unless (string-equal (match-string 1) "200")
+	    (error "Cannot fetch %S: HTTP error %s %s"
+		   url (match-string 1) (match-string 2)))
+	  (unless (search-forward "\n\n" nil t)
+	    (error "Cannot locate reponse body for %S" url))
+	  (setq b-o-resp (match-beginning 0))
+	  (goto-char (point-min))
+	  (when (re-search-forward "^content-type: \\([^; \n]+\\)" b-o-resp t)
+	    (unless (string-equal (match-string 1) "text/html")
+	      (error "Got %S content for %S, need \"text/html\""
+		     (match-string 1) url)))
+	  ;; Search for a <title> element.
+	  (goto-char b-o-resp)
+	  (unless (re-search-forward c12h--re-html-title nil t)
+	    (error "No <title> element in %S" url))
 	  (setq title (match-string-no-properties 1))
 	  ;; Look for a <script> element with type="application/ld+json"
 	  ;; containing an object with an "offers" property
 	  ;; whose value is an object containing an "availabilityEnds" property
 	  ;; which has a string value.
 	  (while (and (not end-date)
-		      (re-search-forward avail-re nil t))
+		      (re-search-forward c12h--re-HB-avail nil t))
 	    (backward-char)
 	    (setq alist (json-parse-buffer :object-type 'alist))
 	    (and (consp alist)
@@ -273,46 +301,23 @@ title."
 	  ;; If that fails, look for a bundle-over notice.
 	  (unless end-date
 	    (setq active nil)
-	    (goto-char (point-min))
-	    (and (re-search-forward ended-re nil t)
+	    (goto-char b-o-resp)
+	    (and (re-search-forward c12h--re-HB-ended nil t)
+		 (setq time-val (assoc (upcase (match-string 1))
+				       c12h--months 'string-equal))
 		 (setq time-val (list 0 0 0			; SEC MIN HOUR
 				      (read (match-string 2))	; DAY
 				      (cdr time-val)		; MONTH
 				      (read (match-string 3))	; YEAR
 				      nil -1 nil))		; JUNK DST ZONE
 	         (setq end-date (format-time-string "%F" (encode-time time-val)))))
-	;; If both failed, we have the wrong URL or a bug.
+	;; If both failed, we have the wrong URL or a bug in this very code.
 	  (unless end-date
 	    (error "Could not get bundle end time from %S" url)))
 	;; On success, return a list.
-	(list active end-date title)))))
+	(list active end-date title))))
 
 
-;;;;;; BUG: the <script type=*application/*json*> we want is not necessarily the first!
-;;;;;;
-(defun c12h--find-end-date ()
-  (interactive)
-  (goto-char (point-min))
-  (unless (re-search-forward
-	   "<script type=['\"]?application/[^<>\";]*json[^<>]*>[\n\t ]*{" nil t)
-    (error "Cannot find “<script type=\"application/…json\"…>…{”"))
-  (backward-char)
-  (let ((alist (json-parse-buffer :object-type 'alist))
-	(standard-output t)
-	offers end-date)
-    (unless (consp alist)
-      (error "Bad JSON data: got %S" end-date))
-    (setq offers (assq 'offers alist))
-    (unless offers
-      (error "No \"offers\" key in JSON object"))
-    (unless (consp offers)
-      (error "Weird value %S for \"offers\" key in JSON object" offers))
-    (let ((end-date (assoc 'availabilityEnds (cdr offers))))
-      (unless end-date
-	(error "No \"availabilityEnds\" key in JSON object"))
-      (setq end-date (cdr end-date))
-      (message "Ends %S" end-date)
-      end-date)))
 
 
 ;;; Insert HTML text for two table rows describing a Steam app.
@@ -330,7 +335,8 @@ Partially un-munges NAME by replacing any “_” characters in NAME with “ �
 
 For my Humble-monthlies.html file and look-alikes."
   (interactive "*")
-  (let ((re (concat "^https://store[.]steampowered[.]com"
+  (let ((case-fold-search t)
+	(re (concat "^https://store[.]steampowered[.]com"
 		   "\\(:?/\\(app\\|sub\\|bundle\\)/[0-9]+\\)/\\([^/#]+\\)/?#?")))
     (save-match-data
       (let ((url (gui-get-selection)) ; Defaults to (gui-get-selection 'PRIMARY 'STRING)
@@ -356,5 +362,29 @@ For my Humble-monthlies.html file and look-alikes."
 ;;;;==================== Creating my bundle HTML files =====================;;;;
 
 ;;; Use (defun url-expand-file-name (url "https://www.humblebundle.com/"))
-;;; Result should begin with "https://www.humblebundle.com/games/"
-;;; or with "https://www.humblebundle.com/books/".
+;;; Result should usually begin with "https://www.humblebundle.com/$KIND/" where
+;;; $KIND is "games" or "books" or "software"
+;;;
+;;; Want some special keys for inserting stub of <li> describing a Linux game.
+;;; Best to do this as a minor mode, since would be useful elsewhere.
+;;;	(define-minor-mode SIK-mode	; "SIK" = Steam Info Keys. First-draft!
+;;;	  "???"
+;;;	  :lighter " +SIK"
+;;;	  :keymap (("\^Cl" . 'c12h-insert-linux-native-game-info)
+;;;		   ("\^Cp" . 'c12h-insert-proton-compat-game-info)
+;;;		   ("\^Cx" . 'c12h-insert-non-linux-game-info)))
+;;;	except maybe add `button-buffer-map' as parent keymap???
+;;;
+;;; Getting fancy with 'edit-here' indicators:
+;;;   *	Info: (elisp)Buttons
+;;;   *	(define-button-type 'c12h-fixme-button
+;;;	  'action	…
+;;;	  'follow-link  t	; ???
+;;;	  'face		…
+;;;	  'help-echo	…
+;;;	  …)
+;;;   * Face:	:height 0.9	;maybe
+;;;		:box '(:line-width -1 :color ??? :style released-button)
+;;;	OR	:inverse-video t
+;;;   *	(insert-text-button "FIXME>" 'type 'c12h-fixme-button)
+;;;

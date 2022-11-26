@@ -1,0 +1,22 @@
+NOTES ON HUMBLE BUNDLE URLS AND HTML PAGES
+==========================================
+
+URLS
+----
+
+AFIAK (as of November 2022), URLs of non-monthly humble bundles look like
+	1. https://www.humblebundle.com/games/«BASENAME»
+	2. https://www.humblebundle.com/books/«BASENAME»
+	3. https://www.humblebundle.com/software/«BASENAME»
+    or	4. https://www.humblebundle.com/«BASENAME»
+where «BASENAME» contains no slashes (and, BTW, does not end with .htm[l] etc).
+
+The fourth format is used for big multi-vendor bundles like the “Humble Conquer
+COVID-19 bundle” and the “Humble Stand with Ukraine Bundle” (for example,
+“https://www.humblebundle.com/conquer-covid19-bundle”).
+
+The monthly bundles from Humble Choice each have pages with URLs like
+	https://www.humblebundle.com/subscription/january-2022
+    or	https://www.humblebundle.com/membership/february-2022
+but (IIRC) the bundles from the previous Humble Monthly feature did not get
+their own pages.

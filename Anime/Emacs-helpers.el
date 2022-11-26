@@ -29,30 +29,172 @@
   (define-key mhtml-mode-map "\^Ca" 'c12h-update-anime-index))
 
 
-;;; This command inserts JavaScript code calling add_show(), the core function defined
-;;; by my "animelist.js" file.
+;;;;=================== Helpers for My YY-MM.html files ====================;;;;
 
+;;; This command inserts JavaScript code calling add_show(), the core function
+;;; defined by my "animelist.js" file.
 ;;; The inserted code will need editing: it will contain a JavaScript syntax
 ;;; error (no 8th argument) and have too many empty strings.
 ;;;
 (defun c12h-insert-add_show-call ()
-  "Insert JavaScript calling add_show() function, for Anime lists.
+  "Insert stub JavaScript call to add_show() function, for Anime lists.
 First, move forward to first line starting with anything other than tab or
 space.  Leave one empty line at start and end of inserted text."
   (interactive "*")
   (save-match-data
     (re-search-forward "\n[^\t ]" nil t)
-    (backward-char)
+    (beginning-of-line)
     (let ((bol (point)))
       (skip-chars-backward "\n\t ")
       (delete-region (point) bol))
     ;;
     (insert "\n\nadd_show(\"\", \"\",\n"
-	    "\t rToTryMaybe, \"?\","
-	    "\t UnknownSite, \"X\", UnknownSchedule,"
+	    "\t rToTryMaybe, \"?\",\n"
+	    "\t UnknownSite, \"X\", UnknownSchedule,\n"
 	    "\t , NoTvT, \"\",\n\t [ \"\", \"\", \"\", \"\" ]);\n\n")
     ))
 
+;;;---------- Automation for adjusting show times to my time zone -----------;;;
+;;; Constants and variables:
+(defconst c12h--re-site-path-time
+  (concat
+   "^\t "			; Only interested in lines starting with TAB then SP
+   "\\([A-Za-z]+\\),\\s-*"	; Identifier for website
+   "\"[^\"]+\",\\s-*"		; Tail of URL for show on website, or "X"
+   "\"\\(Sun\\|Mon\\|Tue\\|Wed\\|Thu\\|Fri\\|Sat\\) \\([0-2][0-9]\\):\\([0-5][0-9]\\)\",")
+				; Only interested in lines with "DAY HH:MM" here
+  "RE for `c12h-adjust-anime-show-times' etc")
+(defconst c12h--days-of-week-alist
+  '((Sun . 0) (Mon . 1) (Tue . 2) (Wed . 3) (Thu . 4) (Fri . 5) (Sat . 6))
+  "Map for `c12h--adjust-anime-site-show-times'")
+(defvar c12h--history--site-names nil
+  "Minibuffer history list for `c12h-adjust-anime-show-times'")
+(defvar c12h--history--delta-hours nil
+  "Minibuffer history list for `c12h-adjust-anime-show-times'")
+
+;;; This command collects information from the user about which site to adjust
+;;; the shows for and how much to adjust them (±0.5 hr, ±1 hr, ..., or ±23.5
+;;; hr), then calls c12h--adjust-anime-site-show-times to calculate the new
+;;; times and update the buffer.
+;;; It is comprehensively over-engineered.
+;;; You can prevent adjustment of a particular show by removing the indentation
+;;; before "CrRoll", "HiDive" etc.
+;;;
+(defun c12h-adjust-anime-show-times ()
+  "Adjust show times for one website in …/Anime/YY-MM.html file.
+Looks and munges ‘<C-J><TAB><SP><website-code>,<OWS>\"…\",<OWS>\"Ddd hh:mm\",’ sequences,
+where OWS is zero or more white-space characters, including newlines.
+Gets user to choose website code (unless only one found), then enter number
+of hours to shift time by (possibly signed, non-zero, can end in \".5\")."
+  (interactive "*")
+  (save-excursion
+    (save-match-data
+      (let ((case-fold-search nil)
+	    (completion-ignore-case t)
+	    (site-names-alist nil) ;; List of (SITE-NAME-STRING . N-TIMES) pairs
+	    pair n-sites prompt
+	    site-name delta-hours)
+	;;==== Get the site name (ie., which site/path/time lines to mung)
+	;;---- Find the site names used in eligible lines
+	(goto-char (point-min))
+	(while (re-search-forward c12h--re-site-path-time nil t)
+	  (let ((name (match-string-no-properties 1)) pair)
+	    (unless (string-equal name "UnknownSite")
+		(setq pair (assoc-string name site-names-alist t))
+		(if pair
+		    (setcdr pair (1+ (cdr pair)))
+		  (setq site-names-alist (cons (cons name 1) site-names-alist))))))
+	;;---- If necessary, ask user for a site name using completion
+	(setq n-sites (length site-names-alist))
+	(cond ((null site-names-alist)
+	       (error "No site/path/time lines found"))
+	      ((= n-sites 1)
+	       (setq site-name (caar site-names-alist)))
+	      (t
+	       ;; Sort into decreasing frequency, then read with completion
+	       (setq site-names-alist (sort site-names-alist
+					    (lambda (a b) (> (cdr a) (cdr b))))
+		     prompt (format "Site code to adjust show times for (%s, %s%s): "
+				    (caar site-names-alist) (caadr site-names-alist)
+				    (if (> n-sites 2) ", …" ""))
+		     site-name (completing-read
+				prompt site-names-alist nil
+				t	; Only exit if input completes properly
+				nil	; No deprecated INITIAL value
+				'c12h--history--site-names
+				(mapcar 'car site-names-alist) ; Defaults
+				))))
+	;;==== Read number of hours
+	(while (let* ((prompt (format "Hours to adjust %s show times by: " site-name))
+		      (s (read-from-minibuffer prompt nil nil nil
+					       'c12h--history--delta-hours))
+		      (keep-asking t))
+		 (when (string-match-p "^[-+]?[0-9]*[1-9][0-9]*\\(?:\\.5\\)?$" s)
+		   (setq delta-hours (read s))
+		   (when (and (not (zerop delta-hours)) (< (abs delta-hours) 24))
+		     (setq keep-asking nil)))
+		 (when keep-asking
+		   (message "Need one of -23.5, -23, …, 1, -0.5, 0.5, 1, …, 23, 23.5")
+		   (sit-for 1))
+		 keep-asking))
+	(c12h--adjust-anime-site-show-times site-name delta-hours)))))
+
+;;; This helper function changes the "Day HH:MM" values for all the shows from a
+;;; website.
+;;; BUG: The time of day calculations use while loops for clarity.  To avoid DOS
+;;; problems, we signal an error if abs(delta-hours) <= 24. Since the shifts are
+;;; time-zone adjustments, this should not be a problem.
+;;;
+(defun c12h--adjust-anime-site-show-times (site-name delta-hours)
+  "Change buffer contents for `c12h-adjust-anime-times'."
+  (when (>= (abs delta-hours) 24)
+    (error "Adjusting anime show times by %g hours would be silly. (Limit is ±24.)"
+	   delta-hours))
+  (message "Adjusting times for %S by %+d minutes ..." site-name delta-hours);#D# ???
+  (save-excursion
+    (save-match-data
+      (let* ((case-fold-search nil)
+	     (delta-min (round (* delta-hours 60))))
+	(goto-char (point-min))
+	(while (re-search-forward c12h--re-site-path-time nil t)
+	  (when (string-equal (match-string-no-properties 1) site-name)
+	    (let (dw hh mm ndw)				      ; dw = day of week (0..6)
+	      (and (setq dw (match-string-no-properties 2))			; String
+		   (setq dw (assoc dw c12h--days-of-week-alist 'string-equal))	; Cons
+		   (setq dw (cdr dw))						; Integer
+		   (setq hh (read (match-string-no-properties 3)))
+		   (setq mm (read (match-string-no-properties 4)))
+		   ;; Calculate new mm, hh, dw values
+		   (setq mm (+ mm delta-min))
+		   (cond ((> delta-min 0)
+			  (while (>= mm 60)
+			    (setq mm (- mm 60)
+				  hh (1+ hh)))
+			  (while (>= hh 24)
+			    (setq hh (- hh 24)
+				  dw (1+ dw)))
+			  t)
+			 ((< delta-min 0)
+			  (while (< mm 0)
+			    (setq mm (+ mm 60)
+				  hh (1- hh)))
+			  (while (< hh 0)
+			    (setq hh (+ hh 24)
+				  dw (1- dw)))
+			  t)
+			 (t))
+		   (setq dw (mod dw 7))
+		   (setq ndw (rassq dw c12h--days-of-week-alist))
+		   (setq ndw (symbol-name (car ndw)))
+		   (progn (replace-match ndw t t nil 2)
+			  (replace-match (format "%02d:%02d" hh mm) t t nil 3)
+			  (delete-char 3))
+		   ))))))))
+
+
+
+
+;;;;================ Helpers for my …/Anime/index.html file ================;;;;
 
 ;;; This command automagically updates the body of the (first) table in
 ;;; my …/Anime/index.html from files found in the same directory,
