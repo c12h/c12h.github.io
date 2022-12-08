@@ -7,3 +7,7 @@
 
 #--- Ignore Emacs byte code files
 *.elc
+
+#--- Ignore Emacs locks etc
+*/.#*
+*/#*#

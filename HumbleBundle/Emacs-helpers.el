@@ -156,29 +156,29 @@ Return nil if no change needed, t if the JSON is/was wrong."
 ;;; success, it returns a list of 3 strings: the bundle’s end date, the URL of
 ;;; its page on Humblebundle.com and a note about the bundle (normally "").
 ;;;
-;;; It signals an error unless the file looks like either
+;;; It signals an error unless the file contains text looking like either
 ;;;	<h1><a …>«LINK-HTML»</a>…</h1>
-;;;	<div id=end>end… <time datetime="«END-D-ISO»"
-;;; in which case the third string returned will be "", or like this:
+;;;	<div id=end>end… <time datetime="«END-DATE-ISO»"
+;;; in which case the third string returned will be "", or like
 ;;;	<h1><a …>«LINK-HTML»</a>…</h1>
-;;;	<div id=end data-note="«NOTE-TEXT»">end… <time datetime="«END-D-ISO»"
+;;;	<div id=end data-note="«NOTE-TEXT»">end… <time datetime="«END-DATE-ISO»"
 ;;; in which case the third result will be "; «NOTE-TEXT»".
 ;;;
 ;;; Exception: certain unusual bundles have to be handled by hard-coding their
 ;;; file name and metadata. Sigh.
 ;;;
 (defun c12h--parse-my-bundle-file (fname)
-  "Extract meta-data from one of my YY-MM-*-bundle.html files.
+  "Extract metadata from one of my YY-MM-*-bundle.html files.
 Signal an error if expected text not found, otherwise return a list of 3
-strings: (END-D-ISO LINK-HTML NOTE-HTML).
+strings: (END-DATE-ISO LINK-HTML NOTE-HTML).
 
-END-D-ISO is when bundle becomes/became unavailable to buy (ISO 8601 format).
+END-DATE-ISO is when bundle becomes/became unavailable to buy (ISO 8601 format).
 
 LINK-HTML is the bundle title as HTML text, used for text of link to FNAME in
 index.html.
 
-NOTE-HTML is \"\" or short HTML text starting with \"; \" explaining bundle
-title."
+NOTE-HTML is \"\" or a short HTML text starting with \"; \" explaining the
+bundle title."
   (cond
    ;; Some bundles are too weird to do programatically.
    ((string-equal fname "22-03-Kodansha-Comics-2022-bundle.html")
@@ -201,6 +201,45 @@ title."
 		((not (string-empty-p note))
 		 (setq note (concat "; " note))))
 	  (list (match-string 3) (match-string 1) note)))))))
+
+
+;;; Insert HTML text for two table rows describing a Steam app.
+;;; For use in my "Humble-monthlies.html" file or similar.
+;;; Requires the PRIMARY selection to be the full URL of a Steam app, like this:
+;;;	https://store.steampowered.com/app/$NUM/$NAMEISH$"
+;;; perhaps with a trailing "/" or "#$FRAGMENT" or both.
+;;;
+(defun c12h-insert-steam-info-from-primary-sel ()
+  "Insert 2 HTML table rows re a Steam app from PRIMARY selection.
+That selection must be text of the form
+  https://store.steampowered.com/app/DDD/NAME[/][#frag]
+where DDD is the numeric app ID and NAME is munged to be valid in a URL.
+Partially un-munges NAME by replacing any “_” characters in NAME with “ ”.
+
+For my Humble-monthlies.html file and look-alikes."
+  (interactive "*")
+  (let ((case-fold-search t)
+	(re (concat "^https://store[.]steampowered[.]com"
+		   "\\(/\\(?:app\\|sub\\|bundle\\)/[0-9]+\\)/\\([^/#]+\\)/?#?")))
+    (save-match-data
+      (let ((url (gui-get-selection)) ; Defaults to (gui-get-selection 'PRIMARY 'STRING)
+	    rel-url app-name)
+	(unless (stringp url)
+	  (error "Weird primary selection data %S" url))
+	(when (string= url "")
+	  (error "Primary selection is empty"))
+	(unless (string-match re url)
+	  (error "Primary selection %S does not look like canonical Steam app URL" url))
+	;; Looks OK, so insert two <TR> elements
+	(setq rel-url (match-string 1 url)
+	      app-name (replace-regexp-in-string "_" " " (match-string 2 url)))
+	(end-of-line)
+	(insert "\n")
+	(delete-blank-lines)
+	(forward-char)
+	(insert "<tr class=hr><td><a href=\"" rel-url "\"\n\t>" app-name "</a>\n"
+		"\t<td>W/-/- <td class=ln>Gold\t\t\t\t<td class=n4me>\n"
+		" <tr><td colspan=5>Action, \n\n")))))
 
 
 ;;;;=============== Parsing bundle pages at Humblebundle.com ===============;;;;
@@ -259,7 +298,7 @@ URL must be HTTP or HTTPS."
 	  (error "No data for URL protocol in %S" url))
 	(with-current-buffer temp-buffer
 	  (goto-char (point-min))
-	  ;; Check the HTTP response line and headers.
+	  ;; Check the HTTP response line and find the start of the response body.
 	  (unless (looking-at "HTTP/[0-9.]+ \\([0-9][0-9][0-9]\\) \\([^\n]+\\)")
 	    (forward-line)
 	    (error "Get non-HTTP response line %S for URL %s"
@@ -271,6 +310,7 @@ URL must be HTTP or HTTPS."
 	    (error "Cannot locate reponse body for %S" url))
 	  (setq b-o-resp (match-beginning 0))
 	  (goto-char (point-min))
+	  ;; If we have a “Content-Type:” header, check for "text/html".
 	  (when (re-search-forward "^content-type: \\([^; \n]+\\)" b-o-resp t)
 	    (unless (string-equal (match-string 1) "text/html")
 	      (error "Got %S content for %S, need \"text/html\""
@@ -318,50 +358,105 @@ URL must be HTTP or HTTPS."
 	(list active end-date title))))
 
 
-
-
-;;; Insert HTML text for two table rows describing a Steam app.
-;;; For use in my "Humble-monthlies.html" file or similar.
-;;; Requires the PRIMARY selection to be the full URL of a Steam app, like this:
-;;;	https://store.steampowered.com/app/$NUM/$NAMEISH$"
-;;; perhaps with a trailing "/" or "#$FRAGMENT" or both.
-;;;
-(defun insert-steam-info-from-primary-sel ()
-  "Insert 2 HTML table rows re a Steam app from PRIMARY selection.
-That selection must be text of the form
-  https://store.steampowered.com/app/DDD/NAME[/][#frag]
-where DDD is the numeric app ID and NAME is munged to be valid in a URL.
-Partially un-munges NAME by replacing any “_” characters in NAME with “ ”.
-
-For my Humble-monthlies.html file and look-alikes."
-  (interactive "*")
-  (let ((case-fold-search t)
-	(re (concat "^https://store[.]steampowered[.]com"
-		   "\\(:?/\\(app\\|sub\\|bundle\\)/[0-9]+\\)/\\([^/#]+\\)/?#?")))
-    (save-match-data
-      (let ((url (gui-get-selection)) ; Defaults to (gui-get-selection 'PRIMARY 'STRING)
-	    rel-url app-name)
-	(unless (stringp url)
-	  (error "Weird primary selection data %S" url))
-	(when (string= url "")
-	  (error "Primary selection is empty"))
-	(unless (string-match re url)
-	  (error "Primary selection %S does not look like canonical Steam app URL" url))
-	;; Looks OK, so insert two <TR> elements
-	(setq rel-url (match-string 1 url)
-	      app-name (replace-regexp-in-string "_" " " (match-string 2 url)))
-	(end-of-line)
-	(insert "\n")
-	(delete-blank-lines)
-	(forward-char)
-	(insert "<tr class=hr><td><a href=\"" rel-url "\"\n\t>" app-name "</a>\n"
-		"\t<td>W/-/- <td class=ln>Gold\t\t\t\t<td class=n4me>\n"
-		" <tr><td colspan=5>Action, \n\n")))))
-
-
 ;;;;==================== Creating my bundle HTML files =====================;;;;
 
+;;; NOTES
+;;;
+;;; AFIAK (as of November 2022), URLs of non-monthly humble bundles look like
+;;; 	1. https://www.humblebundle.com/games/«BASENAME»
+;;; 	2. https://www.humblebundle.com/books/«BASENAME»
+;;; 	3. https://www.humblebundle.com/software/«BASENAME»
+;;;  or	4. https://www.humblebundle.com/«BASENAME»
+;;; where «BASENAME» contains no slashes.
+;;; The fourth format is used for big multi-vendor bundles like the “Humble Conquer
+;;; COVID-19 bundle” and the “Humble Stand with Ukraine Bundle” (for example,
+;;; “https://www.humblebundle.com/conquer-covid19-bundle”).
+;;;
+;;; The monthly bundles from Humble Choice each have pages with URLs like
+;;; 	https://www.humblebundle.com/subscription/january-2022
+;;;  or	https://www.humblebundle.com/membership/february-2022
+;;; whereas (IIRC) the bundles from the previous Humble Monthly feature did not
+;;; get their own pages.
+
+;;; This function checks a string which should/could be the URL of a Humble
+;;; Bundle’s page at HumbleBundle.com.
+;;; It returns nil if the string looks valid, returns a symbol if things look
+;;; sus, or signals an error if (1) the string does not start with “^https?://”
+;;; and (2) NOERROR is nil or omitted.
+;;;
+(defun c12h-check-HB-url (url-str &optional noerror)
+  "Returns nil (if URL-STR seems OK for a HB page), or a symbol.
+Can return 'not-hbcom, 'monthly, 'weird-path or 'not-http, the last only when
+NOERROR is non-nil: the default is to signal an error if URL-STR does not begin
+with \"https://\" or \"http://\"."
+  (save-match-data
+    (let* ((case-fold-search t)
+	   url-obj url-path-etc)
+      (if (not (string-match "^https?://" url-str))
+	  (if noerror
+	      'not-http
+	    (signal "Need \"https://…\" or \"http://…\", not %S" url-str))
+	(setq url-obj (url-generic-parse-url url-str)
+		url-path-etc (url-filename url-obj))
+	(cond ((not (string-match-p "^\\(?:www\\.\\)?humblebundle.com"
+				    (url-host url-obj)))
+	       'not-hbcom)
+	      ((string-match-p "^/\\(?:subscription/\\|membership/\\)" url-path-etc)
+	       'monthly)
+	      ((string-match-p c12h--re-HB-url-path-etc url-path-etc)
+	       nil)
+	      ('weird-path))))))
+(defconst c12h--re-HB-url-path-etc
+  "^/\\(books/\\|games/\\|software/\\)?\\(?:[^?#]+\\)"
+  "Regexp for `c12h-check-HB-url'")
+
+
+;;; This helper function asks the user for the URL of a Humble Bundle.
+;;;
+;;; If the primary selection or the clipboard contain a fully-conforming URL
+;;; (per `c12h-check-HB-url', those URL(s) are presented as default(s).
+;;;
+;;; We reject input that does is not a HTTPS or HTTP URL (for the sake of
+;;; `c12h--parse-bundle-home-page' which requires HTTP-style responses: headers,
+;;; empty line, response body). If the input looks sus in any other way, we ask
+;;; the user for confirmation.
+;;;
+(defun c12h--ask-for-h-b-url ()
+  "Ask the user for the URL of a Humble Bundle.
+Checks the URL using `c12h-check-HB-url', and gets confirmation if it looks
+sus.  Uses primary selection and clipboard for default(s), if they look like
+bundle URLs."
+  (save-match-data
+    (let* ((defaults (cl-remove-if-not
+		      (lambda (str) (c12h-check-HB-url str 'noerror))
+		      (list (gui-get-selection 'PRIMARY)
+			    (gui-get-selection 'CLIPBOARD))))
+	   (ok t)
+	   prompt input kind question)
+      (setq prompt "URL for a Humble Bundle: ");??? Incorporate DEFAULT(s)
+      (setq input (read-from-minibuffer prompt
+					nil nil nil
+					'c12h--history-bundle-url)
+	    kind (c12h-check-HB-url input)
+	    question (assq kind c12h--h-b-url-problems-alist))
+      (when question
+	(setq ok (not (y-or-n-p (format "%S %s. Are you sure? " input question)))))
+      (if ok
+	  input
+	nil))))
+(defvar c12h--history-bundle-url nil
+  "Minibuffer history list for `c12h--ask-for-h-b-url'")
+;; This alist maps symbols returned by c12h-check-HB-url to text to use
+;; with `y-or-n-p' when getting user confirmation of dubious URLs.
+(defconst c12h--h-b-url-problems-alist
+  '((weird-path . "does not look like most bundle URLs")
+    (monthly    . "is for a MONTHLY bundle")
+    (not-hbcom  . "is not at Humble Bundle’s website"))
+  "Controls which URLs user must confirm in `c12h--ask-for-h-b-url'.")
+
+
 ;;; Use (defun url-expand-file-name (url "https://www.humblebundle.com/"))
+;;; which returns a string.
 ;;; Result should usually begin with "https://www.humblebundle.com/$KIND/" where
 ;;; $KIND is "games" or "books" or "software"
 ;;;
