@@ -191,7 +191,7 @@ bundle title."
 	  note)
       (save-match-data
 	(with-temp-buffer
-	  (insert-file-contents-literally fname)
+	  (insert-file-contents fname)
 	  (goto-char (point-min))
 	  (unless (re-search-forward re nil t)
 	    (error "Bad <h1>... sequence in file %s" fname))
