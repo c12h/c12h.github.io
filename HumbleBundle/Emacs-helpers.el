@@ -186,7 +186,7 @@ bundle title."
    (t
     (let ((case-fold-search t)
 	  (re (concat "<h1><a [^<>]+>\\(.+?\\)</a>[^<>]+</h1>\\s-*"
-		      "<div id=end\\(?: data-note=\"\\([^\"]+\\)\"\\)?>\\s-*"
+		      "<div id=ends?\\(?: data-note=\"\\([^\"]+\\)\"\\)?>\\s-*"
 		      "end[eds]+ <time datetime=\"\\([^\"]+\\)\""))
 	  note)
       (save-match-data
