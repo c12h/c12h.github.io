@@ -58,11 +58,12 @@ space.  Leave one empty line at start and end of inserted text."
 ;;; Constants and variables:
 (defconst c12h--re-site-path-time
   (concat
-   "^\t "			; Only interested in lines starting with TAB then SP
-   "\\([A-Za-z]+\\),\\s-*"	; Identifier for website
-   "\"[^\"]+\",\\s-*"		; Tail of URL for show on website, or "X"
-   "\"\\(Sun\\|Mon\\|Tue\\|Wed\\|Thu\\|Fri\\|Sat\\) \\([0-2][0-9]\\):\\([0-5][0-9]\\)\",")
-				; Only interested in lines with "DAY HH:MM" here
+   "^\t "			; Only interested in text starting with TAB then SP
+   "\\([A-Za-z]+\\),[ \t\n]*"	; Identifier for website
+   "\"[^\"]+\",[ \t\n]*"	; Tail of URL for show on website, or "X"
+   "\"\\(Sun\\|Mon\\|Tue\\|Wed\\|Thu\\|Fri\\|Sat\\) \\([0-2][0-9]\\):\\([0-5][0-9]\\)\","
+				; Only interested in text with "DAY HH:MM" here
+   "\\(//PST\\)$")		; Must end with “",//PST”
   "RE for `c12h-adjust-anime-show-times' etc")
 (defconst c12h--days-of-week-alist
   '((Sun . 0) (Mon . 1) (Tue . 2) (Wed . 3) (Thu . 4) (Fri . 5) (Sat . 6))
@@ -76,16 +77,18 @@ space.  Leave one empty line at start and end of inserted text."
 ;;; the shows for and how much to adjust them (±0.5 hr, ±1 hr, ..., or ±23.5
 ;;; hr), then calls c12h--adjust-anime-site-show-times to calculate the new
 ;;; times and update the buffer.
-;;; It is comprehensively over-engineered.
-;;; You can prevent adjustment of a particular show by removing the indentation
-;;; before "CrRoll", "HiDive" etc.
+;;; It is comprehensively over-engineered. (In particular, it only affects lines
+;;; ending with ",//PST", which I only use for Crunchyroll.)
+;;;
+;;; Possible improvement: default to +19 hours for Fall and Winter seasons.
 ;;;
 (defun c12h-adjust-anime-show-times ()
   "Adjust show times for one website in …/Anime/YY-MM.html file.
-Looks and munges ‘<C-J><TAB><SP><website-code>,<OWS>\"…\",<OWS>\"Ddd hh:mm\",’ sequences,
-where OWS is zero or more white-space characters, including newlines.
-Gets user to choose website code (unless only one found), then enter number
-of hours to shift time by (possibly signed, non-zero, can end in \".5\")."
+Looks and munges ‘<C-J><TAB><SP><website-code>,<OWS>\"…\",<OWS>\"Ddd
+hh:mm\",//PST’ sequences, where OWS is zero or more white-space characters,
+including newlines.  Gets user to choose website code (unless only one found),
+then enter number of hours to shift time by (possibly signed, non-zero, can end
+in \".5\")."
   (interactive "*")
   (save-excursion
     (save-match-data
@@ -150,11 +153,11 @@ of hours to shift time by (possibly signed, non-zero, can end in \".5\")."
   (when (>= (abs delta-hours) 24)
     (error "Adjusting anime show times by %g hours would be silly. (Limit is ±24.)"
 	   delta-hours))
-  (message "Adjusting times for %S by %+d minutes ..." site-name delta-hours);#D# ???
   (save-excursion
     (save-match-data
       (let* ((case-fold-search nil)
 	     (delta-min (round (* delta-hours 60))))
+	(message "Adjusting times for %S by %+d minutes ..." site-name delta-min);#D# ???
 	(goto-char (point-min))
 	(while (re-search-forward c12h--re-site-path-time nil t)
 	  (when (string-equal (match-string-no-properties 1) site-name)
@@ -186,9 +189,10 @@ of hours to shift time by (possibly signed, non-zero, can end in \".5\")."
 		   (setq dw (mod dw 7))
 		   (setq ndw (rassq dw c12h--days-of-week-alist))
 		   (setq ndw (symbol-name (car ndw)))
-		   (progn (replace-match ndw t t nil 2)
+		   (progn (replace-match "" t t nil 5)	; Delete "//PST"
 			  (replace-match (format "%02d:%02d" hh mm) t t nil 3)
-			  (delete-char 3))
+			  (delete-char 3)		; Delete old :mm part
+			  (replace-match ndw t t nil 2)); Replace Ddd part
 		   ))))))))
 
 

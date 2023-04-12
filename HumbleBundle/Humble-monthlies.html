@@ -1,10 +1,9 @@
 <!DOCTYPE html><html><head>
 <meta charset="utf-8">
 <title>Humble Choice/Monthly Games</title>
-<base href="https://store.steampowered.com/">
 <style type=text/css>
  body		{ width: 48em; margin: 3px auto 1em; font-family: serif; }
- a.gotoend	{ float: right; margin: 0; border: 1px solid; border-radius: 25%;
+ a#gotoend	{ float: right; margin: 0; border: 1px solid; border-radius: 25%;
 		  text-decoration: none; font-size: 2rem; color: #060; }
  h1		{ font: bold 1.50rem sans-serif; margin: 0.6rem 0; }
  h1.small	{ font-size: 1.11rem; }
@@ -39,8 +38,8 @@
  tr.hr + tr > td > i	{ font: italic 1rem serif; }
  td > div	{ float: right; font: italic 91% serif; }
  .nsp,  .brnz	{ color: #800; }
- .nsp::before	{ content: "Borked"; }				/* "No Steam Proton support" */
- .ln::before	{ content: "(native)"; color: #484 ; }			/* "Linux Native" */
+ .nsp::before	{ content: "Borked"; }			/* "No Steam Proton support" */
+ .ln::before	{ content: "(native)"; color: #484 ; }	/* "Linux Native" */
  .w		{ background: #FEE; font-weight: bold; color: #800; }	/* Warning */
  .n4me, .have	{ background: #DFD; }
  .took		{ background: #FED; }
@@ -57,37 +56,11 @@
  [title]	{ text-decoration: #AFA wavy underline; }
  .pre		{ white-space: pre; }
 </style>
-<script>
- "use strict";
- document.addEventListener("load", do_fixups, true);
- var fixes_done = false;
- function do_fixups() {
-  try {
-	// Hack alert:
-	var hash = location.hash;
-	if ( location.hash.endsWith("=") ) {
-		hash = hash.slice(0,-1);
-		console.log("#D# setting location.hash to «" + hash + "»");
-		location.hash = hash
-	} // So what is appending those "=" chars?
-	//
-	if ( fixes_done )
-		return;
-	fixes_done = true;
-	for ( let e of
-	      document.querySelectorAll('a[href]:not([href^="#"]):not([target])') ) {
-	    e.target = "_blank";
-	}
-	for ( let il of document.querySelectorAll('a[href^="#"]') ) {
-	    il.href = document.URL + il.getAttribute("href")
-	}
-  } catch(e) { alert("Fixups failed: "+e); throw e; }
- }
-</script>
+<base href="https://store.steampowered.com/">
 </head>
 <body>
 
-<a class=gotoend title="Go to end of page" href="#end">▼</a>
+<a id=gotoend title="Go to end of page" href="#end">▼</a>
 <h1>Humble Choice <small><span>(formerly</span> Humble Monthly<span>)</span></small></h1>
 
 
@@ -462,7 +435,7 @@
 <tr class=hr><td><a href="/app/785740">This Is the Police 2</a>
 	<td>W/M/- <td>Gold				<td class=todo>Hmmmmmm
  <tr><td colspan=5>Story-driven, Adventure/Strategy/Management-Sim,
-		   Difficult, Lots-to-Learn
+			Difficult, Lots-to-Learn
 
 <tr class=hr><td><a href="/app/757300">Trüberbrook</a>
 	<td>W/M/L <td class=ln>				<td class=took>
@@ -2194,7 +2167,7 @@
 
 
 <details>
-<summary class=c nLeft="all 4"
+<summary class=c nLeft="all 5"
 	><a href="https://www.humblebundle.com/membership/september-2022"
 	>September 2022</a></summary>
 <table>
@@ -2250,7 +2223,7 @@
 
 
 <details>
-<summary class=c nLeft="5 of 8"	bvg="https://barter.vg/bundle/6435/"
+<summary class=c nLeft="all 5"	bvg="https://barter.vg/bundle/6435/"
 	><a href="https://www.humblebundle.com/membership/october-2022"
 	>October 2022</a></summary>
 <table>
@@ -2291,7 +2264,9 @@
 	>Monster Train</a> + 1 DLC
 	<td>W/-/- <td>Gold				<td class=took> (DLC later)
  <tr><td colspan=5>“strategic roguelike deck build[er]”, unlock stuff for future runs,
-	train to hell, tactics, <a href="https://steamcommunity.com/profiles/76561198160991881/recommended/1359320/">defer DLC</a>
+	train to hell, tactics, <a href=
+	"https://steamcommunity.com/profiles/76561198160991881/recommended/1359320/"
+					>defer DLC</a>
 
 <tr class=hr><td><a href="/app/797400"
 	>Railroad Corporation</a>
@@ -2304,7 +2279,7 @@
 
 
 <details>
-<summary class=c nLeft="2 of 8"
+<summary class=c nLeft="all 2"
 	><a href="https://www.humblebundle.com/membership/november-2022"
 	>November 2022</a></summary>
 <table>
@@ -2354,7 +2329,7 @@
 
 
 <details>
-<summary class=c nLeft="4 of 8"
+<summary class=c nLeft="all 4"
 	><a href="https://www.humblebundle.com/membership/december-2022"
 	>December 2022</a></summary>
 <table>
@@ -2389,18 +2364,235 @@
 <tr class=hr><td><a href="/app/1307580"
 	>TOEM</a>
 	<td>W/M/- <td>Gold				<td class=took>
- <tr><td colspan=5>Adventure, Hand-drawn, Solve puzzles by taking photos, Joy of photography
+ <tr><td colspan=5>Adventure, Hand-drawn, Solve puzzles by taking photos,
+			Joy of photography
 
 <tr class=hr><td><a href="/app/719040"
 	>Wasteland 3</a>
 	<td>W/M/L <td class=ln>				<td class=took> Yes!
- <tr><td colspan=5>RPG, Post-apocalyptic, Party-based, Real-time exploration, Turn-based combat
+ <tr><td colspan=5>RPG, Post-apocalyptic, Party-based, Real-time exploration,
+			Turn-based combat
 
 <tr class=hr><td><a href="/app/447120"
 	>Where the Water Tastes Like Wine</a>
 	<td>W/M/L <td class=ln>				<td class=took>
  <tr><td colspan=5>Narratives, Adventure, ‘folkloric Depression-era US’,
-	Collecting/trading stories
+			Collecting/trading stories
+
+</table>
+</details>
+
+
+<details>
+<summary class=c note="I skipped this month"
+	><a href="https://www.humblebundle.com/membership/january-2023"
+	>January 2023</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/1061880"
+	>Conan Chop Chop</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>“Party roguelite”, 1-4P, 1P broken(?)
+
+<tr class=hr><td><a href="/app/782330"
+	>DOOM Eternal</a>
+	<td>W/-/- <td>Gold				<td class=todo>Maaa-aaybe?
+ <tr><td colspan=5>FPS, Action, Gore & Violence, Demons
+	<div>Plus 60% off both “Ancient Gods” DLC</div>
+
+<tr class=hr><td><a href="/app/921800"
+	>Encased: A SciFi PostApocalyptic RPG</a>
+	<td>W/-/L <td class=ln>				<td class=have>
+ <tr><td colspan=5>SF, RPG, TBT, 70s, Isometric, treats low-IQ PCs differently
+
+<tr class=hr><td><a href="/app/1380420"
+	>Grow: Song of the Evertree</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Gardening + City-building + Exploration, ‘Wholesome’, non-violent,
+		‘cutesie’ graphics
+
+<tr class=hr><td><a href="/app/824000"
+	>Hokko Life</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Farming sim / Life sim, crafting, designing, cozy, ‘cute’ graphics
+
+<tr class=hr><td><a href="/app/1190170"
+	>OlliOlli World</a> + all 4 DLC
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Skateboarding action/platformer, needs controller
+
+<tr class=hr><td><a href="/app/1453790"
+	>The Serpent Rogue</a>
+	<td>W/-/- <td>?					<td class=todo>Hmmm
+ <tr><td colspan=5>“botanical action-adventure”, medieval fantasy, alchemy,
+	beast-taming, shapeshifting, ‘grindy’(?)
+
+<tr class=hr><td><a href="/app/858820"
+	>Tribes of Midgard</a>
+	<td>W/-/- <td>Platinum				<td class=n4me>
+ <tr><td colspan=5>1-10P, online co-op, Fantasy, Grow+Defend village, 1P not great
+
+</table>
+</details>
+
+
+<details>
+<summary class=c nLeft="all 4"	bvg="https://barter.vg/bundle/6651/"
+	><a href="https://www.humblebundle.com/membership/february-2023"
+	>February 2023</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/38400"
+	>Fallout: A Post Nuclear Role Playing Game</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>RPG, Classic, Post-apocalyptic <div>Nice to have via Steam Proton</div>
+
+<tr><td><a href="/app/1151340"
+	>Fallout 76</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>Fifth <i>Fallout</i> RPG, Multiplayer, Open-World
+
+<tr class=hr><td><a href="/app/1353270"
+	>Five Dates</a>
+	<td>W/M/- <td>Platinum				<td class=todo>Leaning Yes
+ <tr><td colspan=5>Dating Sim, FMV, Rom-Com
+
+<tr class=hr><td><a href="/app/1298140"
+	>Fobia - St Dinfna Hotel</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Survival Horror, Multiple Timelines, Violent, Puzzle
+
+<tr class=hr><td><a href="/app/798490"
+	>Othercide</a>
+	<td>W/-/- <td>Platinum				<td class=took>
+ <tr><td colspan=5>Turn-Based Tactics, Roguelite, Combos, Underlying Story
+
+<tr class=hr><td><a href="/app/1184370"
+	>Pathfinder: Wrath of the Righteous</a> Enhanced Edition
+	<td>W/M/- <td>Gold				<td class=took>
+ <tr><td colspan=5>FRPG, <i>Pathfinder</i> rules, Real-Time With Pause,
+			Rewards player research
+
+<tr class=hr><td><a href="/app/1037020"
+	>ScourgeBringer</a>
+	<td>W/M/L <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>“<b>Fast-paced</b> free-moving roguelite platformer”
+
+<tr class=hr><td><a href="/app/1116580"
+	>Shady Part of Me</a>
+	<td>W/-/- <td>Platinum				<td class=todo>Maybe?
+ <tr><td colspan=5>Indie, Atmospheric, Puzzle/Platformer, Narrative
+
+<tr class=hr><td><a href="/app/973760"
+	>Thronebreaker: The Witcher Tales</a>
+	<td>W/-/- <td>Gold				<td class=took>
+ <tr><td colspan=5>RPG, Exploration, Recruitment, <i>Gwent</i> as combat
+
+</table>
+</details>
+
+
+<details>
+<summary class=c note="I skipped this month"
+	><a href="https://www.humblebundle.com/membership/march-2023"
+	>March 2023</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/597820"
+	>BIOMUTANT</a>
+	<td>W/-/- <td>Pt				<td class=n4me>
+ <tr><td colspan=5>Action-RPG, Kung-Fu, Anthropomorphic animals, Post-apocalyptic,
+			Open-world
+
+<tr class=hr><td><a href="/app/1325900"
+	>Demon Turf</a>
+	<td>W/-/- <td>Pt				<td class=n4me>
+ <tr><td colspan=5>3D platformer, “Rogue-lite-esque”, Runs unlock permanent powers
+
+<tr class=hr><td><a href="/app/269190"
+	>Edge Of Eternity</a>
+	<td>W/-/- <td>Gold				<td class=n4me> (?)
+ <tr><td colspan=5>JRPG, SF, Great visuals, TBT, Indie, “Unpolished”, “too ambitious”
+
+<tr class=hr><td><a href="/app/1245430"
+	>Golden Light</a>
+	<td>W/-/- <td>Pt				<td class=n4me>
+ <tr><td colspan=5>Survival-Horror, FPS, Prop-hunt, Roguelike, 3D
+
+<tr class=hr><td><a href="/app/1656780"
+	>Hero’s Hour</a>
+	<td>W/-/- <td>Pt				<td class=n4me> (?)
+ <tr><td colspan=5>TBS, Real-time combat, Fantasy, 4X, Pixel graphics, Co-op,
+			‘Unpolished’
+
+<tr class=hr><td><a href="/app/1244460"
+	>Jurassic World Evolution 2</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>Management Sim, Dinosaurs, Voiced by actors from the films
+
+<tr class=hr><td><a href="/app/830370"
+	>Monster Crown</a>
+	<td>W/-/- <td class=ln>				<td class=n4me>
+ <tr><td colspan=5>JRPG, TBT, Collectathon, Pixel-graphics
+
+<tr class=hr><td><a href="/app/1069690"
+	>Rogue Lords</a>
+	<td>W/-/- <td>Pt				<td class=n4me>
+ <tr><td colspan=5>Dark Fantasy, Roguelike, Play as the Devil, 2D
+
+</table>
+</details>
+
+
+<details			open=true	>
+<summary class=c note="Will take" |nLeft="???"
+	><a href="https://www.humblebundle.com/membership/april-2023"
+	>April 2023</a></summary>
+<table>
+
+<tr class=hr><td><a href="/app/1549970"
+	>Aliens Fireteam Elite</a>
+	<td>W/-/- <td>Pt				<td class=n4me>
+ <tr><td colspan=5>Co-op 3P shooter, <i>Aliens</i> Universe, SF/Horror, Level up
+
+<tr class=hr><td><a href="/app/1850570"
+	>Death Stranding</a>  Director’s Cut
+	<td>W/-/- <td>Au→Pt				<td class=want>YES! (AU$60)
+ <tr><td colspan=5>Action, Walking, Linking settlements, Open World, Story Rich,
+			Voice Acted
+
+<tr class=hr><td><a href="/app/1104330"
+	>Founders’ Fortune</a>
+	<td>W/M/- <td>Pt				<td class=want>Why not?
+ <tr><td colspan=5>Fantasy Village Builder, Villages can be uncooperative, Cute
+
+<tr class=hr><td><a href="/bundle/16140"
+	>Life is Strange 2</a> Complete Season
+	<td>W/M/L <td class=ln>				<td class=todo>Hmmmm?
+ <tr><td colspan=5>Adventure, 2 brothers on the run, 1 telekinetic,
+			Story-rich, Choices matter
+
+<tr class=hr><td><a href="/app/1140270"
+	>Monster Prom 2: Monster Camp</a>
+	<td>W/W/L <td class=ln>				<td class=todo>Hmm?
+ <tr><td colspan=5>Comedy, Dating Sim, 1P or Online PvP (?!), Casual, LGB compatible
+
+<tr class=hr><td><a href="/app/1175460"
+	>Revita</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>“Fast-paced twin-stick roguelite platformer”,
+			“Harvest and sacrifice souls ...”
+
+<tr class=hr><td><a href="/app/1294420"
+	>Rollerdrome</a>
+	<td>W/-/- <td>Gold				<td class=n4me>
+ <tr><td colspan=5>3P Shooter, Roller skating, <i>Rollerball</i>-like world
+
+<tr class=hr><td><a href="/app/1272160"
+	>The Life and Suffering of Sir Brante</a>
+	<td>W/-/- <td>Pt				<td class=want>I think
+ <tr><td colspan=5>Narrativist RPG, Dark fantasy, Medieval world, Difficult,
+			Choices Matter, Writing your journal
 
 </table>
 </details>
@@ -2418,7 +2610,7 @@ When Naithin skips a month, try Barter.vg.
 <details  [ open=true ]  >
 <summary class=c note|nLeft="???"
 	><a href=""
-	> 2022</a></summary>
+	> 2023</a></summary>
 <table>
 
 <tr class=hr><td><a href=""
@@ -2430,5 +2622,25 @@ When Naithin skips a month, try Barter.vg.
 </details>
 -->
 
+<script>
+ "use strict";
+ try {
+	for ( let e of
+	      document.querySelectorAll('a[href]:not([href^="#"]):not([target])') ) {
+	    e.target = "_blank";
+	}
+	//
+	let gotoend = document.getElementById("gotoend");
+	if ( gotoend ) {
+	    //D//alert("#D# Got gotoend.href := «" + gotoend.href + "»");
+	    let o = new URL(document.URL);
+	    o.hash = "end";
+	    gotoend.href = o.toString();
+	    //D//alert("#D# Now gotoend.href := «" + gotoend.href + "»");
+	} else {
+	    throw new Error("Cannot find “<a id=gotoend ...>” element")
+	}
+  } catch(e) { alert("Fixups failed: "+e); throw e; }
+</script>
 </body>
 </html>

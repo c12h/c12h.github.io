@@ -290,9 +290,10 @@ URL must be HTTP or HTTPS."
 	  (deactivate-mark nil)	; Don’t deactive mark in current buffer.
 	  (active t) title end-date
 	  (url-obj (url-generic-parse-url url))
-	  temp-buffer b-o-resp alist offers availEnds time-val)
+	  temp-buffer b-o-resp alist offers json-text availEnds time-val)
       (unless (and url-obj (member (url-type url-obj) '("http" "https")))
 	(error "Need https://… or http://… url, not %S" url))
+      ;;; UH-OH! url-retrieve-synchronously
       (setq temp-buffer (url-retrieve-synchronously url-obj nil t 30))
 	(unless temp-buffer
 	  (error "No data for URL protocol in %S" url))
@@ -308,7 +309,7 @@ URL must be HTTP or HTTPS."
 		   url (match-string 1) (match-string 2)))
 	  (unless (search-forward "\n\n" nil t)
 	    (error "Cannot locate reponse body for %S" url))
-	  (setq b-o-resp (match-beginning 0))
+	  (setq b-o-resp (match-end 0))
 	  (goto-char (point-min))
 	  ;; If we have a “Content-Type:” header, check for "text/html".
 	  (when (re-search-forward "^content-type: \\([^; \n]+\\)" b-o-resp t)
@@ -319,15 +320,25 @@ URL must be HTTP or HTTPS."
 	  (goto-char b-o-resp)
 	  (unless (re-search-forward c12h--re-html-title nil t)
 	    (error "No <title> element in %S" url))
-	  (setq title (match-string-no-properties 1))
+	  (setq title (replace-regexp-in-string
+		       "\\s-*(pay what you want and help charity)$" ""
+		       (match-string-no-properties 1)))
 	  ;; Look for a <script> element with type="application/ld+json"
 	  ;; containing an object with an "offers" property
 	  ;; whose value is an object containing an "availabilityEnds" property
 	  ;; which has a string value.
 	  (while (and (not end-date)
 		      (re-search-forward c12h--re-HB-avail nil t))
+	    ;; HB.com now puts a line containing whitespace and the text
+	    ;;		"url": "/" +
+	    ;; into the JSON we want to parse, which is not valid JSON.
+	    ;; Sigh. Hence the replace-regexp-in-string call here.
 	    (backward-char)
-	    (setq alist (json-parse-buffer :object-type 'alist))
+	    (setq json-text (replace-regexp-in-string
+			     "\\(:\\s-*\"[^\"]*\"\\)\\s-*\\+\\(\\s-*[,}]\\)"
+			     "\1\2"
+			     (buffer-substring (point) (scan-sexps (point) 1))))
+	    (setq alist (json-parse-string json-text :object-type 'alist))
 	    (and (consp alist)
 		 (setq offers (assq 'offers alist))
 		 (consp offers)
@@ -375,14 +386,23 @@ URL must be HTTP or HTTPS."
 ;;; The monthly bundles from Humble Choice each have pages with URLs like
 ;;; 	https://www.humblebundle.com/subscription/january-2022
 ;;;  or	https://www.humblebundle.com/membership/february-2022
-;;; whereas (IIRC) the bundles from the previous Humble Monthly feature did not
-;;; get their own pages.
+;;; whereas the earlier Humble Monthly bundles did not get their own pages.
+
 
 ;;; This function checks a string which should/could be the URL of a Humble
 ;;; Bundle’s page at HumbleBundle.com.
-;;; It returns nil if the string looks valid, returns a symbol if things look
-;;; sus, or signals an error if (1) the string does not start with “^https?://”
-;;; and (2) NOERROR is nil or omitted.
+;;; It signals an error if (1) the string does not start with “^https?://” and
+;;; (2) NOERROR is nil or omitted.
+;;; Otherwise, it returns nil if the string looks valid, or else a symbol:
+;;;	'not-http	The string does not start with "http://" or "https://"
+;;;			(and NOERROR is nil)
+;;;	'not-hbcom	The URL is for a site other than [www.]humblebundle.com
+;;;	'monthly	The URL is for a Humble Choice bundle
+;;;	'weird-path	The URL’s path part is odd (
+;;;
+(defconst c12h--re-HB-url-path-etc
+  "^/\\(books/\\|games/\\|software/\\)?\\(?:[^?#]+\\)"
+  "Regexp for `c12h-check-HB-url'")
 ;;;
 (defun c12h-check-HB-url (url-str &optional noerror)
   "Returns nil (if URL-STR seems OK for a HB page), or a symbol.
@@ -406,11 +426,16 @@ with \"https://\" or \"http://\"."
 	      ((string-match-p c12h--re-HB-url-path-etc url-path-etc)
 	       nil)
 	      ('weird-path))))))
-(defconst c12h--re-HB-url-path-etc
-  "^/\\(books/\\|games/\\|software/\\)?\\(?:[^?#]+\\)"
-  "Regexp for `c12h-check-HB-url'")
 
 
+;;; This alist maps symbols returned by c12h-check-HB-url to text to use
+;;; with `y-or-n-p' when getting user confirmation of dubious URLs.
+(defconst c12h--h-b-url-problems-alist
+  '((weird-path . "does not look like most bundle URLs")
+    (monthly    . "is for a MONTHLY bundle")
+    (not-hbcom  . "is not at Humble Bundle’s website"))
+  "Controls which URLs user must confirm in `c12h--ask-for-h-b-url'.")
+;;;
 ;;; This helper function asks the user for the URL of a Humble Bundle.
 ;;;
 ;;; If the primary selection or the clipboard contain a fully-conforming URL
@@ -444,15 +469,9 @@ bundle URLs."
       (if ok
 	  input
 	nil))))
+
 (defvar c12h--history-bundle-url nil
   "Minibuffer history list for `c12h--ask-for-h-b-url'")
-;; This alist maps symbols returned by c12h-check-HB-url to text to use
-;; with `y-or-n-p' when getting user confirmation of dubious URLs.
-(defconst c12h--h-b-url-problems-alist
-  '((weird-path . "does not look like most bundle URLs")
-    (monthly    . "is for a MONTHLY bundle")
-    (not-hbcom  . "is not at Humble Bundle’s website"))
-  "Controls which URLs user must confirm in `c12h--ask-for-h-b-url'.")
 
 
 ;;; Use (defun url-expand-file-name (url "https://www.humblebundle.com/"))
@@ -483,3 +502,137 @@ bundle URLs."
 ;;;	OR	:inverse-video t
 ;;;   *	(insert-text-button "FIXME>" 'type 'c12h-fixme-button)
 ;;;
+
+(defconst c12h--bundle-item-class-alist
+  '(("Definitely!"	  . "want")
+    ("Would like a copy"  . "like")
+    ("Undecided"	  . "hmm")
+    ("No; Do Not Want"	  . "dnw")
+    ("No: already own it" . "own"))
+  "For c12h-insert-li-steam-primary-sel")
+(defconst c12h--bundle-item-compat-alist
+'(("Non-Proton"
+   ("Native"     . "<b>L</b>")
+   ("Not at all" . "<span class=nL></span>")
+   "Via Proton"
+   ("  Platinum" . "<small>Pt</small>")
+   ("  Gold"     . "<small>Gold</small>")
+   ("  Silver"   . "<small>Silver</small>")
+   ("  Bronze"   . "<small>Bronze</small>")
+   ("  Pending"  . "<small class=pending></small>"))))
+
+(defun c12h-insert-li-steam-primary-sel ()
+  "Insert HTML <LI> decribing a Steam app from PRIMARY selection.
+That selection must be text of the form
+  https://store.steampowered.com/app/DDD/NAME[/][#frag]
+where DDD is the numeric app ID and NAME is munged to be valid in a URL.
+Partially un-munges NAME by replacing any “_” characters in NAME with “ ”.
+
+For my my YY-MM-*-bundle.html files."
+  (interactive "*")
+  (let ((case-fold-search t)
+	(re (concat "^https://store[.]steampowered[.]com"
+		   "\\(/\\(?:app\\|sub\\|bundle\\)/[0-9]+\\)/\\([^/#]+\\)[/#]?")))
+    (save-match-data
+      (let ((url (gui-get-selection)) ; Defaults to (gui-get-selection 'PRIMARY 'STRING)
+	    rel-url app-name wanted compat)
+	(unless (stringp url)
+	  (error "Weird primary selection data %S" url))
+	(when (string= url "")
+	  (error "Primary selection is empty"))
+	(unless (string-match re url)
+	  (error "Primary selection %S does not look like canonical Steam app URL" url))
+	;; Looks OK, so insert some HTML
+	(setq rel-url (match-string-no-properties 1 url)
+	      app-name (replace-regexp-in-string
+			"_" " " (match-string-no-properties 2 url)))
+	(end-of-line)
+	(insert "\n")
+	(delete-blank-lines)
+	(forward-char)
+	;; Construct popup-menu headers
+	(setq wanted (format "Do you want “%s”?" app-name)
+	      compat (format "How Linux-compatible is “%s”?" app-name))
+	;; Ask two questions
+	(setq wanted
+	      (x-popup-menu t `(,wanted ("" ,@c12h--bundle-item-class-alist))))
+	(setq compat
+	      (x-popup-menu t `(,compat ,@c12h--bundle-item-compat-alist)))
+	;; 	      t (append (list wanted "")
+	;; 			c12h--bundle-item-class-alist))
+	;; compat (x-popup-menu
+	;; 	      t (append (list compat
+	;; 			)))
+	(and wanted compat
+	     (insert "<li class=" wanted "><a href=\"" rel-url "\"\n\t>" app-name "</a>\n"
+		     "\t(W/-/" compat ";\t)\n\n"))
+	))))
+
+(defconst c12h--bundle-item-class-alist
+  '(("Definitely!"	  . "want")
+    ("Would like a copy"  . "like")
+    ("Undecided"	  . "hmm")
+    ("No; Do Not Want"	  . "dnw")
+    ("No: already own it" . "own"))
+  "For c12h-insert-li-steam-primary-sel")
+(defconst c12h--bundle-item-compat-alist
+'(("Non-Proton"
+   ("Native"     . "<b>L</b>")
+   ("Not at all" . "<span class=nL></span>")
+   "Via Proton"
+   ("  Platinum" . "<small>Pt</small>")
+   ("  Gold"     . "<small>Gold</small>")
+   ("  Silver"   . "<small>Silver</small>")
+   ("  Bronze"   . "<small>Bronze</small>")
+   ("  Pending"  . "<small class=pending></small>"))))
+
+
+;; (defun c12h-insert-li-steam-linux-native ()
+;;   "Insert HTML <LI> describing a Linux-native Steam app.
+;; Uses `c12h-insert-li-steam-primary-sel', which see."
+;;   (interactive "*")
+;;   (c12h-insert-li-steam-primary-sel "<b>L</b>"))
+
+;; (defun c12h-insert-li-steam-linux-proton ()
+;;   "Insert HTML <LI> describing a Steam app which can run on Linux using Proton.
+;; Uses `c12h-insert-li-steam-primary-sel', which see."
+;;   (interactive "*")
+;;   (c12h-insert-li-steam-primary-sel "<small>Gold</small>"))
+
+;; (defun c12h-insert-li-steam-not-linux ()
+;;   "Insert HTML <LI> describing a non-Linux-compatible Steam app.
+;; Uses `c12h-insert-li-steam-primary-sel', which see."
+;;   (interactive "*")
+;;   (c12h-insert-li-steam-primary-sel "<span class=nL></span>"))
+
+;; (x-popup-menu t '("Select Linux compatibility level"
+;; 		  (""
+;; 		   ("Native" . "<b>L</b>")
+;; 		   ("None"   . "<span class=nL></span>")
+;; 		   "Via Proton"
+;; 		   ("  Platinum" . "<small>Pt</small>")
+;; 		   ("  Gold"     . "<small>Gold</small>")
+;; 		   ("  Silver"   . "<small>Silver</small>")
+;; 		   ("  Bronze"   . "<small>Bronze</small>")
+;; 		   ("  Pending"  . "<small class=pending></small>"))))
+
+
+;;;«	<li class=$KLASS><a href="$REL-URL"
+;;;		>$APP-NAME</a>
+;;;		(W/-/$LINUX; action, $TAGS)
+;;;
+;;;»
+;;;
+;;;  $KLASS:	"took" | "own" | "want" | "like" | "hmm" | "dnw"
+
+;;;  $LINUX:	N(ative) ⇒ "<b>L</b>"
+;;;		P(roton) ⇒ "<small>Gold</small>"
+;;;		-	 ⇒ "<span class=nL></span>"
+
+;;;  $LINUX:	N(ative)   ⇒ "<b>L</b>"
+;;;		P(latinum) ⇒ "<small>Pt</small>"
+;;;		G(old)     ⇒ "<small>Gold</small>"
+;;;		S(ilver)   ⇒ "<small>Silver</small>"
+;;;	//	B(ronze)   ⇒ "<small>Bronze</small>"
+;;;	//	?          ⇒ "<small>???</small>"	//Pending
+;;;		-	   ⇒ "<span class=nL></span>"	//Borked
