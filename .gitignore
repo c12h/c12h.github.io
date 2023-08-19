@@ -1,8 +1,9 @@
 #--- Ignore Emacs-style backups
 *~
 
-#--- Ignore my working notes and backup zips:
+#--- Ignore my working notes, HTML template files and backup zips:
 *.text
+*.htm
 *.zip
 
 #--- Ignore Emacs byte code files

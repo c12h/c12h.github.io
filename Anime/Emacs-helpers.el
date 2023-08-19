@@ -12,21 +12,23 @@
 ;;;;
 
 ;;; Modify MHTML mode and its JavaScript “submode” (which is actually js-mode)
-;;; to understand the keystroke sequence “C-c a”.
+;;; to understand the keystroke sequences “C-c a” and "C-c l".
 ;;;
 ;;; (Because I've configured Emacs to use js2-mode for .js files etc, “C-c a”
 ;;; will normally not do anything in those files.)
 ;;;
-;;; Define the “C-c a” sequence to:
-;;;	- insert JavaScript code calling add_show whenever in js-mode
-;;;	- update the table of links to YY-*.html files when in ordinary HTML mode
-;;;	  (which will signal an error if not in my "…/Anime/index.html" or a file
-;;;	   greatly resembling it).
-;;; Note the context dependence!
-;;;
+;;  Define the “C-c a” sequence to:
+;;	- insert JavaScript code calling add_show whenever in js-mode
+;;	- update the table of links to YY-*.html files when in ordinary HTML mode
+;;	  (which will signal an error if not in my "…/Anime/index.html" or a file
+;;	   greatly resembling it).
+;;  Note the context dependence!
+;;
+;;  Also define “C-c l” to invoke c12h-update-crunchyroll-link.
 (when (boundp 'mhtml-mode-map)
   (define-key js-mode-map    "\^Ca" 'c12h-insert-add_show-call)
-  (define-key mhtml-mode-map "\^Ca" 'c12h-update-anime-index))
+  (define-key mhtml-mode-map "\^Ca" 'c12h-update-anime-index)
+  (define-key js-mode-map    "\^Cl" 'c12h-update-crunchyroll-link))
 
 
 ;;;;=================== Helpers for My YY-MM.html files ====================;;;;
@@ -39,31 +41,63 @@
 (defun c12h-insert-add_show-call ()
   "Insert stub JavaScript call to add_show() function, for Anime lists.
 First, move forward to first line starting with anything other than tab or
-space.  Leave one empty line at start and end of inserted text."
+space.  Leave one empty line at start and end of inserted text.
+Sets point to first argument."
   (interactive "*")
   (save-match-data
     (re-search-forward "\n[^\t ]" nil t)
     (beginning-of-line)
     (let ((bol (point)))
       (skip-chars-backward "\n\t ")
-      (delete-region (point) bol))
-    ;;
-    (insert "\n\nadd_show(\"\", \"\",\n"
-	    "\t rToTryMaybe, \"?\",\n"
-	    "\t UnknownSite, \"X\", UnknownSchedule,\n"
-	    "\t , NoTvT, \"\",\n\t [ \"\", \"\", \"\", \"\" ]);\n\n")
-    ))
+      (delete-region (point) bol)
+      ;;
+      (setq bol (point))
+      (insert "\n\nadd_show(\"\", \"\",\n"
+	      "\t rToTryMaybe, \"?\",\n"
+	      "\t UnknownSite, \"X\", UnknownSchedule,\n"
+	      "\t , NoTvT, \"\",\n\t [ \"\", \"\", \"\", \"\" ]);\n\n")
+      (goto-char (+ bol 12))
+    )))
+
+;; This command expects the clipboard to contain a string of the form
+;;	https://www\\.crunchyroll\\.com/series…/$S
+;; where the “…” is usually a bunch of letters and digits followed by a '/'
+;; and the tail ($S) does not contain any slashes.
+;; It looks for the NEXT line starting with “\t CrRoll, "X", ” and replaces the “X”
+;; with $S.
+;;	BUG: should check whether $S has word(s) in common with rest of add_show()
+;;	arguments.
+(defun c12h-update-crunchyroll-link ()
+  "Replace “X” in next “\t CrRoll, \"X\", ” line with tail of URL in clipboard."
+  (interactive "*")
+  (save-match-data
+    (let ((url (gui-get-selection 'CLIPBOARD 'STRING))
+	  (url-re (concat "^https://www\\.crunchyroll\\.com/series/"
+			  "\\(?:.+/\\)?\\([^/]+\\)$"))
+	  s)
+      (unless (stringp url)
+	(error "Weird primary selection data %S" url))
+      (when (string= url "")
+	(error "Primary selection is empty"))
+      (unless (string-match url-re url)
+	(error "Primary selection %S does not look like Crunchyroll series URL" url))
+      (setq s (match-string-no-properties 1 url))
+      ;; (beginning-of-line)
+      (unless (re-search-forward "^\t CrRoll, \"\\(X\\)\", " nil t)
+	(error "No “CrRoll, \"X\", ” line"))
+      (replace-match s t t nil 1))))
+
 
 ;;;---------- Automation for adjusting show times to my time zone -----------;;;
 ;;; Constants and variables:
 (defconst c12h--re-site-path-time
   (concat
    "^\t "			; Only interested in text starting with TAB then SP
-   "\\([A-Za-z]+\\),[ \t\n]*"	; Identifier for website
+   "\\([A-Za-z/]+\\),[ \t\n]*"	; Identifier for website
    "\"[^\"]+\",[ \t\n]*"	; Tail of URL for show on website, or "X"
    "\"\\(Sun\\|Mon\\|Tue\\|Wed\\|Thu\\|Fri\\|Sat\\) \\([0-2][0-9]\\):\\([0-5][0-9]\\)\","
 				; Only interested in text with "DAY HH:MM" here
-   "\\(//PST\\)$")		; Must end with “",//PST”
+   "\\(//PT\\)$")		; Must end with “",//PT”
   "RE for `c12h-adjust-anime-show-times' etc")
 (defconst c12h--days-of-week-alist
   '((Sun . 0) (Mon . 1) (Tue . 2) (Wed . 3) (Thu . 4) (Fri . 5) (Sat . 6))
@@ -78,17 +112,18 @@ space.  Leave one empty line at start and end of inserted text."
 ;;; hr), then calls c12h--adjust-anime-site-show-times to calculate the new
 ;;; times and update the buffer.
 ;;; It is comprehensively over-engineered. (In particular, it only affects lines
-;;; ending with ",//PST", which I only use for Crunchyroll.)
+;;; ending with ",//PT", which I only use for Crunchyroll.)
 ;;;
-;;; Possible improvement: default to +19 hours for Fall and Winter seasons.
+;;; Possible improvement: default to +19 hours for Fall and Winter seasons,
+;;; and +17 for Spring and Summer.
 ;;;
 (defun c12h-adjust-anime-show-times ()
   "Adjust show times for one website in …/Anime/YY-MM.html file.
-Looks and munges ‘<C-J><TAB><SP><website-code>,<OWS>\"…\",<OWS>\"Ddd
-hh:mm\",//PST’ sequences, where OWS is zero or more white-space characters,
-including newlines.  Gets user to choose website code (unless only one found),
-then enter number of hours to shift time by (possibly signed, non-zero, can end
-in \".5\")."
+Looks and munges ‘<C-J><TAB><SP><website-code>,<OWS>\"…\",<OWS>\"Ddd hh:mm\",//PT’
+sequences, where OWS is zero or more white-space characters, including
+newlines.  Gets user to choose website code (unless only one found), then enter
+number of hours to shift time by (possibly signed, non-zero, can end in
+\".5\")."
   (interactive "*")
   (save-excursion
     (save-match-data
@@ -103,10 +138,10 @@ in \".5\")."
 	(while (re-search-forward c12h--re-site-path-time nil t)
 	  (let ((name (match-string-no-properties 1)) pair)
 	    (unless (string-equal name "UnknownSite")
-		(setq pair (assoc-string name site-names-alist t))
-		(if pair
-		    (setcdr pair (1+ (cdr pair)))
-		  (setq site-names-alist (cons (cons name 1) site-names-alist))))))
+	      (setq pair (assoc-string name site-names-alist t))
+	      (if pair
+		  (setcdr pair (1+ (cdr pair)))
+		(setq site-names-alist (cons (cons name 1) site-names-alist))))))
 	;;---- If necessary, ask user for a site name using completion
 	(setq n-sites (length site-names-alist))
 	(cond ((null site-names-alist)
@@ -189,7 +224,7 @@ in \".5\")."
 		   (setq dw (mod dw 7))
 		   (setq ndw (rassq dw c12h--days-of-week-alist))
 		   (setq ndw (symbol-name (car ndw)))
-		   (progn (replace-match "" t t nil 5)	; Delete "//PST"
+		   (progn (replace-match "" t t nil 5)	; Delete "//PT"
 			  (replace-match (format "%02d:%02d" hh mm) t t nil 3)
 			  (delete-char 3)		; Delete old :mm part
 			  (replace-match ndw t t nil 2)); Replace Ddd part

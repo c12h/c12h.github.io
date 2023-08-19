@@ -239,7 +239,8 @@ For my Humble-monthlies.html file and look-alikes."
 	(forward-char)
 	(insert "<tr class=hr><td><a href=\"" rel-url "\"\n\t>" app-name "</a>\n"
 		"\t<td>W/-/- <td class=ln>Gold\t\t\t\t<td class=n4me>\n"
-		" <tr><td colspan=5>Action, \n\n")))))
+		" <tr><td colspan=5>Action, \n\n")
+	(end-of-line -1)))))
 
 
 ;;;;=============== Parsing bundle pages at Humblebundle.com ===============;;;;
