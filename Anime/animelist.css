@@ -112,3 +112,4 @@
  p.outdent	{ margin-left: 2em; text-indent: -2em; }
  p.outdent + ul	{ margin-bottom: 1em; }
  a[href$="/?"]	{ opacity: 0.3; }
+ p		{ max-width: 42rem; }

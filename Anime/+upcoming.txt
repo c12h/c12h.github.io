@@ -1,0 +1,194 @@
+UPCOMING ANIME
+
+Winter 2024
+==============================
+
+Bottom-Tier Character Tomozaki		S2	27113
+
+Bucchigiri?!					28306
+
+Classroom of the Elite			S3	25413
+
+The Dangers in My Heart			S2	28648
+
+Delicious in Dungeon				26195	Netflix
+
+Doctor Elise					27224	From manwha "Surgeon Elise"
+
+Hokkaido Gals Are Super Adorable!		26494
+
+Kingdom					S5	26401	Historical China
+
+Mashle: Magic and Muscles		S2	28834
+
+Metallic Rouge					27568	"Tech noir", Android girl ;CrRoll
+
+My Instant Death Ability is So Overpowered …	26672	HS school class isekai’d
+
+Pon no Michi		= The Way of Pon	28336	CGDCT; vacant mahjong parlor
+
+Sengoku Youko		= Warring States Yōko	29375	Humans vs Monsters
+
+A Sign of Affection				28917	Deaf girl, boy, romance
+
+Solo Leveling					26000	From Manhwa
+
+'Tis Time for "Torture," Princess		28789	Mild-mannered demons ‘torture’ her
+
+Tsukimichi -Moonlit Fantasy-		S2	24758
+
+Whisper Me a Love Song				26890	HS rom-com
+
+The Witch and the Beast				26232	Weird duo vs witch who enthralled a town
+
+
+Spring 2024
+===========
+
+Bartender Glass of God				28005
+
+I Was Reincarnated as the 7th Prince		26536	For kids?
+
+Kaiju No. 8					26176
+
+Quality Assurance in Another World		27598	QA people trapped in VG world
+
+
+Sometime in 2024
+=============================
+
+2.5 Dimensional Seduction			26712	HS RomCom; Otaku + cosplayer
+
+7th Time Loop: The Villainess Enjoys a Carefree Life		29506	Looper marries her killer
+
+As a Reincarnated Aristocrat, I'll Use My Appraisal Skill	28178
+
+The Café Terrace and Its Goddesses	S2	28764	Sigh.
+
+Days With My Stepsister				26123
+
+Fluffy Paradise					26045
+
+God's Game We Play				25175
+
+Grendizer U					29306	Mecha, ∈ “UFO Robo Grendizer”
+
+Gushing Over Magical Girls			27415	Shy MS girl loves MGs, becomes villain
+
+Hamidashi Creative				28918	Crowdfunded; 12×2½min eps
+
+High Card				S2	27640
+
+Highspeed Etoile				26074
+
+The Irregular at Magic High School	S???	29053
+
+Ishura						27125	Seems very shōnen
+
+Jellyfish Can't Swim in the Night		27601
+
+Kaii to Otome to Kamikakushi			26872	AKA Mysterious Disappearances
+
+KonoSuba 3					25730
+
+Laid-Back Camp				S3	26481
+
+Mecha-Ude					26336	Mecha-Ude = powerful sentient machines ...
+
+No Longer Allowed In Another World		26062	(Isekai Shikkaku)
+
+Oi! Tonbo					28078	Golf; from manga
+
+Oroka na Tenshi wa Akuma to Odoru		28013	Stupid Angel Dances with the Devil
+
+Sasaki and Peeps				26120
+
+Shūbmatsu Train Doko e Iku?			26454	= "Where Does the Doomsday Train Go?"
+
+Spice & Wolf: merchant meets the wise wolf	28812	New adaptation of light novels
+
+Sword Art Online Alternative: Gun Gale Online	S2	29052
+
+Tonari no Yōkai-san				29197
+
+Tsukimichi -Moonlit Fantasy-		S2	24758	I enjoyed S1 (Isekai with jerk goddess)
+
+Unnamed Memory					26728	Prince, curse, witch
+
+The Weakest Tamer Began a Journey to Pick Up Trash	26555	Girl isekai RPGish world
+
+Why nobody remembers my world?			29143
+
+The Wrong Way to Use Healing Magic		24635	"slapstick isekai fantasy"
+
+
+Perhaps in 2024, perhaps later
+==============================
+
+365 Days to the Wedding				27881	Shy co-workers fake engagement
+
+Aquarion: Myth of Emotions			27526	CrRoll; anime S4 of franchise
+
+Bang Brave Bang Bravern				28414
+
+Banished From The Heroes' Party		S2	26524
+
+Bōkyaku Battery					29271	HS Baseball
+
+Cherry Magic! Thirty Years of Virginity Can Make You a Wizard?!		29049	Yaoi
+
+Dekisokonai to Yobareta Moto Eiyū wa		28700	"Banished Former Hero Lives as He Pleases"
+
+Delico's Nursery				29294	Vampires
+
+The Demon Prince of Momochi House		29056
+
+The Do-Over Damsel Conquers the Dragon Emperor	28073	Shojo(ish); 16yo goes back 6 years
+
+Dungeon People					29475	Girl searching Dungeon joins staff
+
+The Fable					28984	Prodigy hitman tries to be normal
+
+Girls Band Cry					28002
+
+God's Game We Play				25175
+
+Grandpa and Grandma Turn Young Again		29353	Comedy; "Jiisan Baasan Wakagaeru"
+
+Hana-Doll*: Reinterpretation of Flowering	28697	Male Idol group
+
+I May Be a Guild Receptionist, But I'll Solo Any Boss to Clock Out on Time	29055
+
+Koi wa Futago de Warikirenai			29051	= Love Between Twins is Indivisible
+
+Lazarus						29112	SF, 2052, imminent mass death
+
+My New Boss Is Goofy				28237
+
+Okinawa de Suki ni Natta Ko ga H\u014dgen Sugite Tsurasugiru	2889
+
+Our Last Crusade or the Rise of a New World		S2	24812	Is/was due "2023"
+
+Rebuild World					28891	Post-apocalypse
+
+Rekishi ni Nokoru Akujo ni Naru zo		29354	Isekai’d as villainess, girl tries 2b evil
+
+Re:ZERO -Starting Life in Another World-  S3	27619
+
+A Salad Bowl of Eccentrics			28938	See animenewsnetwork.com/.200035
+
+Sentenced to Be a Hero: The Prison Records of Penal Hero Unit 9004	29058
+
+Seirei Gensouki - Spirit Chronicles	S2	24949
+
+/* Delayed from 23-07: https://www.animenewsnetwork.com/daily-briefs/.198460
+add_show("Tsuyokute New Saga", "",
+	 rToTryMaybe, "?",
+	 UnknownSite, "X", UnknownSchedule,
+	 26476, "Literature/TsuyokuteNewSaga", "New Saga",
+	 [ "Heroes-barely-defeat-Demon-Lord", "Hero-sent-back-4-years" ]);	*/
+
+VTuber Legend: How I Went Viral after Forgetting to Turn Off My Stream	26966
+	20yo ladylike VTuber accidentally streams drinking beer and cracking crude jokes ...
+
+Your Forma					29054	SF Crime/suspense

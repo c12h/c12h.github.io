@@ -64,20 +64,22 @@ Object.freeze(_RATING_INFO);
 // 'Exported' constants for websites:
 const CrRoll=1001,  AnLab=1002,   Funimation=1003, HiDive=1004, AmazonP=1005,
       Netflix=1006, Youtube=1007, Disney=1008, AdultSwim=1009, AniPlus=1010,
-      UnknownSite=1023;
+      Apple=1011, UnknownSite=1023;
 // 'Private' constants for websites:
 var _SITE_INFO = {};
 const _siteName=0, _siteAbbrev=1, _siteBase=2;
-_SITE_INFO[CrRoll]	= ["Crunchyroll", "Cr",	"https://www.crunchyroll.com/"];
-_SITE_INFO[AnLab]	= ["Anime Lab",	  "AL",	"https://www.animelab.com/shows/"];
-_SITE_INFO[Funimation]	= ["Funimation",  "F",	"https://www.funimation.com/shows/"];
-_SITE_INFO[HiDive]	= ["HiDive",	  "Hd",	"https://www.hidive.com/tv/"];
-_SITE_INFO[AmazonP]	= ["Amazon",	  "AP",	"https://www.amazon.com/dp/"];
-_SITE_INFO[Netflix]	= ["Netflix",	  "Nf",	"https://www.netflix.com/au/title/"];
-_SITE_INFO[Youtube]	= ["Youtube",	  "Yt", "https://youtube.com/"];
-_SITE_INFO[Disney]	= ["Disney/Hulu", "D+", "https://disneyplus.com/"];
-_SITE_INFO[AdultSwim]	= ["Adult Swim",  "AS", "https://www.adultswim.com/videos/"];
-_SITE_INFO[AniPlus]	= ["AniPlus",	  "A+", "https://www.aniplus-asia.com/show/"];
+_SITE_INFO[CrRoll]	= ["Crunchyroll","Cr", "https://www.crunchyroll.com/"];
+_SITE_INFO[AnLab]	= ["Anime Lab",	 "AL", "https://www.animelab.com/shows/"];
+_SITE_INFO[Funimation]	= ["Funimation", "F",  "https://www.funimation.com/shows/"];
+_SITE_INFO[HiDive]	= ["HiDive",	 "Hd", "https://www.hidive.com/tv/"];
+_SITE_INFO[AmazonP]	= ["Amazon",	 "AP", "https://www.amazon.com/dp/"];
+_SITE_INFO[Netflix]	= ["Netflix",	 "Nf", "https://www.netflix.com/au/title/"];
+_SITE_INFO[Youtube]	= ["Youtube",	 "Yt", "https://youtube.com/"];
+_SITE_INFO[Disney]	= ["Disney/Hulu","D+", "https://www.disneyplus.com/series/"];
+	// disneyplus.com will redirect to …disneyplus.com/en-gb/series/… etc.
+_SITE_INFO[AdultSwim]	= ["Adult Swim", "AS", "https://www.adultswim.com/videos/"];
+_SITE_INFO[AniPlus]	= ["AniPlus",	 "A+", "https://www.aniplus-asia.com/show/"];
+_SITE_INFO[Apple]	= ["Apple TV+",	 "Ap", "https://tv.apple.com/au/show/"];
 _SITE_INFO[UnknownSite] = ["Website not known yet", "(Unknown)", ""];
 Object.freeze(_SITE_INFO);
 
