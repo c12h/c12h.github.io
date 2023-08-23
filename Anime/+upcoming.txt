@@ -141,6 +141,8 @@ Dekisokonai to Yobareta Moto Eiyū wa		28700	"Banished Former Hero Lives as He P
 
 Delico's Nursery				29294	Vampires
 
+Demon Lord, Retry! R				29545
+
 The Demon Prince of Momochi House		29056
 
 The Do-Over Damsel Conquers the Dragon Emperor	28073	Shojo(ish); 16yo goes back 6 years
@@ -189,6 +191,6 @@ add_show("Tsuyokute New Saga", "",
 	 [ "Heroes-barely-defeat-Demon-Lord", "Hero-sent-back-4-years" ]);	*/
 
 VTuber Legend: How I Went Viral after Forgetting to Turn Off My Stream	26966
-	20yo ladylike VTuber accidentally streams drinking beer and cracking crude jokes ...
+	20yo ladylike VTuber accidentally streams drinking beer and cracking crude jokes …
 
 Your Forma					29054	SF Crime/suspense
