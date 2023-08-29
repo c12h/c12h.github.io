@@ -17,6 +17,8 @@ Doctor Elise					27224	From manwha "Surgeon Elise"
 
 Hokkaido Gals Are Super Adorable!		26494
 
+High Card				S2	27640	Poker, magical 52 cards; CrRoll
+
 Kingdom					S5	26401	Historical China
 
 Mashle: Magic and Muscles		S2	28834
@@ -27,9 +29,11 @@ My Instant Death Ability is So Overpowered …	26672	HS school class isekai’d
 
 Pon no Michi		= The Way of Pon	28336	CGDCT; vacant mahjong parlor
 
+Sasaki and Peeps				26120	CrRoll
+
 Sengoku Youko		= Warring States Yōko	29375	Humans vs Monsters
 
-A Sign of Affection				28917	Deaf girl, boy, romance
+A Sign of Affection				28917	Deaf girl, boy, romance; CrRoll
 
 Solo Leveling					26000	From Manhwa
 
@@ -39,7 +43,9 @@ Tsukimichi -Moonlit Fantasy-		S2	24758
 
 Whisper Me a Love Song				26890	HS rom-com
 
-The Witch and the Beast				26232	Weird duo vs witch who enthralled a town
+The Witch and the Beast				26232	Weird duo vs witch; CrRoll
+
+The Wrong Way to Use Healing Magic		24635	"slapstick isekai fantasy"
 
 
 Spring 2024
@@ -61,7 +67,7 @@ Sometime in 2024
 
 7th Time Loop: The Villainess Enjoys a Carefree Life		29506	Looper marries her killer
 
-As a Reincarnated Aristocrat, I'll Use My Appraisal Skill	28178
+As a Reincarnated Aristocrat, I'll Use My Appraisal Skill	28178	CrRoll
 
 The Café Terrace and Its Goddesses	S2	28764	Sigh.
 
@@ -76,8 +82,6 @@ Grendizer U					29306	Mecha, ∈ “UFO Robo Grendizer”
 Gushing Over Magical Girls			27415	Shy MS girl loves MGs, becomes villain
 
 Hamidashi Creative				28918	Crowdfunded; 12×2½min eps
-
-High Card				S2	27640
 
 Highspeed Etoile				26074
 
@@ -101,8 +105,6 @@ Oi! Tonbo					28078	Golf; from manga
 
 Oroka na Tenshi wa Akuma to Odoru		28013	Stupid Angel Dances with the Devil
 
-Sasaki and Peeps				26120
-
 Shūbmatsu Train Doko e Iku?			26454	= "Where Does the Doomsday Train Go?"
 
 Spice & Wolf: merchant meets the wise wolf	28812	New adaptation of light novels
@@ -119,8 +121,6 @@ The Weakest Tamer Began a Journey to Pick Up Trash	26555	Girl isekai RPGish worl
 
 Why nobody remembers my world?			29143
 
-The Wrong Way to Use Healing Magic		24635	"slapstick isekai fantasy"
-
 
 Perhaps in 2024, perhaps later
 ==============================
@@ -136,6 +136,8 @@ Banished From The Heroes' Party		S2	26524
 Bōkyaku Battery					29271	HS Baseball
 
 Cherry Magic! Thirty Years of Virginity Can Make You a Wizard?!		29049	Yaoi
+
+Dahlia in Bloom: Crafting a Fresh Start With Magical Tools	29629
 
 Dekisokonai to Yobareta Moto Eiyū wa		28700	"Banished Former Hero Lives as He Pleases"
 
