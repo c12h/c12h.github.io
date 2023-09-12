@@ -113,3 +113,4 @@
  p.outdent + ul	{ margin-bottom: 1em; }
  a[href$="/?"]	{ opacity: 0.3; }
  p		{ max-width: 42rem; }
+ .title		{ font-style: italic; font-family: serif; }
