@@ -5,6 +5,7 @@
  *  By:		Chris Chittleborough, June 2019
  *	Edited Jan 2020: Second param is now any alternate name(s), not just Japanese
  *	Edited Jul 2020: now accepts WHEN values like "Sat AM"
+ *	Edited Sep 2023: accepts ANNENUN==0; no longer creates nested <a> for names cell
  *
  *  This file 'exports' one function and several constants.
  *  (Names beginning with '_' are for internal use only.)
@@ -178,24 +179,27 @@ function add_show (
     //  tag	string		Kind of element to add
     //  text	string?		Optional text to attach to new element
     //	classes	string?		Optional className string for new element
-    //  url	string?		Optional; if supplied, add_el() also adds an
-    //				<a href=URL target=_blank> as the child of the
-    //				new element and attaches any text to the <a>.
+    //  url xxx string? xxxxxxx Optional; if supplied when tag is NOT "a",
+    //				add_el() also adds an <a href=URL target=_blank>
+    //				as the child of the new element and attaches any
+    //				text to that <a>.
     function add_el(parent, tag, text, classes, url) {
 	var el = document.createElement(tag);
 	parent.appendChild(el);
 	if ( classes ) {
 	    el.className = classes;
 	}
-	var pot = el;	// Parent Of Text node
+	var a_el = el;
 	if ( url ) {
-	    pot = el.appendChild(document.createElement("A"));
-	    pot.href = url;
-	    pot.target = "_blank";
-	    pot.rel = "noopener";
-	}
+	    if ( tag != "a" ) {
+		    a_el = el.appendChild(document.createElement("A"));
+	    }
+	    a_el.href   = url;
+	    a_el.target = "_blank";
+	    a_el.rel    = "noopener";
+	    }
 	if ( text ) {
-	    pot.appendChild(document.createTextNode(text));
+	    a_el.appendChild(document.createTextNode(text));
 	}
 	return el;
     }
@@ -232,11 +236,15 @@ function add_show (
     //==== Add the first row for this show.
     var tr = _anime_list_table.insertRow(-1), td, e;
     tr.className="row1";
-    //		First cell spans 4 cols, has name hyperlinked to ANN
-    //		encyclopedia entry and perhaps a span.jname with Japanese name(s).
+    //		First cell spans 4 cols, almost always has name hyperlinked to ANN
+    //		encyclopedia entry and perhaps a span.oname with other name(s).
     td = add_el(tr, "td", "", "name-s");
     td.colSpan = 4;
-    add_el(td, "a", name, "ANNElink", (ANNE_base + ANNEnum));
+    if ( ANNEnum > 0 ) {	// Cope with series with no ANN entry (donghua etc)
+	add_el(td, "a", name, "ANNElink", (ANNE_base + ANNEnum));
+    } else {
+	add_el(td, "span", name);
+    }
     if ( onames ) {
 	var title = "", tabpos = onames.indexOf("\t");
 	if ( tabpos > 0 ) {

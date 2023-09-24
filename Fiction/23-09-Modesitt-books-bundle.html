@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta charset="utf-8">
+<title>Humble Modessit Books Bundle (September 2023)</title>
+<style type=text/css>
+ body		{ width: 40em; margin: 2px auto; font-family: serif; }
+ div#ends	{ font: bold 100% serif; margin-bottom: 1rem; }
+ h1		{ font: bold  150% sans-serif; margin: 1rem 0 0; }
+ .box		{ float: right; margin: 0.5rem; border: 1px #008 solid; border-radius: 0.5rem;
+		  padding: 0.25rem; background: #CCF; }
+ table		{ border-collapse: collapse; clear: both; font-size: 95%; }
+ th		{ text-align: left; font: bold 111% serif; padding: 0.5rem 0 0; }
+ td				{ padding: 0 4pt; }
+ td:nth-child(1)		{ text-align: right; }
+ td:nth-child(2),  .title	{ font-style: italic; }
+ td.again::before		{ content: "      〃"; font-size: 75%; }
+ *[title]			{ text-decoration: #080 wavy underline; }
+</style>
+</head>
+<body>
+
+<h1><a href=
+ "https://www.humblebundle.com/books/le-modesitt-collection-tor-publishing-group-books"
+ >Humble L. E. Modesitt, Jr Collection</a> (September 2023)</h1>
+
+<div class=box>
+<strong>Conclusion:</strong> Paid <small>AU</small>$30 for 36 ebooks
+</div>
+
+<div id=ends>
+Ends <time datetime="2023-10-12T18:00:00+00:00">2023-10-12 18:00 UTC</time></div>
+
+
+<table>
+<tr><th colspan=4 class=title>The Saga of Recluce
+<tr><td> 1<td>The Magic of Recluce		<td>1991	<td>Lerris
+<tr><td> 2<td>The Towers of the Sunset		<td>1992	<td>Creslin
+<tr><td> 3<td>The Magic Engineer		<td>1994	<td>Dorrin
+<tr><td> 4<td>The Order War			<td>1995	<td>Justen
+<tr><td> 5<td>The Death of Chaos		<td>1995	<td>Lerris (again)
+<tr><td> 6<td>Fall of Angels			<td>1996	<td>Ryba, Nylan
+<tr><td> 7<td>The Chaos Balance			<td>1997	<td>Nylan, Ayrlyn
+<tr><td> 8<td>The White Order			<td>1998	<td>Cerryl
+<tr><td> 9<td>Colors of Chaos			<td>1999	<td class=again>
+<tr><td>10<td>Magi’i of Cyador			<td>2001	<td>Lorn
+<tr><td>11<td>Scion of Cyador			<td>2001	<td class=again>
+<tr><td>12<td>The Wellspring of Chaos		<td>2004	<td>Khari
+<tr><td>13<td>Ordermaster			<td>2005	<td class=again>
+<tr><td>14<td>Natural Ordermage			<td>2007	<td>Rahl
+<tr><td>15<td>Mage-Guard of Hamor		<td>2008	<td class=again>
+<tr><td>16<td>Arms-Commander			<td>2010	<td>Saryn
+<tr><td>17<td>Cyador’s Heirs			<td>2014	<td>Lerial, Lephi
+<tr><td>18<td>Heritage of Cyador		<td>2014	<td class=again>
+<tr><td>19<td>The Mongrel Mage			<td>2017	<td>Beltur
+<tr><td>20<td>Outcasts of Order			<td>2018	<td class=again>
+<tr><td>21<td>The Mage-Fire War			<td>2019	<td class=again>
+<tr><td>22<td>Fairhaven Rising			<td>2021 <td title="Beltur’s adopted niece">Taelya
+<tr><td>23<td>Recluce Tales			<td>2017	<td>(Short stories)
+
+<tr><th colspan=4 class=title>The Corean Chronicles
+<tr><td> 1<td>Legacies				<td>2002<td>
+<tr><td> 2<td>Darknesses			<td>2003<td>
+<tr><td> 3<td>Scepters				<td>2004<td>
+<tr><td> 4<td>Alector’s Choice			<td>2005<td>
+<tr><td> 5<td>Cadmian’s Choice			<td>2006<td>
+<tr><td> 6<td>Soarer’s Choice			<td>2006<td>
+<tr><td> 7<td>The Lord-Protector’s Daughter	<td>2008<td>
+<tr><td> 8<td>Lady-Protector			<td>2011<td>
+
+<tr><th colspan=4>Standalone Novels
+<tr><td>  <td>The Hammer of Darkness		<td>1985<td>
+<tr><td>  <td>The Octagonal Raven		<td>2001<td>
+<tr><td>  <td>Haze				<td>2009<td>
+<tr><td>  <td>Empress of Eternity		<td>2010<td>
+<tr><td>  <td>Quantum Shadows			<td>2020<td>
+</table>
+
+<!--
+# Bash script to rename downloaded EPUB and MOBI files.
+
+# Usage: mmm <original-file-name> <series-number> <title> <year-etc>
+#	where <series-number> is "Recluce-20", "Corea-1" or "" for standalones.
+#
+function mmm {
+    local old="$1" sn="$2" t="$3" yearEtc="$4"
+    local dir="."
+    if [[ -n "$sn" ]]
+    then
+	dir="${sn%-*}"
+	sn="{$sn,$yearEtc}"
+    else
+	sn="{$yearEtc}"
+    fi
+    mv -nv "$old" "${dir}/Modesitt $sn $t.${old#*.}"
+}
+
+mkdir -p Recluce
+mmm magicofrecluce.epub		Recluce-01 "The Magic of Recluce"	"1991,Lerris-1"
+mmm magicofrecluce.mobi		Recluce-01 "The Magic of Recluce"	"1991,Lerris-1"
+mmm towersofthesunset.epub	Recluce-02 "The Towers of the Sunset"	"1992,Creslin"
+mmm towersofthesunset.mobi	Recluce-02 "The Towers of the Sunset"	"1992,Creslin"
+mmm magicengineer.epub		Recluce-03 "The Magic Engineer"		"1994,Dorrin"
+mmm orderwar.epub		Recluce-04 "The Order War"		"1995,Justen"
+mmm deathofchaos.epub		Recluce-05 "The Death of Chaos"		"1995,Lerris-2"
+mmm fallofangels.epub		Recluce-06 "Fall of Angels"		"1996,Nylan-1"
+mmm fallofangels.mobi		Recluce-06 "Fall of Angels"		"1996,Nylan-1"
+mmm chaosbalance.epub		Recluce-07 "The Chaos Balance"		"1997,Nylan-2"
+mmm chaosbalance.mobi		Recluce-07 "The Chaos Balance"		"1997,Nylan-2"
+mmm whiteorder.epub		Recluce-08 "The White Order"		"1998,Cerryl-1"
+mmm whiteorder.mobi		Recluce-08 "The White Order"		"1998,Cerryl-1"
+mmm colorsofchaos.epub		Recluce-09 "Colors of Chaos"		"1999,Cerryl-2"
+mmm colorsofchaos.mobi		Recluce-09 "Colors of Chaos"		"1999,Cerryl-2"
+mmm magiiofcyador.epub		Recluce-10 "Magi’i of Cyador"		"2001,Lorn-1"
+mmm magiiofcyador.mobi		Recluce-10 "Magi’i of Cyador"		"2001,Lorn-1"
+mmm scionofcyador.epub		Recluce-11 "Scion of Cyador"		"2001,Lorn-2"
+mmm scionofcyador.mobi		Recluce-11 "Scion of Cyador"		"2001,Lorn-2"
+mmm wellspringofchaos.epub	Recluce-12 "The Wellspring of Chaos"	"2004,Khari-1"
+mmm ordermaster.epub		Recluce-13 "Ordermaster"		"2005,Khari-2"
+mmm naturalordermage.epub	Recluce-14 "Natural Ordermage"		"2007,Rahl-1"
+mmm mage-guardofhamor.epub	Recluce-15 "Mage-Guard of Hamor"	"2008,Rahl-2"
+mmm arms-commander.epub		Recluce-16 "Arms-Commander"		"2010,Saryn"
+mmm cyadorsheirs.epub		Recluce-17 "Cyador’s Heirs"		"2014,Lerial+Lephi-1"
+mmm heritageofcyador.epub	Recluce-18 "Heritage of Cyador"		"2014,Lerial+Lephi-2"
+mmm heritageofcyador.mobi	Recluce-18 "Heritage of Cyador"		"2014,Lerial+Lephi-2"
+mmm mongrelmage.epub		Recluce-19 "The Mongrel Mage"		"2017,Beltur-1"
+mmm outcastsoforder.epub	Recluce-20 "Outcasts of Order"		"2018,Beltur-2"
+mmm mage-firewar.epub		Recluce-21 "The Mage-Fire War"		"2019,Beltur-3"
+mmm fairhavenrising.epub	Recluce-22 "Fairhaven Rising"		"2021,Taelya"
+mmm reclucetales.epub		Recluce-Shorts	"Recluce Tales"		"2017"
+mmm reclucetales.mobi		Recluce-Shorts	"Recluce Tales"		"2017"
+
+mkdir -p Corea
+mmm legacies.epub			Corea-1	"Legacies"			"2002"
+mmm darknesses.epub			Corea-2	"Darknesses"			"2003"
+mmm scepters.epub			Corea-3	"Scepters"			"2004"
+mmm alectorschoice.epub			Corea-4	"Alector’s Choice"		"2005"
+mmm alectorschoice.mobi			Corea-4	"Alector’s Choice"		"2005"
+mmm cadmianschoice.epub			Corea-5	"Cadmian’s Choice"		"2006"
+mmm soarerschoice.epub			Corea-6	"Soarer’s Choice"		"2006"
+mmm lord-protectorsdaughter.epub	Corea-7	"The Lord-Protector’s Daughter"	"2008"
+mmm lady-protector.epub			Corea-8	"Lady-Protector"		"2011"
+
+mmm hammerofdarkness.epub	""	"The Hammer of Darkness"	"1985"
+mmm octagonalraven.epub		""	"The Octagonal Raven"		"2001"
+mmm haze.epub			""	"Haze"				"2009"
+mmm empressofeternity.epub	""	"Empress of Eternity"		"2010"
+mmm quantumshadows.epub		""	"Quantum Shadows"		"2020"
+-->
+
+</body>
+</html>

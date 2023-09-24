@@ -3,6 +3,8 @@ UPCOMING ANIME
 Winter 2024
 ==============================
 
+Banished From The Heroes' Party		S2	26524
+
 Blue Exorcist: Shimane Illuminati Saga		29818
 
 Bottom-Tier Character Tomozaki		S2	27113
@@ -27,6 +29,8 @@ Mashle: Magic and Muscles		S2	28834
 
 Metallic Rouge					27568	"Tech noir", Android girl ;CrRoll
 
+Monthly Mōsō Science				29966	Magazine about bizarre paranormal stuff
+
 My Instant Death Ability is So Overpowered …	26672	HS school class isekai’d
 
 Pon no Michi		= The Way of Pon	28336	CGDCT; vacant mahjong parlor
@@ -39,11 +43,15 @@ A Sign of Affection				28917	Deaf girl, boy, romance; CrRoll
 
 Solo Leveling					26000	From Manhwa
 
+Tales of Wedding Rings				26935	CF says bye, he chases her ⇒ isekai, married
+
 'Tis Time for "Torture," Princess		28789	Mild-mannered demons ‘torture’ her
 
 Tsukimichi -Moonlit Fantasy-		S2	24758
 
 Villainess Level 99				27600
+
+The Weakest Tamer Began a Journey to Pick Up Trash	26555	Girl isekai RPGish world
 
 Whisper Me a Love Song				26890	HS rom-com
 
@@ -55,7 +63,7 @@ The Wrong Way to Use Healing Magic		24635	"slapstick isekai fantasy"
 Spring 2024
 ===========
 
-Bartender Glass of God				28005
+Bartender Glass of God				28005	Genius bartender makes incredible cocktails
 
 // Dead Dead Demon's Dededede Destruction	25464	is 2 movies, not a series
 
@@ -67,8 +75,9 @@ Quality Assurance in Another World		27598	QA people trapped in VG world
 
 Sound! Euphonium			S3	25754
 
+
 Sometime in 2024
-=============================
+================
 
 2.5 Dimensional Seduction			26712	HS RomCom; Otaku + cosplayer
 
@@ -84,7 +93,7 @@ The Café Terrace and Its Goddesses	S2	28764	Sigh.
 
 Days With My Stepsister				26123
 
-Delico's Nursery				29294	vampires vs humans, a vampire nicknamed TRUMP, 
+Delico's Nursery				29294	vampires vs humans, a vampire nicknamed TRUMP,
 
 The Demon Prince of Momochi House		29056
 
@@ -138,9 +147,9 @@ Tonari no Yōkai-san				29197
 
 Tsukimichi -Moonlit Fantasy-		S2	24758	I enjoyed S1 (Isekai with jerk goddess)
 
-Unnamed Memory					26728	Prince, curse, witch
+Tying the Knot With an Amagami Siste		27976	
 
-The Weakest Tamer Began a Journey to Pick Up Trash	26555	Girl isekai RPGish world
+Unnamed Memory					26728	Prince, curse, witch
 
 Why nobody remembers my world?			29143
 
@@ -156,7 +165,7 @@ Azur Lane: Slow Ahead!			S2	29823
 
 Bang Brave Bang Bravern				28414
 
-Banished From The Heroes' Party		S2	26524
+The Blue Wolves of Mibu				29882	founding of Shinsengumi
 
 Bōkyaku Battery					29271	HS Baseball
 
@@ -194,13 +203,20 @@ Koi wa Futago de Warikirenai			29051	= Love Between Twins is Indivisible
 
 Lazarus						29112	SF, 2052, imminent mass death
 
+My Happy Marriage			S2	29984	Netflix
+
 My New Boss Is Goofy				28237
 
-Okinawa de Suki ni Natta Ko ga H\u014dgen Sugite Tsurasugiru	2889
+Okinawa de Suki ni Natta Ko ga Hōgen Sugite Tsurasugiru	2889
+
+
+Reborn as a Vending Machine […]		s2	29983
 
 Rebuild World					28891	Post-apocalypse
 
 Rekishi ni Nokoru Akujo ni Naru zo		29354	Isekai’d as villainess, girl tries 2b evil
+
+Re:Monster					29955	Isekai’d into fantasy world … as a lowly goblin
 
 Re:ZERO -Starting Life in Another World-  S3	27619
 
@@ -219,5 +235,7 @@ add_show("Tsuyokute New Saga", "",
 
 VTuber Legend: How I Went Viral after Forgetting to Turn Off My Stream	26966
 	20yo ladylike VTuber accidentally streams drinking beer and cracking crude jokes …
+
+Watari-kun's ***** is About to Collapse		29971	Orphaned HS boy focuses on sister, then ...
 
 Your Forma					29054	SF Crime/suspense
