@@ -179,7 +179,7 @@ function add_show (
     //  tag	string		Kind of element to add
     //  text	string?		Optional text to attach to new element
     //	classes	string?		Optional className string for new element
-    //  url xxx string? xxxxxxx Optional; if supplied when tag is NOT "a",
+    //  url	string?		Optional; if supplied when tag is NOT "a",
     //				add_el() also adds an <a href=URL target=_blank>
     //				as the child of the new element and attaches any
     //				text to that <a>.
