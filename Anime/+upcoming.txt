@@ -3,7 +3,7 @@ UPCOMING ANIME
 Winter 2024
 ==============================
 
-Banished From The Heroes' Party		S2	26524
+Banished From The Heroes’ Party		S2	26524
 
 Blue Exorcist: Shimane Illuminati Saga		29818
 
@@ -15,7 +15,7 @@ Classroom of the Elite			S3	25413
 
 The Dangers in My Heart			S2	28648
 
-Delicious in Dungeon				26195	Netflix
+Delicious in Dungeon				26195	Netflix, 2-cour run
 
 Doctor Elise					27224	From manwha "Surgeon Elise"
 
@@ -31,7 +31,7 @@ Metallic Rouge					27568	"Tech noir", Android girl ;CrRoll
 
 Monthly Mōsō Science				29966	Mag about bizarre paranormal stuff
 
-Mr. Villain's Day Off				27196
+Mr. Villain’s Day Off				27196
 
 My Instant Death Ability is So Overpowered …	26672	HS school class isekai’d
 
@@ -45,11 +45,13 @@ A Sign of Affection				28917	Deaf girl, boy, romance; CrRoll
 
 Solo Leveling					26000	From Manhwa
 
+The Strongest Tank's Labyrinth Raids		https://www.animenewsnetwork.com/.203152
+
 Synduality: Noir		2nd cour	?????	1st cour Summer 2023
 
 Tales of Wedding Rings				26935	Guy chased CF to isekai, married
 
-'Tis Time for "Torture," Princess		28789	Mild-mannered demons ‘torture’ her
+’Tis Time for "Torture," Princess		28789	Mild-mannered demons ‘torture’ her
 
 Tsukimichi -Moonlit Fantasy-		S2	24758
 
@@ -69,7 +71,7 @@ Spring 2024
 
 Bartender Glass of God				28005	Genius bartender, superb cocktails
 
-// Dead Dead Demon's Dededede Destruction	25464	is 2 movies, not a series
+// Dead Dead Demon’s Dededede Destruction	25464	is 2 movies, not a series
 
 Hey! Tonbo			= Oi! Tonbo	28078	Ex-pro golfer finds genius girl
 
@@ -89,7 +91,7 @@ Sometime in 2024
 
 7th Time Loop: The Villainess Enjoys a Carefree Life	29506	Looper marries her killer
 
-As a Reincarnated Aristocrat, I'll Use My Appraisal Skill	28178	CrRoll
+As a Reincarnated Aristocrat, I’ll Use My Appraisal Skill	28178	CrRoll
 
 ATRI: My Dear Moments				26372
 
@@ -99,7 +101,7 @@ The Café Terrace and Its Goddesses	S2	28764	Sigh.
 
 Days With My Stepsister				26123
 
-Delico's Nursery				29294	vamps vs humans, vamp called TRUMP
+Delico’s Nursery				29294	vamps vs humans, vamp called TRUMP
 
 The Demon Prince of Momochi House		29056
 
@@ -107,7 +109,7 @@ The Elusive Samurai				27523
 
 Fluffy Paradise					26045
 
-God's Game We Play				25175
+God’s Game We Play				25175
 
 Grendizer U					29306	Mecha, ∈ “UFO Robo Grendizer”
 
@@ -121,7 +123,7 @@ The Irregular at Magic High School	S???	29053
 
 Ishura						27125	Seems very shōnen
 
-Jellyfish Can't Swim in the Night		27601
+Jellyfish Can’t Swim in the Night		27601
 
 Kaii to Otome to Kamikakushi			26872	AKA Mysterious Disappearances
 
@@ -143,7 +145,9 @@ Oi! Tonbo					28078	Golf; from manga
 
 Oroka na Tenshi wa Akuma to Odoru		28013	Stupid Angel Dances with the Devil
 
-Our Last Crusade or the Rise of a New World		S2	24812	Is/was due "2023"
+Our Last Crusade or the Rise of a New World	S2	24812	Is/was due "2023"
+
+A Salad Bowl of Eccentrics			28938
 
 Shinmai Ossan Bōkensha				27725	Shōnen for older readers (?)
 
@@ -191,7 +195,7 @@ Dahlia in Bloom: Crafting a Fresh Start With Magical Tools	29629
 Dekisokonai to Yobareta Moto Eiyū wa		28700
 	= "Banished Former Hero Lives as He Pleases"
 
-Delico's Nursery				29294	Vampires
+Delico’s Nursery				29294	Vampires
 
 Demon Lord 2099					27615
 
@@ -207,13 +211,15 @@ The Fable					28984	Prodigy hitman tries to be normal
 
 Girls Band Cry					28002
 
-God's Game We Play				25175
+God’s Game We Play				25175
 
 Grandpa and Grandma Turn Young Again		29353	Comedy; "Jiisan Baasan Wakagaeru"
 
 Hana-Doll*: Reinterpretation of Flowering	28697	Male Idol group
 
-I May Be a Guild Receptionist, But I'll Solo Any Boss to Clock Out on Time	29055
+How I Attended an All-Guy’s Mixer		30160
+
+I May Be a Guild Receptionist, But I’ll Solo Any Boss to Clock Out on Time	29055
 
 Koi wa Futago de Warikirenai			29051
 	= Love Between Twins is Indivisible
@@ -242,6 +248,8 @@ Sentenced to Be a Hero: The Prison Records of Penal Hero Unit 9004	29058
 
 Seirei Gensouki - Spirit Chronicles	S2	24949
 
+Studio Apartment, Good Lighting, Angel Included	30153
+
 Tenkō-saki no Seiso Karen na Bishōjo ga, Mukashi Danshi to Omotte Issho ni Asonda Osananajimi Datta Ken
 	= The Neat and Beautiful Girl at My New School Was My Childhood Friend Whom I Thought Was a Boy and I Played Together With
 						30081
@@ -256,7 +264,7 @@ add_show("Tsuyokute New Saga", "",
 VTuber Legend: How I Went Viral after Forgetting to Turn Off My Stream	26966
 	# 20yo ladylike VTuber accidentally streams drinking beer, cracking crude jokes …
 
-Watari-kun's ***** is About to Collapse		29971
+Watari-kun’s ***** is About to Collapse		29971
 	# Orphaned HS boy focuses on sister, then ...
 
 Your Forma					29054	SF Crime/suspense
