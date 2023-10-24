@@ -3,6 +3,8 @@ UPCOMING ANIME
 Winter 2024
 ==============================
 
+Bang Brave Bang Bravern				28414
+
 Banished From The Heroes’ Party		S2	26524
 
 Blue Exorcist: Shimane Illuminati Saga		29818
@@ -11,6 +13,10 @@ Bottom-Tier Character Tomozaki		S2	27113
 
 Bucchigiri?!					28306
 
+Chained Soldier					24978	HiDive
+
+Cherry Magic! Thirty Years of Virginity Can Make You a Wizard?!	29049	Yaoi
+
 Classroom of the Elite			S3	25413
 
 The Dangers in My Heart			S2	28648
@@ -18,6 +24,8 @@ The Dangers in My Heart			S2	28648
 Delicious in Dungeon				26195	Netflix, 2-cour run
 
 Doctor Elise					27224	From manwha "Surgeon Elise"
+
+The Foolish Angel Dances with the Devil		28013	CrRoll
 
 Hokkaido Gals Are Super Adorable!		26494
 
@@ -33,19 +41,21 @@ Monthly Mōsō Science				29966	Mag about bizarre paranormal stuff
 
 Mr. Villain’s Day Off				27196
 
-My Instant Death Ability is So Overpowered …	26672	HS school class isekai’d
+My Instant Death Ability is So Overpowered …	26672	HS school class isekai’d; HiDive
 
 Pon no Michi		= The Way of Pon	28336	CGDCT; vacant mahjong parlor
 
 Sasaki and Peeps				26120	CrRoll
 
-Sengoku Youko		= Warring States Yōko	29375	Humans vs Monsters
+Sengoku Youko		= Warring States Yōko	29375	Humans vs Monsters; CrRoll
 
 A Sign of Affection				28917	Deaf girl, boy, romance; CrRoll
 
+Snack Basue					28588
+
 Solo Leveling					26000	From Manhwa
 
-The Strongest Tank's Labyrinth Raids		https://www.animenewsnetwork.com/.203152
+The Strongest Tank’s Labyrinth Raids		https://www.animenewsnetwork.com/.203152
 
 Synduality: Noir		2nd cour	?????	1st cour Summer 2023
 
@@ -54,6 +64,8 @@ Tales of Wedding Rings				26935	Guy chased CF to isekai, married
 ’Tis Time for "Torture," Princess		28789	Mild-mannered demons ‘torture’ her
 
 Tsukimichi -Moonlit Fantasy-		S2	24758
+
+The Unwanted Undead Adventurer			25566	CrRoll
 
 Villainess Level 99				27600
 
@@ -73,15 +85,25 @@ Bartender Glass of God				28005	Genius bartender, superb cocktails
 
 // Dead Dead Demon’s Dededede Destruction	25464	is 2 movies, not a series
 
+The Fable					28984	Prodigy hitman tries to be normal
+
 Hey! Tonbo			= Oi! Tonbo	28078	Ex-pro golfer finds genius girl
+
+Highspeed Etoile				26074
 
 I Was Reincarnated as the 7th Prince		26536	For kids?
 
-Kaiju No. 8					26176
+Kaiju No. 8					26176	CrRoll
+
+Laid-Back Camp				S3	26481
+
+The Raven Does Not Choose its Master		//From LNs; see …/manga.php?id=28495
 
 Quality Assurance in Another World		27598	QA people trapped in VG world
 
 Sound! Euphonium			S3	25754
+
+Wind Breaker					27706	Shōnen, HS 4 delinquents, fighting
 
 
 Sometime in 2024
@@ -95,13 +117,27 @@ As a Reincarnated Aristocrat, I’ll Use My Appraisal Skill	28178	CrRoll
 
 ATRI: My Dear Moments				26372
 
+add_show("Beyblade X", "",	//See https://www.animenewsnetwork.com/.202972
+	 rNo, "Seems unlikely",
+	 UnknownSite, "X", UnknownSchedule,//Oct 6
+	 28243, "Franchise/Beyblade", "Beyblade Burst",
+	 [ "Toy-franchise", "Spinning-tops", "Arena-combat", "Lotsa-anime" ]);
+
 Black Butler: Public School Arc			28897	CrRoll
 
+Bye Bye, Earth					26581	CrRoll
+
 The Café Terrace and Its Goddesses	S2	28764	Sigh.
+
+Chillin' in Another World with Level 2 Super Cheat Powers	30332
+
+Date A Live V				= S5	25912
 
 Days With My Stepsister				26123
 
 Delico’s Nursery				29294	vamps vs humans, vamp called TRUMP
+
+Demon Lord 2099					27615
 
 The Demon Prince of Momochi House		29056
 
@@ -111,13 +147,19 @@ Fluffy Paradise					26045
 
 God’s Game We Play				25175
 
+Go, Go, Loser Ranger!				26693
+
 Grendizer U					29306	Mecha, ∈ “UFO Robo Grendizer”
 
 Gushing Over Magical Girls			27415	Shy MS girl loves MGs, now villain
 
-Hamidashi Creative				28918	Crowdfunded; 12×2½min eps
+add_show("Haigakura", "",
+	 rToTryMaybe, "?",
+	 UnknownSite, "X", UnknownSchedule,
+	 29579, NoTvT, "Haigakura",
+	 [ "Action", "Fantasy", "Guy+junior-God-seek-the-four-evil-gods" ]);
 
-Highspeed Etoile				26074
+Hamidashi Creative				28918	Crowdfunded; 12×2½min eps
 
 The Irregular at Magic High School	S???	29053
 
@@ -131,13 +173,13 @@ Kimi ni Todoke - From Me to You Season 3	29713	Netflix; Sadako-lookalike
 
 KonoSuba 3					25730
 
-Laid-Back Camp				S3	26481
-
 Love Live! Superstar!!			S3	26429
 
 Mecha-Ude					26336	Powerful sentient machines ...
 
 The Misfit of Demon King Academy	S2,2nd½	30100
+
+Mission: Yozakura Family			26739	= Yozakura-san Chi no Daisakusen
 
 No Longer Allowed In Another World		26062	(Isekai Shikkaku)
 
@@ -154,9 +196,11 @@ Shinmai Ossan Bōkensha				27725	Shōnen for older readers (?)
 Shūbmatsu Train Doko e Iku?			26454
 	= "Where Does the Doomsday Train Go?"
 
-Spice & Wolf: merchant meets the wise wolf	28812	New adaptation of light novels
+Spice & Wolf: merchant meets the wise wolf	28812	New adaptation of LNs; CrRoll
 
 Sword Art Online Alternative: Gun Gale Online	S2	29052
+
+Time Patrol Bon					30154	AKA "T・P Bon"; Netflix
 
 Tonari no Yōkai-san				29197
 
@@ -166,9 +210,10 @@ Tying the Knot With an Amagami Siste		27976
 
 Unnamed Memory					26728	Prince, curse, witch
 
-Why nobody remembers my world?			29143
+VTuber Legend: How I Went Viral after Forgetting to Turn Off My Stream	26966
+	# 20yo ladylike VTuber accidentally streams drinking beer, cracking crude jokes …
 
-Yozakura-san Chi no Daisakusen			26739
+Why nobody remembers my world?			29143
 
 
 Perhaps in 2024, perhaps later
@@ -178,11 +223,13 @@ Perhaps in 2024, perhaps later
 
 Alya Sometimes Hides Her Feelings in Russian	27443
 
+The Angel Next Door Spoils Me Rotten	S2	30219
+
 Aquarion: Myth of Emotions			27526	CrRoll; anime S4 of franchise
 
 Azur Lane: Slow Ahead!			S2	29823
 
-Bang Brave Bang Bravern				28414
+Blue Orchestra				S2	30218
 
 The Blue Wolves of Mibu				29882	founding of Shinsengumi
 
@@ -207,7 +254,7 @@ The Do-Over Damsel Conquers the Dragon Emperor	28073	Shojo(ish); 16yo goes back 
 
 Dungeon People					29475	Girl searching Dungeon joins staff
 
-The Fable					28984	Prodigy hitman tries to be normal
+The Unemployed Hero Does Not Need Something Like Skills	30185	 Mushoku no Eiyū
 
 Girls Band Cry					28002
 
@@ -226,11 +273,15 @@ Koi wa Futago de Warikirenai			29051
 
 Lazarus						29112	SF, 2052, imminent mass death
 
+Medalist					28262	Olympic ice-skating, manga
+
 My Happy Marriage			S2	29984	Netflix
 
 My New Boss Is Goofy				28237
 
 Okinawa de Suki ni Natta Ko ga Hōgen Sugite Tsurasugiru	2889
+
+ Private Tutor to the Duke’s Daughter		30324
 
 Reborn as a Vending Machine […]		S2	29983
 
@@ -243,8 +294,6 @@ Re:Monster					29955	Isekai’d  … as a lowly goblin
 Re:ZERO -Starting Life in Another World-  S3	27619
 
 A Salad Bowl of Eccentrics			28938	See animenewsnetwork.com/.200035
-
-Sentenced to Be a Hero: The Prison Records of Penal Hero Unit 9004	29058
 
 Seirei Gensouki - Spirit Chronicles	S2	24949
 
@@ -261,10 +310,15 @@ add_show("Tsuyokute New Saga", "",
 	 26476, "Literature/TsuyokuteNewSaga", "New Saga",
 	 [ "Heroes-barely-defeat-Demon-Lord", "Hero-sent-back-4-years" ]);	*/
 
-VTuber Legend: How I Went Viral after Forgetting to Turn Off My Stream	26966
-	# 20yo ladylike VTuber accidentally streams drinking beer, cracking crude jokes …
-
 Watari-kun’s ***** is About to Collapse		29971
 	# Orphaned HS boy focuses on sister, then ...
 
+Yakuza Fiancé: Raise wa Tanin ga Ii		30444
+
 Your Forma					29054	SF Crime/suspense
+
+
+2015
+====
+
+Sentenced to Be a Hero: The Prison Records of Penal Hero Unit 9004	29058
