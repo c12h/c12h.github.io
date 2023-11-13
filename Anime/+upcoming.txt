@@ -1,7 +1,9 @@
 UPCOMING ANIME
 
 Winter 2024
-==============================
+===========
+
+7th Time Loop: The Villainess Enjoys a Carefree Life	29506	Looper marries her killer
 
 Bang Brave Bang Bravern				28414
 
@@ -25,11 +27,21 @@ Delicious in Dungeon				26195	Netflix, 2-cour run
 
 Doctor Elise					27224	From manwha "Surgeon Elise"
 
+The Fire Hunter				S2	27459
+
+Fluffy Paradise					26045	Isekai, woman, animals love her
+
 The Foolish Angel Dances with the Devil		28013	CrRoll
+
+Gushing Over Magical Girls			27415	Shy MS girl loves MGs, now villain
 
 Hokkaido Gals Are Super Adorable!		26494
 
 High Card				S2	27640	Poker, magical 52 cards; CrRoll
+
+I Parry Everything				30566
+
+Ishura						27125	Seems very shōnen
 
 Kingdom					S5	26401	Historical China; Jan 6
 
@@ -41,7 +53,7 @@ Monthly Mōsō Science				29966	Mag about bizarre paranormal stuff
 
 Mr. Villain’s Day Off				27196
 
-My Instant Death Ability is So Overpowered …	26672	HS school class isekai’d; HiDive
+My Instant Death Ability is So Overpowered	26672	HS school class isekai’d; HiDive
 
 Pon no Michi		= The Way of Pon	28336	CGDCT; vacant mahjong parlor
 
@@ -63,15 +75,13 @@ Tales of Wedding Rings				26935	Guy chased CF to isekai, married
 
 ’Tis Time for "Torture," Princess		28789	Mild-mannered demons ‘torture’ her
 
-Tsukimichi -Moonlit Fantasy-		S2	24758
+Tsukimichi -Moonlit Fantasy-		S2	24758	"alternate-world social reform fantasy"
 
 The Unwanted Undead Adventurer			25566	CrRoll
 
 Villainess Level 99				27600
 
 The Weakest Tamer Began a Journey to Pick Up Trash	26555	Girl isekai RPGish world
-
-Whisper Me a Love Song				26890	HS rom-com
 
 The Witch and the Beast				26232	Weird duo vs witch; CrRoll
 
@@ -81,7 +91,13 @@ The Wrong Way to Use Healing Magic		24635	"slapstick isekai fantasy"
 Spring 2024
 ===========
 
+Alya Sometimes Hides Her Feelings in Russian	27443
+
 Bartender Glass of God				28005	Genius bartender, superb cocktails
+
+A Condition Called Love				28531	HS romance
+
+As a Reincarnated Aristocrat, I’ll Use My Appraisal Skill	28178	CrRoll
 
 // Dead Dead Demon’s Dededede Destruction	25464	is 2 movies, not a series
 
@@ -93,15 +109,21 @@ Highspeed Etoile				26074
 
 I Was Reincarnated as the 7th Prince		26536	For kids?
 
+Jellyfish Can’t Swim in the Night		27601
+
 Kaiju No. 8					26176	CrRoll
 
 Laid-Back Camp				S3	26481
+
+Kuso Miso Technique				27727	BL; OAV; AKA "Shin Yaranai ka"
 
 The Raven Does Not Choose its Master		//From LNs; see …/manga.php?id=28495
 
 Quality Assurance in Another World		27598	QA people trapped in VG world
 
 Sound! Euphonium			S3	25754
+
+Whisper Me a Love Song				26890	HS rom-com, Yuri
 
 Wind Breaker					27706	Shōnen, HS 4 delinquents, fighting
 
@@ -111,9 +133,7 @@ Sometime in 2024
 
 2.5 Dimensional Seduction			26712	HS RomCom; Otaku + cosplayer
 
-7th Time Loop: The Villainess Enjoys a Carefree Life	29506	Looper marries her killer
-
-As a Reincarnated Aristocrat, I’ll Use My Appraisal Skill	28178	CrRoll
+An Archdemon's Dilemma - How to Love Your Elf Bride	26502
 
 ATRI: My Dear Moments				26372
 
@@ -135,6 +155,9 @@ Date A Live V				= S5	25912
 
 Days With My Stepsister				26123
 
+Dekisokonai to Yobareta Moto Eiyū wa		28700
+	= "Banished Former Hero Lives as He Pleases"
+
 Delico’s Nursery				29294	vamps vs humans, vamp called TRUMP
 
 Demon Lord 2099					27615
@@ -143,15 +166,11 @@ The Demon Prince of Momochi House		29056
 
 The Elusive Samurai				27523
 
-Fluffy Paradise					26045
-
 God’s Game We Play				25175
 
 Go, Go, Loser Ranger!				26693
 
 Grendizer U					29306	Mecha, ∈ “UFO Robo Grendizer”
-
-Gushing Over Magical Girls			27415	Shy MS girl loves MGs, now villain
 
 add_show("Haigakura", "",
 	 rToTryMaybe, "?",
@@ -162,10 +181,6 @@ add_show("Haigakura", "",
 Hamidashi Creative				28918	Crowdfunded; 12×2½min eps
 
 The Irregular at Magic High School	S???	29053
-
-Ishura						27125	Seems very shōnen
-
-Jellyfish Can’t Swim in the Night		27601
 
 Kaii to Otome to Kamikakushi			26872	AKA Mysterious Disappearances
 
@@ -180,6 +195,10 @@ Mecha-Ude					26336	Powerful sentient machines ...
 The Misfit of Demon King Academy	S2,2nd½	30100
 
 Mission: Yozakura Family			26739	= Yozakura-san Chi no Daisakusen
+
+Nanare Hananare					30587	Coming-of-age for 6 HS girls
+
+The New Gate					30589	Trapped-in-VRMMO but time-skip
 
 No Longer Allowed In Another World		26062	(Isekai Shikkaku)
 
@@ -206,9 +225,11 @@ Tonari no Yōkai-san				29197
 
 Tsukimichi -Moonlit Fantasy-		S2	24758	Isekai with jerk goddess (S1=fun)
 
-Tying the Knot With an Amagami Siste		27976
+Tying the Knot With an Amagami Sister		27976
 
 Unnamed Memory					26728	Prince, curse, witch
+
+Vampire Dormitory				30546	Unlikely
 
 VTuber Legend: How I Went Viral after Forgetting to Turn Off My Stream	26966
 	# 20yo ladylike VTuber accidentally streams drinking beer, cracking crude jokes …
@@ -220,8 +241,6 @@ Perhaps in 2024, perhaps later
 ==============================
 
 365 Days to the Wedding				27881	Shy co-workers fake engagement
-
-Alya Sometimes Hides Her Feelings in Russian	27443
 
 The Angel Next Door Spoils Me Rotten	S2	30219
 
@@ -235,12 +254,11 @@ The Blue Wolves of Mibu				29882	founding of Shinsengumi
 
 Bōkyaku Battery					29271	HS Baseball
 
+Campfire Cooking in Another World with My Absurd Skill	S2	30535
+
 Cherry Magic! Thirty Years of Virginity Can Make You a Wizard?!		29049	Yaoi
 
 Dahlia in Bloom: Crafting a Fresh Start With Magical Tools	29629
-
-Dekisokonai to Yobareta Moto Eiyū wa		28700
-	= "Banished Former Hero Lives as He Pleases"
 
 Delico’s Nursery				29294	Vampires
 
@@ -268,6 +286,10 @@ How I Attended an All-Guy’s Mixer		30160
 
 I May Be a Guild Receptionist, But I’ll Solo Any Boss to Clock Out on Time	29055
 
+Is It Wrong to Try to Pick Up Girls in a Dungeon? V	30574	(ie., S5)
+
+I Want to Escape from Princess Lessons		30565
+
 Koi wa Futago de Warikirenai			29051
 	= Love Between Twins is Indivisible
 
@@ -281,7 +303,7 @@ My New Boss Is Goofy				28237
 
 Okinawa de Suki ni Natta Ko ga Hōgen Sugite Tsurasugiru	2889
 
- Private Tutor to the Duke’s Daughter		30324
+Private Tutor to the Duke’s Daughter		30324
 
 Reborn as a Vending Machine […]		S2	29983
 
