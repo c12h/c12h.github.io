@@ -17,7 +17,7 @@ Bucchigiri?!					28306
 
 Chained Soldier					24978	HiDive
 
-Cherry Magic! Thirty Years of Virginity Can Make You a Wizard?!	29049	Yaoi
+Cherry Magic! Thirty Years of Virginity Can Make You a Wizard?!	29049	Yaoi; Jan 10
 
 Classroom of the Elite			S3	25413
 
@@ -53,7 +53,7 @@ Monthly Mōsō Science				29966	Mag about bizarre paranormal stuff
 
 Mr. Villain’s Day Off				27196
 
-My Instant Death Ability is So Overpowered	26672	HS school class isekai’d; HiDive
+My Instant Death Ability is So Overpowered	26672	HS school class isekaid; HD Jan4
 
 Pon no Michi		= The Way of Pon	28336	CGDCT; vacant mahjong parlor
 
@@ -170,6 +170,8 @@ God’s Game We Play				25175
 
 Go, Go, Loser Ranger!				26693
 
+Great Pretender razbliuto		GP S2	30684	CrRoll
+
 Grendizer U					29306	Mecha, ∈ “UFO Robo Grendizer”
 
 add_show("Haigakura", "",
@@ -209,6 +211,8 @@ Oroka na Tenshi wa Akuma to Odoru		28013	Stupid Angel Dances with the Devil
 Our Last Crusade or the Rise of a New World	S2	24812	Is/was due "2023"
 
 A Salad Bowl of Eccentrics			28938
+
+Sand Land: The Series				30616	Looks v shōnen; Disney
 
 Shinmai Ossan Bōkensha				27725	Shōnen for older readers (?)
 
@@ -303,6 +307,8 @@ My New Boss Is Goofy				28237
 
 Okinawa de Suki ni Natta Ko ga Hōgen Sugite Tsurasugiru	2889
 
+Plus-Sized Misadventures in Love		30685
+
 Private Tutor to the Duke’s Daughter		30324
 
 Reborn as a Vending Machine […]		S2	29983
@@ -340,7 +346,7 @@ Yakuza Fiancé: Raise wa Tanin ga Ii		30444
 Your Forma					29054	SF Crime/suspense
 
 
-2015
+2025
 ====
 
 Sentenced to Be a Hero: The Prison Records of Penal Hero Unit 9004	29058
